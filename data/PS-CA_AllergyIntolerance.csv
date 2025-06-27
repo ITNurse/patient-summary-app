@@ -1,0 +1,16 @@
+patient.identifier,substance.code,substance.display,clinicalStatus,verificationStatus,reaction.code,reaction.display,criticality,severity
+999 471 999,227493005,Milk protein,active,confirmed,422400008,Rash,low,Mild
+999 471 999,91937009,Ibuprofen,active,confirmed,422400008,Rash,high,Mild
+999 471 999,91932001,Aspirin,active,confirmed,271759003,Wheezing,unable-to-assess,Severe
+999 878 645,282100009,Tree nuts,active,confirmed,422587007,Vomiting,high,Mild
+999 878 645,233678006,Egg protein,active,confirmed,271757001,Anaphylaxis,high,Mild
+999 884 228,91930004,Latex,active,confirmed,247472004,Hives,unable-to-assess,Severe
+999 884 228,91932001,Aspirin,active,confirmed,271757001,Anaphylaxis,high,Mild
+999 586 662,91930004,Latex,active,confirmed,247472004,Hives,low,Severe
+999 586 662,227493005,Milk protein,active,confirmed,422400008,Rash,high,Moderate
+999 269 371,294954003,Bee venom,active,confirmed,422400008,Rash,high,Mild
+999 269 371,91930004,Latex,active,confirmed,247472004,Hives,high,Moderate
+999 269 371,91936005,Penicillin,active,confirmed,247472004,Hives,unable-to-assess,Severe
+999 873 847,233678006,Egg protein,active,confirmed,271759003,Wheezing,high,Moderate
+999 806 305,282100009,Tree nuts,active,confirmed,422400008,Rash,unable-to-assess,Severe
+999 806 305,91937009,Ibuprofen,active,confirmed,247472004,Hives,unable-to-assess,Severe

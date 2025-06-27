@@ -1,0 +1,831 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:ff126bea-25b7-4c11-9760-fe082f735178",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "ff126bea-25b7-4c11-9760-fe082f735178",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60591-5",
+              "display": "Patient Summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        },
+        "date": "2025-06-23T23:51:27.958143+00:00",
+        "title": "PS-CA Patient Summary",
+        "author": [
+          {
+            "reference": "urn:uuid:psca-author-org",
+            "display": "Wellness Way Hospital"
+          }
+        ],
+        "custodian": {
+          "reference": "urn:uuid:psca-author-org",
+          "display": "Wellness Way Hospital"
+        },
+        "section": [
+          {
+            "title": "Allergies",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48765-2",
+                  "display": "Allergies and adverse reactions"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:5e0465c4-f820-48c0-9517-ee72103e2e70"
+              },
+              {
+                "reference": "urn:uuid:c084961e-da97-47c5-a0d6-7084890575a7"
+              }
+            ]
+          },
+          {
+            "title": "Problems",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11450-4",
+                  "display": "Problem List"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:07462255-75b7-4324-9494-ac5e711ce7e8"
+              },
+              {
+                "reference": "urn:uuid:fe3b8b9e-3b44-4698-83c8-67b6a06006c2"
+              },
+              {
+                "reference": "urn:uuid:33444db7-f39e-4eb1-a97f-658bbeb2b41c"
+              }
+            ]
+          },
+          {
+            "title": "Medications",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "10160-0",
+                  "display": "History of Medication Use"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:bc2d409d-8c7a-4df5-89d5-c6c06d3403ec"
+              },
+              {
+                "reference": "urn:uuid:2f2d4d9c-fa64-4099-9eb0-63891ed6d7e2"
+              },
+              {
+                "reference": "urn:uuid:88699f52-6988-4bc0-9838-adf22c795665"
+              }
+            ]
+          },
+          {
+            "title": "Immunizations",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11369-6",
+                  "display": "History of immunizations"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:54d00619-3400-422d-9272-6743002b2456"
+              },
+              {
+                "reference": "urn:uuid:a24cba17-e4ed-496e-a87c-fcb02d801ee9"
+              },
+              {
+                "reference": "urn:uuid:23ef54c6-56cb-4193-8070-f51da20b4c17"
+              },
+              {
+                "reference": "urn:uuid:71efe7d3-1dbf-4fdd-be60-97005d6e2549"
+              },
+              {
+                "reference": "urn:uuid:2183bea9-8c71-4f9b-b2ed-d044c80e5745"
+              },
+              {
+                "reference": "urn:uuid:1e7c3e4d-a2de-4cda-9856-e57ba662528e"
+              },
+              {
+                "reference": "urn:uuid:eb2f1c78-fa8f-4ee3-9605-bb5691bc4d00"
+              },
+              {
+                "reference": "urn:uuid:ff7252fe-18a0-4e38-9d45-4cb6e2ff55d4"
+              },
+              {
+                "reference": "urn:uuid:d08a5d58-16be-4280-9fcd-cbff4ee1bcf2"
+              },
+              {
+                "reference": "urn:uuid:516f67e3-92aa-4fce-af12-ca669a7187d2"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "4404bec0-aad2-4a40-b9c7-259d522adc7b",
+        "identifier": [
+          {
+            "system": "http://example.org/healthcardnumber",
+            "value": "999 806 305"
+          }
+        ],
+        "name": [
+          {
+            "family": "Bird",
+            "given": [
+              "Woodstock"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2022-02-21",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "1-472-779-0104",
+            "use": "home"
+          },
+          {
+            "system": "email",
+            "value": "Woodstock.Bird@outlook.com",
+            "use": "home"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "34332 Brandon Mountains Apt. 769"
+            ],
+            "city": "New Stacyland",
+            "state": "Saskatchewan",
+            "postalCode": "N4S 3H9",
+            "country": "Canada"
+          }
+        ],
+        "photo": [
+          {
+            "contentType": "image/jpeg",
+            "data": "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"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:psca-author-org",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "psca-author-org",
+        "name": "Wellness Way Hospital"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:07462255-75b7-4324-9494-ac5e711ce7e8",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "07462255-75b7-4324-9494-ac5e711ce7e8",
+        "subject": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73211009",
+              "display": "Obesity (disorder)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:fe3b8b9e-3b44-4698-83c8-67b6a06006c2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "fe3b8b9e-3b44-4698-83c8-67b6a06006c2",
+        "subject": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "422504002",
+              "display": "Ischemic heart disease (disorder)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:33444db7-f39e-4eb1-a97f-658bbeb2b41c",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "33444db7-f39e-4eb1-a97f-658bbeb2b41c",
+        "subject": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "13645005",
+              "display": "Osteoarthritis (disorder)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:bc2d409d-8c7a-4df5-89d5-c6c06d3403ec",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "bc2d409d-8c7a-4df5-89d5-c6c06d3403ec",
+        "subject": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/hc-CCDD",
+              "code": "9000973",
+              "display": "\talendronic acid (alendronate sodium) 70 mg oral tablet"
+            }
+          ]
+        },
+        "status": "active"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2f2d4d9c-fa64-4099-9eb0-63891ed6d7e2",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "2f2d4d9c-fa64-4099-9eb0-63891ed6d7e2",
+        "subject": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/hc-CCDD",
+              "code": "9000021",
+              "display": "warfarin sodium 5 mg oral tablet"
+            }
+          ]
+        },
+        "status": "active"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:88699f52-6988-4bc0-9838-adf22c795665",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "88699f52-6988-4bc0-9838-adf22c795665",
+        "subject": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/hc-CCDD",
+              "code": "9000398",
+              "display": "amlodipine (amlodipine besylate) 10 mg oral tablet"
+            }
+          ]
+        },
+        "status": "active"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5e0465c4-f820-48c0-9517-ee72103e2e70",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "5e0465c4-f820-48c0-9517-ee72103e2e70",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "criticality": "unable-to-assess",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 282100009,
+              "display": "Tree nuts"
+            }
+          ]
+        },
+        "reaction": [
+          {
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": 422400008,
+                    "display": "Rash"
+                  }
+                ]
+              }
+            ],
+            "severity": "severe"
+          }
+        ],
+        "patient": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c084961e-da97-47c5-a0d6-7084890575a7",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "c084961e-da97-47c5-a0d6-7084890575a7",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "criticality": "unable-to-assess",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 91937009,
+              "display": "Ibuprofen"
+            }
+          ]
+        },
+        "reaction": [
+          {
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": 247472004,
+                    "display": "Hives"
+                  }
+                ]
+              }
+            ],
+            "severity": "severe"
+          }
+        ],
+        "patient": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:54d00619-3400-422d-9272-6743002b2456",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "54d00619-3400-422d-9272-6743002b2456",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "28721000087103",
+              "display": "[DTaP] TRIPACEL"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        },
+        "occurrenceDateTime": "2021-01-29",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "RA",
+              "display": "Right arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a24cba17-e4ed-496e-a87c-fcb02d801ee9",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "a24cba17-e4ed-496e-a87c-fcb02d801ee9",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "31541000087105",
+              "display": "[Var] VARILRIX"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        },
+        "occurrenceDateTime": "2024-12-04",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "RA",
+              "display": "Right arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:23ef54c6-56cb-4193-8070-f51da20b4c17",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "23ef54c6-56cb-4193-8070-f51da20b4c17",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "24381000087107",
+              "display": "[Inf] AFLURIA TETRA"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        },
+        "occurrenceDateTime": "2022-04-21",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "RA",
+              "display": "Right arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:71efe7d3-1dbf-4fdd-be60-97005d6e2549",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "71efe7d3-1dbf-4fdd-be60-97005d6e2549",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "37651000087101",
+              "display": "[COVID-19] SPIKEVAX Bivalent (Original / Omicron BA.4/BA.5) 0.10 mg/mL"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        },
+        "occurrenceDateTime": "2020-10-16",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "LA",
+              "display": "Left arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2183bea9-8c71-4f9b-b2ed-d044c80e5745",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "2183bea9-8c71-4f9b-b2ed-d044c80e5745",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "28581000087106",
+              "display": "[COVID-19] COMIRNATY (original strain) 30 mcg/0.3 mL"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        },
+        "occurrenceDateTime": "2021-12-05",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "RA",
+              "display": "Right arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:1e7c3e4d-a2de-4cda-9856-e57ba662528e",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "1e7c3e4d-a2de-4cda-9856-e57ba662528e",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "7161000087102",
+              "display": "[MMR] M-M-R II"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        },
+        "occurrenceDateTime": "2022-04-23",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "RA",
+              "display": "Right arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:eb2f1c78-fa8f-4ee3-9605-bb5691bc4d00",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "eb2f1c78-fa8f-4ee3-9605-bb5691bc4d00",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "24381000087107",
+              "display": "[Inf] AFLURIA TETRA"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        },
+        "occurrenceDateTime": "2021-04-16",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "RA",
+              "display": "Right arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ff7252fe-18a0-4e38-9d45-4cb6e2ff55d4",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "ff7252fe-18a0-4e38-9d45-4cb6e2ff55d4",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "7361000087100",
+              "display": "[IPV] IMOVAX POLIO"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        },
+        "occurrenceDateTime": "2021-12-22",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "RA",
+              "display": "Right arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d08a5d58-16be-4280-9fcd-cbff4ee1bcf2",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "d08a5d58-16be-4280-9fcd-cbff4ee1bcf2",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "24381000087107",
+              "display": "[Inf] AFLURIA TETRA"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        },
+        "occurrenceDateTime": "2020-06-23",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "RA",
+              "display": "Right arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:516f67e3-92aa-4fce-af12-ca669a7187d2",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "516f67e3-92aa-4fce-af12-ca669a7187d2",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "28581000087106",
+              "display": "[COVID-19] COMIRNATY (original strain) 30 mcg/0.3 mL"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:4404bec0-aad2-4a40-b9c7-259d522adc7b"
+        },
+        "occurrenceDateTime": "2021-10-07",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "LA",
+              "display": "Left arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

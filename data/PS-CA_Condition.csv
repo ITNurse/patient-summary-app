@@ -1,0 +1,15 @@
+patient.identifier,condition.code,condition.display
+999 471 999,38341003,"Hypertensive disorder, systemic arterial (disorder)"
+999 878 645,13645005,Osteoarthritis (disorder)
+999 878 645,444814009,Viral upper respiratory tract infection (disorder)
+999 884 228,271327008,Migraine (disorder)
+999 884 228,16114001,Anemia (disorder)
+999 586 662,195967001,Asthma (disorder)
+999 269 371,239873007,Gastroesophageal reflux disease (disorder)
+999 269 371,13645005,Osteoarthritis (disorder)
+999 873 847,2023001,Malignant neoplasm of prostate (disorder)
+999 873 847,239873007,Gastroesophageal reflux disease (disorder)
+999 873 847,44054006,Diabetes mellitus (disorder)
+999 806 305,73211009,Obesity (disorder)
+999 806 305,422504002,Ischemic heart disease (disorder)
+999 806 305,13645005,Osteoarthritis (disorder)

@@ -1,0 +1,743 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:44dbaa76-9c01-4638-9157-08ee713f23b1",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "44dbaa76-9c01-4638-9157-08ee713f23b1",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60591-5",
+              "display": "Patient Summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:59c035f0-e300-4f26-a941-24a1eeec5a13"
+        },
+        "date": "2025-06-23T23:51:27.344623+00:00",
+        "title": "PS-CA Patient Summary",
+        "author": [
+          {
+            "reference": "urn:uuid:psca-author-org",
+            "display": "Wellness Way Hospital"
+          }
+        ],
+        "custodian": {
+          "reference": "urn:uuid:psca-author-org",
+          "display": "Wellness Way Hospital"
+        },
+        "section": [
+          {
+            "title": "Allergies",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48765-2",
+                  "display": "Allergies and adverse reactions"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:531fa513-ebfb-4e80-857c-ba9efac7e085"
+              },
+              {
+                "reference": "urn:uuid:6912e850-afb6-4d7e-9359-14a6c751f228"
+              }
+            ]
+          },
+          {
+            "title": "Problems",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11450-4",
+                  "display": "Problem List"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:67682ac2-f364-49fd-89e3-689b152c2da8"
+              },
+              {
+                "reference": "urn:uuid:00809f40-74a8-4c99-b3a1-4f4f53fe0fdb"
+              }
+            ]
+          },
+          {
+            "title": "Medications",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "10160-0",
+                  "display": "History of Medication Use"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:1638e31a-8c07-4f3f-9bf2-4f594c9715a3"
+              },
+              {
+                "reference": "urn:uuid:224c056b-6daf-45dd-a3a2-e68276c9bb7b"
+              }
+            ]
+          },
+          {
+            "title": "Immunizations",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11369-6",
+                  "display": "History of immunizations"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:f66a9fca-032d-432e-8f82-ea76f97f3746"
+              },
+              {
+                "reference": "urn:uuid:54262a65-b9eb-4904-82aa-883c0c8a7f49"
+              },
+              {
+                "reference": "urn:uuid:85226964-dfb9-4eee-b2d0-f3d5332b7619"
+              },
+              {
+                "reference": "urn:uuid:8c35ced1-ed75-43bb-82be-0d96ce69dca3"
+              },
+              {
+                "reference": "urn:uuid:3618655d-7374-44b8-9271-a397d7ea0e37"
+              },
+              {
+                "reference": "urn:uuid:f3407620-cd96-4609-869e-15e61637d31c"
+              },
+              {
+                "reference": "urn:uuid:8d697ad3-603e-44d7-9040-41c8adc236c0"
+              },
+              {
+                "reference": "urn:uuid:0900c0f4-d3cd-48df-b4a8-f97bb3a2343e"
+              },
+              {
+                "reference": "urn:uuid:84211670-3044-4af1-aeb2-64fab1ab2572"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:59c035f0-e300-4f26-a941-24a1eeec5a13",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "59c035f0-e300-4f26-a941-24a1eeec5a13",
+        "identifier": [
+          {
+            "system": "http://example.org/healthcardnumber",
+            "value": "999 884 228"
+          }
+        ],
+        "name": [
+          {
+            "family": "Duck",
+            "given": [
+              "Daffy"
+            ]
+          }
+        ],
+        "gender": "unknown",
+        "birthDate": "1960-06-17",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(416) 850-5423 x573",
+            "use": "home"
+          },
+          {
+            "system": "email",
+            "value": "Daffy.Duck@outlook.com",
+            "use": "home"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "4330 Raymond Harbors Apt. 458"
+            ],
+            "city": "Christinaside",
+            "state": "British Columbia",
+            "postalCode": "H7H 4C8",
+            "country": "Canada"
+          }
+        ],
+        "photo": [
+          {
+            "contentType": "image/jpeg",
+            "data": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAEsASwDASIAAhEBAxEB/8QAGgAAAwEBAQEAAAAAAAAAAAAAAAECAwQFBv/EADUQAAICAQMDAwMBBgUFAAAAAAABAhEDBCExEkFRBSJhEzJxkRRCUoGhwSNDYpLRFSSCseH/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQIDBAX/xAAhEQEBAQEAAgMAAgMAAAAAAAAAAQIRAzESIUEEIhMUUf/aAAwDAQACEQMRAD8A82gooTPKFQDAAQ6EigFQUMYEhQwABDEAgGIAABAMBDAYgsAAQMQQAAAAAADGIYAAwCpAYmAgGIIKAYASA6CgLEFiCgZIwKGRYwKCybAB2Fk2FgUKybCwKsQrFYDsLEADGIqEJZJKOOLlJ9krAQHfh9H1ORXPpx/ndnXD0TH+/mm/wkjUzR4oj316Lp+7yP8A8h/9E03nJ/uL8KcfPiPoH6Hp6+/L+q/4MJ+gv/Lz/wC6P/A+FOPHBHfl9I1ePiMci/0v+zOGUJQl0zi4yXZqmZssQDEFkVSBisVgMQNiAYIQ7AAAAAKAAFYWIAAAAAHYgCGFiABiGIoBAADAAAY4xc5KMU5SfCXLL0+CepyrHjW/d9kj6HR6LFpY+1XN8zfLLM9VwaX0dupamW38Ef7s9fDp8eGPTjgor4RaRR1kk9LwUOgRSHVJIdAUBNBQ2AE0ZZtPjzx6cuOM18o3EB4Or9FlG5aWV/6Jc/yZ5U4yhJxnFxkuU1TPsmjk1mixaqFZY+5cSXKM3M/E4+WCzbV6TJpMvRk3T+2S4Zgc+MiwbEBA7AQBVAJDAYgABDExlQmCAQDEAAMFyAdwGIY6AmhUUwoBFY4SyZIwgrlJ0hHp+kYVUszW7fSvx3LJ2j0dFpoabF0x3b+6Xk6kZxLTOrUaDRCZSJ1pSHYrJcqROi+oOpeTmyZ4wVykkc/7dhcq+ov5onV49Lq+RWjljkvdbo0Uh042sOTNSGpF6jTbySxWMvRz6rT49TiePItnw+6flHzGq009LmeLJv3T8o+uaOH1LRrV4KVLJHeL/sSzrNj5liKknFuMlTWzT7CObIGCQ6IARVCCgQxAMBiKhCKYiBCGBQIpEjRBQyRhQxDEVAz3dDD6emxxfNf/AE8fS4XnzRh25l+D3oLg3ifqxtFlohFJPg01FodiSKMtCyMj2LonJDqxyXdolHx3rmuyy1MscJNRhV189jgjmxz6VHFKOTypd/ye5r/RM8szy4nu+bVpmOm9BzzmutRhHu4pp/qy51JE1m2u/wBEyZsmlhKabTW/5vk9ePUu2xel00NPhjjglSVG1EkatZLcas06UPpNcRFDRVIKCEyGjSiGijwfWdJ0T/aILaTqX58nln1epwxzYZY5r2yX6Hy2THLFkljmqlF0zGoxSRRKGYDEMAJYhskCgAVhAxDYigDuMVAMAEQMdiAB2JsB449eSMe3cLPt6/p2JY8ClXunu2ehBHJpckfpRVq6N3ngnXUrXY7dkjXPvje9xQyKU5Ri76eTjlnyT+3ZGmi2wp+W2cp5Jq8jpcXM7XcuCkRFlo6MKUSkhIaCk4J9gUEVyDHEKhDAoSKJGAxWJsltgUyWwUr5EwIkeN63hSjDMlUr6W/KPZZz6vAtRp543+8tvhizsZr5hDsmnFtSVNbNBZyZVYWTYWRQwAAH2ENAVCAdAAACAAEFiApAIAA6NJjbuf8AJGEU5SUVyz0sWPpiorhHLy6+M47eLPb1MISXPPk2hjvc1hDyiZycW+lHlurfb1ycDn0+3udOlf8AhROGSlXVfPJ16FtxlFrZPZnb+Pf7cc/LPp3QNE6MolpnsedomUmZpjsoux2QhgUBIWBQhCbCGyWMTYBVAxWBRJEjSSIYR896rgeLVuaXtybr89zhZ7PrSrHDba9meMc7PtikMARADGkADQUOgIChMYmUITGybAGAMEEMANtNi+pO2vav6kt5O1rMuryN9Hgr3SW74+Du9mNb7vskTjjSs871R6lwUcGOUnPlpcLwebM/ya+3s5MZ5HoLW4nPoU49XizWKUm14PH9N0GXD05NW26dwx92z2YRlCDc/vk7a8DzTOZyLi2+0yjs64J0eVQyuMtup/1KlJJHNOTV9mnszl4tfHXW9Ts49tNAcen1MckPuV+DbrXk+j15ON+pC6jHrQnMdHTGRXVfJzKZakOjfqQWY9S8lJjqNLBsjq+QciirE2T1BdgUFiBlQMhldiWUcXqkVPRztX07/g+fPptXB5NPkjHlxdHzCMaYp0CQ0MygQ9gSCgGIYnsRSYAxFQMljYmArGiTfT6eWXd7Q8+SWzM7Vmbq8hYcMs0tto92eljxqKUUtkPHjjCKUVSRokeLyeX5Pb4/HMxTXEf1NElXf+TMx2zl8r+OvGkVCD6oxV+XuyMkrFZDdkttOJkzHJGzTeUqQmt6iuqf9Eag5Z4Hs4Sam+EiV+148y/xZTUX7ovudV9Dccb68r+6XaJeLpg4pu6dt+T0Y3ZyOWsx0QyWuGUp/BEs2Ps078C+rGu56nnbKS5s0Ujk+qvIvr1w0B29fyUpfJxLOn3LWZDo6+oOo545L7GkZWUbphZESuxUXewEoaKH2JfgoTKjHI+mDk+FyfMZd803Ve5n1GWNwkvKZ8pw2nyiaY0tDRCLXBhFAKwsiixN2TY7KgEMQDZNOTpJt+Ea4sMsr22j5O3FihhXtW/nuc9+SZdMeK6YYNHTUsu7/hO+MaQoR/U1UTxb8l17e3GJmfSekpKh13FZzbJjrwAFCfBEq5bpBKfu6Yrql48HPmzwwvd/Uy+P3Yms5t9JbJ7bOXtu/pw8vl/gwyZoqPTbhD+FfdL8nJkz5Mkrk9zJq93uenPh/wCvPrzyenYslrpi444/qy4ww3bk5Py2ec0JNrud5iT04XyW+3sxnjraivqQPHjknHiRpHM3yzSTT03OBGz4OSGZeTeGW6t2Rpr0GkIsUMie5tFoKIxfk1jtyQo3xyaRg/JRaexa3JjE0UShpFAo0M0hMTG0JqioiTPl9XDo1WRLddVo+nlyfLZ4uGoyRbtqT3JpnSUUmQUmYZOwAQCASGAWdWn06kuvLx2j5MtLBTy3LdR3ryelCK5HOumJ+ob2SiqRpjxt7sK6p0uInRCNK3sjyeWyf1j1477pRjRVCeaCWzshznN+yDryzzcdVy25M3OKdLdj+jJ/fKkKco4lUI2wKbSVypGMsvWn0vpguZPgxy5Yw3zyt9oI4c+onme/tiuIrg7Y8V05b8kw2z6u04YLjDvLvI5kSNHszmZnI8Wt3V7VIdCRRplLRFWaMmgJoOGUJgWoUzbGpJBBKSi/KNoQLxuNMdnVjXUjHHHZHRjir2bI02jDpNYpERNVTKqlsOrEiqKgTG2JDKE2S2ymSyozlumfL5Zdeacmt2z6bPLowzl4TZ8vLeTfyZ0zRQdwRRlkgGIBAArCNMc3jk2uGdWHU3Ss4k7H0q74YbzrjvhqoY8r6ns2dUdbhaS64v8AJ4xLRxvhlveu08/Px7v7VgSvqxr+ZE/UcC/zL/B4jQqM/wCvP2l/kX8j0p+pp/ZBv8nNk1mXJ36V8GCQ6Ok8WM/jnfLu/qW3dvdiG0FHRzNFJEpF0A0CBBYAxMHuACQMYMDowK8UTsxQ4dGGkheKJ3wxtfg23DjC3warH070KGyN4u1TI0mKotKhpDoBpDpjQ72KFuCsYLYAohotkN7FRllS6JJ8NUfL1Wx9D6lNw0k5R+F/U+f7mNM1JQmF7EZMBWIAZLLaJoBItMhouKCGSyhSCpYgYLkIpDFQ6CpYDaABoolDAYrFYmBSGSmFgMW/YLOjR4Xly9X7sN2J9q7sGNwhGPhbnbjXt3FixqjaOOlsdK3BCOxVbjgu1F15IqEiiulLgdcECSsdNDQ2UJOwaBD/ACBPYlltIiRUcHqj/wCzyfyPBPe9VcVo5qVe7Zfk8CzGvbNDFYWIjICwEBbENgkBNFLYKGgATRRL5AhghtCAtFEJjAbIbG2S2A09yjPuUmAxMYVYAgF3GA4QlkmoQVyfB7mn06w44xjv5+TL0/SfSgnJe+XPx8HpRjW1G5ONSDGbJeCVBdi0q5K0FGmVVjHRFTTQjTuLpAhDKqg2YCrYOwJUwYEMmRckQyo8v1rfSLypI8Kz2/XZJaeC8yPDMa9sX2djslFIiARVCoCmxkhYFCsLJYF9gJvYaYUMllMloIRViYUAMhsuiGgAqJLBBGjGiLKRFNnd6dput/VkrSftX9zm02B6jKoL7VvJ+Ee9ixxhFRiqSRvM/VioQrg3iKC2NEjbZxRaWwkUiBhW4wAAAdAKrChgFSyb7MtktARJXwQ0W1TJkEeN67JfTxxq31Xfg8aj2fXI3DHKuHVnkGL7YvtKRdCoZEAhiAkBNhZRQhWFkBZRA+oC7EyUxsChrglVRSAGS0XRDAnuNIaRSKJoCmdXp+m+rk+pJeyL2+WJOjv0Gn+jhXVtJ7yO6HyRFWzeNUdG4qJoiEtiokVaGhRKAaAEOgEMAAAsL3EAMljEwJZnI0ZEgPH9am4whBLaXJ4563rlNY9/crdeUeQZvti+zGibGjKGxBYwMWCG0CQABaWwukCA7DaEUCZSZA0EWi0Sh3uRVksEDATGmSBRpjg82SMI8ydHv4cKxY1GOyiqR5vpWBtyzNbfbH+568VZvMahR2rybpbGSXuNosqqXA1wCWw0RVIYkMBrkolDQAMBcBTaF2AGAhDYgJZEi2S0EeN64k8cPa+pO00jxT6+UIy+5JkPT4nzjRfj1iz7fJopH08tFp5c4o/oYT9J00+I9L+CfCpx8+M9XN6JJb4cl/DOKfp+qjKvp38pmbmjkYLYdBRlVpA0C4HZBnRLRTdMTKiK3LSEuSgHRPcdifIDTGJcDYE8MeODy5IwjzJ0iZHf6Ri6sk8jX2ql+SydHq4YLFijCPCVI3gyIq0aRidGxHlmkTJbSdmqCtEw7iRdWiARSZKKQDoYdgQAMVgFAADCFYgFYUmSymIImrZXQBa3NRGfQHQa0FFRl00FPwaNBQ6PixtbElHBCQrGhMCWCBiQDC9gE+AlFjJGiiojYkDIpM93RYvo6aEe9W/yzxMKUs0E+HJf+z6KG9s3mEax8Gq4MYGqe5po3Gx/awXI3wFXHgozjwUiCikiUUmA0HcBgAhgwoEwBgHYljQmQKgoBlQioiRUSiqFRSCiojuBQgP/2Q=="
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:psca-author-org",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "psca-author-org",
+        "name": "Wellness Way Hospital"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:67682ac2-f364-49fd-89e3-689b152c2da8",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "67682ac2-f364-49fd-89e3-689b152c2da8",
+        "subject": {
+          "reference": "urn:uuid:59c035f0-e300-4f26-a941-24a1eeec5a13"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "271327008",
+              "display": "Migraine (disorder)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00809f40-74a8-4c99-b3a1-4f4f53fe0fdb",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "00809f40-74a8-4c99-b3a1-4f4f53fe0fdb",
+        "subject": {
+          "reference": "urn:uuid:59c035f0-e300-4f26-a941-24a1eeec5a13"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "16114001",
+              "display": "Anemia (disorder)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:1638e31a-8c07-4f3f-9bf2-4f594c9715a3",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "1638e31a-8c07-4f3f-9bf2-4f594c9715a3",
+        "subject": {
+          "reference": "urn:uuid:59c035f0-e300-4f26-a941-24a1eeec5a13"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/hc-CCDD",
+              "code": "9001234",
+              "display": "\tduloxetine (duloxetine hydrochloride) 30 mg gastro-resistant capsule"
+            }
+          ]
+        },
+        "status": "active"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:224c056b-6daf-45dd-a3a2-e68276c9bb7b",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "224c056b-6daf-45dd-a3a2-e68276c9bb7b",
+        "subject": {
+          "reference": "urn:uuid:59c035f0-e300-4f26-a941-24a1eeec5a13"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/hc-CCDD",
+              "code": "9000834",
+              "display": "citalopram (citalopram hydrobromide) 20 mg oral tablet"
+            }
+          ]
+        },
+        "status": "active"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:531fa513-ebfb-4e80-857c-ba9efac7e085",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "531fa513-ebfb-4e80-857c-ba9efac7e085",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "criticality": "unable-to-assess",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 91930004,
+              "display": "Latex"
+            }
+          ]
+        },
+        "reaction": [
+          {
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": 247472004,
+                    "display": "Hives"
+                  }
+                ]
+              }
+            ],
+            "severity": "severe"
+          }
+        ],
+        "patient": {
+          "reference": "urn:uuid:59c035f0-e300-4f26-a941-24a1eeec5a13"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6912e850-afb6-4d7e-9359-14a6c751f228",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "6912e850-afb6-4d7e-9359-14a6c751f228",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "criticality": "high",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 91932001,
+              "display": "Aspirin"
+            }
+          ]
+        },
+        "reaction": [
+          {
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": 271757001,
+                    "display": "Anaphylaxis"
+                  }
+                ]
+              }
+            ],
+            "severity": "mild"
+          }
+        ],
+        "patient": {
+          "reference": "urn:uuid:59c035f0-e300-4f26-a941-24a1eeec5a13"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f66a9fca-032d-432e-8f82-ea76f97f3746",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "f66a9fca-032d-432e-8f82-ea76f97f3746",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "7361000087100",
+              "display": "[IPV] IMOVAX POLIO"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:59c035f0-e300-4f26-a941-24a1eeec5a13"
+        },
+        "occurrenceDateTime": "2024-10-02",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "RA",
+              "display": "Right arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:54262a65-b9eb-4904-82aa-883c0c8a7f49",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "54262a65-b9eb-4904-82aa-883c0c8a7f49",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "28581000087106",
+              "display": "[COVID-19] COMIRNATY (original strain) 30 mcg/0.3 mL"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:59c035f0-e300-4f26-a941-24a1eeec5a13"
+        },
+        "occurrenceDateTime": "2022-12-13",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "LA",
+              "display": "Left arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:85226964-dfb9-4eee-b2d0-f3d5332b7619",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "85226964-dfb9-4eee-b2d0-f3d5332b7619",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "37651000087101",
+              "display": "[COVID-19] SPIKEVAX Bivalent (Original / Omicron BA.4/BA.5) 0.10 mg/mL"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:59c035f0-e300-4f26-a941-24a1eeec5a13"
+        },
+        "occurrenceDateTime": "2024-09-14",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "RA",
+              "display": "Right arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8c35ced1-ed75-43bb-82be-0d96ce69dca3",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "8c35ced1-ed75-43bb-82be-0d96ce69dca3",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "28581000087106",
+              "display": "[COVID-19] COMIRNATY (original strain) 30 mcg/0.3 mL"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:59c035f0-e300-4f26-a941-24a1eeec5a13"
+        },
+        "occurrenceDateTime": "2022-03-18",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "RA",
+              "display": "Right arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3618655d-7374-44b8-9271-a397d7ea0e37",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "3618655d-7374-44b8-9271-a397d7ea0e37",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "51471000087104",
+              "display": "[COVID-19] COMIRNATY Omicron XBB.1.5 30 mcg/0.3 mL"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:59c035f0-e300-4f26-a941-24a1eeec5a13"
+        },
+        "occurrenceDateTime": "2024-08-02",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "RA",
+              "display": "Right arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f3407620-cd96-4609-869e-15e61637d31c",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "f3407620-cd96-4609-869e-15e61637d31c",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "28721000087103",
+              "display": "[DTaP] TRIPACEL"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:59c035f0-e300-4f26-a941-24a1eeec5a13"
+        },
+        "occurrenceDateTime": "2024-11-05",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "RA",
+              "display": "Right arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8d697ad3-603e-44d7-9040-41c8adc236c0",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "8d697ad3-603e-44d7-9040-41c8adc236c0",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "28581000087106",
+              "display": "[COVID-19] COMIRNATY (original strain) 30 mcg/0.3 mL"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:59c035f0-e300-4f26-a941-24a1eeec5a13"
+        },
+        "occurrenceDateTime": "2020-08-30",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "RA",
+              "display": "Right arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0900c0f4-d3cd-48df-b4a8-f97bb3a2343e",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "0900c0f4-d3cd-48df-b4a8-f97bb3a2343e",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "31541000087105",
+              "display": "[Var] VARILRIX"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:59c035f0-e300-4f26-a941-24a1eeec5a13"
+        },
+        "occurrenceDateTime": "2023-10-08",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "RA",
+              "display": "Right arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:84211670-3044-4af1-aeb2-64fab1ab2572",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "84211670-3044-4af1-aeb2-64fab1ab2572",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "51471000087104",
+              "display": "[COVID-19] COMIRNATY Omicron XBB.1.5 30 mcg/0.3 mL"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:59c035f0-e300-4f26-a941-24a1eeec5a13"
+        },
+        "occurrenceDateTime": "2021-08-09",
+        "primarySource": true,
+        "site": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0493",
+              "code": "LA",
+              "display": "Left arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": 78421000,
+              "display": "Intramuscular: IM"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

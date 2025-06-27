@@ -1,0 +1,789 @@
+{
+  "health_card": "999 878 645",
+  "status_code": 200,
+  "total_issues": 34,
+  "errors": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 13166
+        }
+      ],
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Error parsing JSON: the primitive value must be a string",
+      "location": [
+        "Bundle.entry[7].resource.code.coding[0].code",
+        "Line[1] Col[13166]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 13293
+        }
+      ],
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Error parsing JSON: the primitive value must be a string",
+      "location": [
+        "Bundle.entry[7].resource.reaction[0].manifestation[0].coding[0].code",
+        "Line[1] Col[13293]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 13949
+        }
+      ],
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Error parsing JSON: the primitive value must be a string",
+      "location": [
+        "Bundle.entry[8].resource.code.coding[0].code",
+        "Line[1] Col[13949]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 14078
+        }
+      ],
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Error parsing JSON: the primitive value must be a string",
+      "location": [
+        "Bundle.entry[8].resource.reaction[0].manifestation[0].coding[0].code",
+        "Line[1] Col[14078]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 14840
+        }
+      ],
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Error parsing JSON: the primitive value must be a string",
+      "location": [
+        "Bundle.entry[9].resource.route.coding[0].code",
+        "Line[1] Col[14840]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 15505
+        }
+      ],
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Error parsing JSON: the primitive value must be a string",
+      "location": [
+        "Bundle.entry[10].resource.route.coding[0].code",
+        "Line[1] Col[15505]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 16205
+        }
+      ],
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Error parsing JSON: the primitive value must be a string",
+      "location": [
+        "Bundle.entry[11].resource.route.coding[0].code",
+        "Line[1] Col[16205]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 16925
+        }
+      ],
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Error parsing JSON: the primitive value must be a string",
+      "location": [
+        "Bundle.entry[12].resource.route.coding[0].code",
+        "Line[1] Col[16925]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 17628
+        }
+      ],
+      "severity": "error",
+      "code": "processing",
+      "diagnostics": "Error parsing JSON: the primitive value must be a string",
+      "location": [
+        "Bundle.entry[13].resource.route.coding[0].code",
+        "Line[1] Col[17628]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 10941
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+          "valueString": "Type_Specific_Checks_DT_UUID_Valid"
+        }
+      ],
+      "severity": "error",
+      "code": "processing",
+      "details": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/java-core-messageId",
+            "code": "Type_Specific_Checks_DT_UUID_Valid"
+          }
+        ]
+      },
+      "diagnostics": "UUIDs must be valid and lowercase (psca-author-org)",
+      "location": [
+        "Bundle.entry[2].fullUrl",
+        "Line[1] Col[10941]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 14764
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+          "valueString": "Terminology_PassThrough_TX_Message"
+        }
+      ],
+      "severity": "error",
+      "code": "processing",
+      "details": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/java-core-messageId",
+            "code": "Terminology_PassThrough_TX_Message"
+          }
+        ]
+      },
+      "diagnostics": "Unknown code 'http://terminology.hl7.org/CodeSystem/v2-0493#RA'",
+      "location": [
+        "Bundle.entry[9].resource/*Immunization/9c12ce10-321a-429d-8e23-09b28b69a1f6*/.site",
+        "Line[1] Col[14764]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 15429
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+          "valueString": "Terminology_PassThrough_TX_Message"
+        }
+      ],
+      "severity": "error",
+      "code": "processing",
+      "details": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/java-core-messageId",
+            "code": "Terminology_PassThrough_TX_Message"
+          }
+        ]
+      },
+      "diagnostics": "Unknown code 'http://terminology.hl7.org/CodeSystem/v2-0493#LA'",
+      "location": [
+        "Bundle.entry[10].resource/*Immunization/5c1d4b90-61b4-41a8-b880-e0d18fd154cb*/.site",
+        "Line[1] Col[15429]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 16129
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+          "valueString": "Terminology_PassThrough_TX_Message"
+        }
+      ],
+      "severity": "error",
+      "code": "processing",
+      "details": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/java-core-messageId",
+            "code": "Terminology_PassThrough_TX_Message"
+          }
+        ]
+      },
+      "diagnostics": "Unknown code 'http://terminology.hl7.org/CodeSystem/v2-0493#LA'",
+      "location": [
+        "Bundle.entry[11].resource/*Immunization/df40971a-c07e-4e95-b063-79b7ef8920c5*/.site",
+        "Line[1] Col[16129]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 16849
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+          "valueString": "Terminology_PassThrough_TX_Message"
+        }
+      ],
+      "severity": "error",
+      "code": "processing",
+      "details": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/java-core-messageId",
+            "code": "Terminology_PassThrough_TX_Message"
+          }
+        ]
+      },
+      "diagnostics": "Unknown code 'http://terminology.hl7.org/CodeSystem/v2-0493#LA'",
+      "location": [
+        "Bundle.entry[12].resource/*Immunization/396f970f-d2e6-4a3a-9808-b8be23b25c96*/.site",
+        "Line[1] Col[16849]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 17552
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+          "valueString": "Terminology_PassThrough_TX_Message"
+        }
+      ],
+      "severity": "error",
+      "code": "processing",
+      "details": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/java-core-messageId",
+            "code": "Terminology_PassThrough_TX_Message"
+          }
+        ]
+      },
+      "diagnostics": "Unknown code 'http://terminology.hl7.org/CodeSystem/v2-0493#RA'",
+      "location": [
+        "Bundle.entry[13].resource/*Immunization/ce3af7d1-92b5-4ec6-b17f-5552a29ff642*/.site",
+        "Line[1] Col[17552]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 17667
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+          "valueString": "http://hl7.org/fhir/StructureDefinition/Bundle#bdl-9"
+        }
+      ],
+      "severity": "error",
+      "code": "processing",
+      "details": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/java-core-messageId",
+            "code": "http://hl7.org/fhir/StructureDefinition/Bundle#bdl-9"
+          }
+        ]
+      },
+      "diagnostics": "Constraint failed: bdl-9: 'A document must have an identifier with a system and a value'",
+      "location": [
+        "Bundle",
+        "Line[1] Col[17667]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 17667
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+          "valueString": "http://hl7.org/fhir/StructureDefinition/Bundle#bdl-10"
+        }
+      ],
+      "severity": "error",
+      "code": "processing",
+      "details": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/java-core-messageId",
+            "code": "http://hl7.org/fhir/StructureDefinition/Bundle#bdl-10"
+          }
+        ]
+      },
+      "diagnostics": "Constraint failed: bdl-10: 'A document must have a date'",
+      "location": [
+        "Bundle",
+        "Line[1] Col[17667]"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 329
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+          "valueString": "Terminology_PassThrough_TX_Message"
+        }
+      ],
+      "severity": "warning",
+      "code": "processing",
+      "details": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/java-core-messageId",
+            "code": "Terminology_PassThrough_TX_Message"
+          }
+        ]
+      },
+      "diagnostics": "Unable to expand ValueSet because CodeSystem could not be found: http://loinc.org",
+      "location": [
+        "Bundle.entry[0].resource/*Composition/812847a8-aac1-4dfe-a8ec-c01ab652f2cf*/.type",
+        "Line[1] Col[329]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 1972
+        }
+      ],
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+      "location": [
+        "Bundle.entry[0].resource/*Composition/812847a8-aac1-4dfe-a8ec-c01ab652f2cf*/",
+        "Line[1] Col[1972]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 10900
+        }
+      ],
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+      "location": [
+        "Bundle.entry[1].resource/*Patient/61e19029-fd72-4195-85f2-0d986d78f3ac*/",
+        "Line[1] Col[10900]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 11045
+        }
+      ],
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+      "location": [
+        "Bundle.entry[2].resource/*Organization/psca-author-org*/",
+        "Line[1] Col[11045]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 11391
+        }
+      ],
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+      "location": [
+        "Bundle.entry[3].resource/*Condition/288e3aac-cb84-4c7a-9916-52942970799e*/",
+        "Line[1] Col[11391]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 11763
+        }
+      ],
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+      "location": [
+        "Bundle.entry[4].resource/*Condition/be8929d6-8b24-4c89-b5ae-4b523954eca2*/",
+        "Line[1] Col[11763]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 12185
+        }
+      ],
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+      "location": [
+        "Bundle.entry[5].resource/*MedicationStatement/7a4eeea6-6096-4188-b22a-dfa0e3d59eda*/",
+        "Line[1] Col[12185]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 12611
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+          "valueString": "Type_Specific_Checks_DT_String_WS"
+        }
+      ],
+      "severity": "warning",
+      "code": "processing",
+      "details": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/java-core-messageId",
+            "code": "Type_Specific_Checks_DT_String_WS"
+          }
+        ]
+      },
+      "diagnostics": "value should not start or finish with whitespace '\\talendronic acid (alendronate sodium) 70 mg oral tablet'",
+      "location": [
+        "Bundle.entry[6].resource/*MedicationStatement/18728f96-ca01-48bb-9e64-c96c0fc172f0*/.medication.ofType(CodeableConcept).coding[0].display",
+        "Line[1] Col[12611]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 12635
+        }
+      ],
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+      "location": [
+        "Bundle.entry[6].resource/*MedicationStatement/18728f96-ca01-48bb-9e64-c96c0fc172f0*/",
+        "Line[1] Col[12635]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 13418
+        }
+      ],
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+      "location": [
+        "Bundle.entry[7].resource/*AllergyIntolerance/ad7dc3d2-9c40-42b9-a0e5-7584edb69e2c*/",
+        "Line[1] Col[13418]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 14206
+        }
+      ],
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+      "location": [
+        "Bundle.entry[8].resource/*AllergyIntolerance/bceda08d-ad31-4999-a828-8e3963aabe67*/",
+        "Line[1] Col[14206]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 14876
+        }
+      ],
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+      "location": [
+        "Bundle.entry[9].resource/*Immunization/9c12ce10-321a-429d-8e23-09b28b69a1f6*/",
+        "Line[1] Col[14876]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 15541
+        }
+      ],
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+      "location": [
+        "Bundle.entry[10].resource/*Immunization/5c1d4b90-61b4-41a8-b880-e0d18fd154cb*/",
+        "Line[1] Col[15541]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 16241
+        }
+      ],
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+      "location": [
+        "Bundle.entry[11].resource/*Immunization/df40971a-c07e-4e95-b063-79b7ef8920c5*/",
+        "Line[1] Col[16241]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 16961
+        }
+      ],
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+      "location": [
+        "Bundle.entry[12].resource/*Immunization/396f970f-d2e6-4a3a-9808-b8be23b25c96*/",
+        "Line[1] Col[16961]"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 17664
+        }
+      ],
+      "severity": "warning",
+      "code": "processing",
+      "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+      "location": [
+        "Bundle.entry[13].resource/*Immunization/ce3af7d1-92b5-4ec6-b17f-5552a29ff642*/",
+        "Line[1] Col[17664]"
+      ]
+    }
+  ],
+  "info": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+          "valueInteger": 1
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+          "valueInteger": 329
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+          "valueString": "Terminology_TX_NoValid_3_CC"
+        }
+      ],
+      "severity": "information",
+      "code": "processing",
+      "details": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/java-core-messageId",
+            "code": "Terminology_TX_NoValid_3_CC"
+          }
+        ]
+      },
+      "diagnostics": "None of the codings provided are in the value set 'FHIR Document Type Codes' (http://hl7.org/fhir/ValueSet/doc-typecodes|4.0.1), and a coding is recommended to come from this value set (codes = http://loinc.org#60591-5)",
+      "location": [
+        "Bundle.entry[0].resource/*Composition/812847a8-aac1-4dfe-a8ec-c01ab652f2cf*/.type",
+        "Line[1] Col[329]"
+      ]
+    }
+  ]
+}

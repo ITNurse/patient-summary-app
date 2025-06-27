@@ -1,0 +1,52 @@
+patient.identifier,vaccine.code,vaccine.display,date,site.code,site.display,route.system,route.code,route.display
+999 471 999,28581000087106,[COVID-19] COMIRNATY (original strain) 30 mcg/0.3 mL,2024-12-18,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 471 999,31541000087105,[Var] VARILRIX,2023-10-17,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 471 999,7361000087100,[IPV] IMOVAX POLIO,2024-08-24,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 471 999,7161000087102,[MMR] M-M-R II,2023-08-31,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 471 999,51471000087104,[COVID-19] COMIRNATY Omicron XBB.1.5 30 mcg/0.3 mL,2024-06-08,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 471 999,28721000087103,[DTaP] TRIPACEL,2025-03-25,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 878 645,24381000087107,[Inf] AFLURIA TETRA,2020-11-06,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 878 645,28721000087103,[DTaP] TRIPACEL,2023-12-22,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 878 645,51471000087104,[COVID-19] COMIRNATY Omicron XBB.1.5 30 mcg/0.3 mL,2021-08-10,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 878 645,37651000087101,[COVID-19] SPIKEVAX Bivalent (Original / Omicron BA.4/BA.5) 0.10 mg/mL,2024-01-12,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 878 645,28581000087106,[COVID-19] COMIRNATY (original strain) 30 mcg/0.3 mL,2024-09-16,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 884 228,7361000087100,[IPV] IMOVAX POLIO,2024-10-02,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 884 228,28581000087106,[COVID-19] COMIRNATY (original strain) 30 mcg/0.3 mL,2022-12-13,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 884 228,37651000087101,[COVID-19] SPIKEVAX Bivalent (Original / Omicron BA.4/BA.5) 0.10 mg/mL,2024-09-14,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 884 228,28581000087106,[COVID-19] COMIRNATY (original strain) 30 mcg/0.3 mL,2022-03-18,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 884 228,51471000087104,[COVID-19] COMIRNATY Omicron XBB.1.5 30 mcg/0.3 mL,2024-08-02,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 884 228,28721000087103,[DTaP] TRIPACEL,2024-11-05,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 884 228,28581000087106,[COVID-19] COMIRNATY (original strain) 30 mcg/0.3 mL,2020-08-30,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 884 228,31541000087105,[Var] VARILRIX,2023-10-08,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 884 228,51471000087104,[COVID-19] COMIRNATY Omicron XBB.1.5 30 mcg/0.3 mL,2021-08-09,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 586 662,37651000087101,[COVID-19] SPIKEVAX Bivalent (Original / Omicron BA.4/BA.5) 0.10 mg/mL,2024-04-16,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 586 662,28721000087103,[DTaP] TRIPACEL,2024-09-18,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 586 662,24381000087107,[Inf] AFLURIA TETRA,2025-03-14,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 586 662,31541000087105,[Var] VARILRIX,2025-01-18,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 586 662,51471000087104,[COVID-19] COMIRNATY Omicron XBB.1.5 30 mcg/0.3 mL,2022-01-29,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 586 662,7161000087102,[MMR] M-M-R II,2021-09-01,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 586 662,51471000087104,[COVID-19] COMIRNATY Omicron XBB.1.5 30 mcg/0.3 mL,2022-12-05,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 586 662,24381000087107,[Inf] AFLURIA TETRA,2024-04-27,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 269 371,7361000087100,[IPV] IMOVAX POLIO,2024-05-04,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 269 371,37651000087101,[COVID-19] SPIKEVAX Bivalent (Original / Omicron BA.4/BA.5) 0.10 mg/mL,2023-05-18,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 269 371,28581000087106,[COVID-19] COMIRNATY (original strain) 30 mcg/0.3 mL,2020-10-20,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 269 371,24381000087107,[Inf] AFLURIA TETRA,2023-05-06,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 269 371,31541000087105,[Var] VARILRIX,2024-10-19,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 269 371,28581000087106,[COVID-19] COMIRNATY (original strain) 30 mcg/0.3 mL,2020-07-29,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 873 847,28721000087103,[DTaP] TRIPACEL,2024-08-13,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 873 847,28581000087106,[COVID-19] COMIRNATY (original strain) 30 mcg/0.3 mL,2023-01-11,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 873 847,37651000087101,[COVID-19] SPIKEVAX Bivalent (Original / Omicron BA.4/BA.5) 0.10 mg/mL,2023-06-05,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 873 847,51471000087104,[COVID-19] COMIRNATY Omicron XBB.1.5 30 mcg/0.3 mL,2021-02-04,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 873 847,24381000087107,[Inf] AFLURIA TETRA,2021-12-05,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 873 847,31541000087105,[Var] VARILRIX,2024-11-18,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 873 847,28581000087106,[COVID-19] COMIRNATY (original strain) 30 mcg/0.3 mL,2020-10-05,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 806 305,28721000087103,[DTaP] TRIPACEL,2021-01-29,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 806 305,31541000087105,[Var] VARILRIX,2024-12-04,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 806 305,24381000087107,[Inf] AFLURIA TETRA,2022-04-21,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 806 305,37651000087101,[COVID-19] SPIKEVAX Bivalent (Original / Omicron BA.4/BA.5) 0.10 mg/mL,2020-10-16,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 806 305,28581000087106,[COVID-19] COMIRNATY (original strain) 30 mcg/0.3 mL,2021-12-05,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 806 305,7161000087102,[MMR] M-M-R II,2022-04-23,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 806 305,24381000087107,[Inf] AFLURIA TETRA,2021-04-16,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 806 305,7361000087100,[IPV] IMOVAX POLIO,2021-12-22,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 806 305,24381000087107,[Inf] AFLURIA TETRA,2020-06-23,RA,Right arm,http://snomed.info/sct,78421000,Intramuscular: IM
+999 806 305,28581000087106,[COVID-19] COMIRNATY (original strain) 30 mcg/0.3 mL,2021-10-07,LA,Left arm,http://snomed.info/sct,78421000,Intramuscular: IM
