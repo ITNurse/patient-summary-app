@@ -21,12 +21,13 @@ cd patient-summary-app
 ### 2. Set up your Python environment
 It's recommended to use a virtual environment:
 python -m venv venv
-venv\Scripts\activate      # On Windows or source venv/bin/activate on macOS/Linux
+venv\Scripts\activate      
+#### On Windows or source venv/bin/activate on macOS/Linux
 pip install -r requirements.txt
 
 ### 3. Start the HAPI FHIR server (via Docker)
 docker run -d -p 8080:8080 hapiproject/hapi:latest
-Or use your custom application.yaml if needed (instructions TBD).
+#### Or use your custom application.yaml if needed (instructions TBD).
 
 ### 4. Run the application
 python main.py
