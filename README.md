@@ -10,30 +10,47 @@ This project generates and validates HL7 FHIR-based patient summaries.
 ## Requirements
 - Python 3.x
 - Docker (for running HAPI FHIR server)
-- [Any other dependencies]
+- Python packages listed in `requirements.txt`
 
 ## Getting Started
 
 ### 1. Clone the repository
+
+```bash
 git clone https://github.com/ITNurse/patient-summary-app.git
 cd patient-summary-app
+```
 
 ### 2. Set up your Python environment
-It's recommended to use a virtual environment:
+
+It’s recommended to use a virtual environment:
+
+```bash
 python -m venv venv
-venv\Scripts\activate      
-#### On Windows or source venv/bin/activate on macOS/Linux
+venv\Scripts\activate      # On Windows
+# source venv/bin/activate   # On macOS/Linux
+
 pip install -r requirements.txt
+```
 
 ### 3. Start the HAPI FHIR server (via Docker)
+
+```bash
 docker run -d -p 8080:8080 hapiproject/hapi:latest
-#### Or use your custom application.yaml if needed (instructions TBD).
+```
+
+> Or use your own `application.yaml` configuration (instructions coming soon).
 
 ### 4. Run the application
+
+```bash
 python main.py
+```
 
 ### 5. Output
-FHIR Bundles will be created in the document_bundles/ folder and POSTed to the FHIR server.
+
+FHIR Bundles will be created in the `document_bundles/` folder and POSTed to the FHIR server.
 
 ## License
+
 MIT
