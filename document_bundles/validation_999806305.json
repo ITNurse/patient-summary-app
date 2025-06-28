@@ -327,7 +327,7 @@
       },
       "diagnostics": "Unknown code 'http://terminology.hl7.org/CodeSystem/v2-0493#RA'",
       "location": [
-        "Bundle.entry[11].resource/*Immunization/54d00619-3400-422d-9272-6743002b2456*/.site",
+        "Bundle.entry[11].resource/*Immunization/7cd121f0-8461-46b3-a8de-ae9076b0eb73*/.site",
         "Line[1] Col[13618]"
       ]
     },
@@ -358,7 +358,7 @@
       },
       "diagnostics": "Unknown code 'http://terminology.hl7.org/CodeSystem/v2-0493#RA'",
       "location": [
-        "Bundle.entry[12].resource/*Immunization/a24cba17-e4ed-496e-a87c-fcb02d801ee9*/.site",
+        "Bundle.entry[12].resource/*Immunization/ba875aa0-f6fc-4f92-9b89-4534b1b9029e*/.site",
         "Line[1] Col[14283]"
       ]
     },
@@ -389,7 +389,7 @@
       },
       "diagnostics": "Unknown code 'http://terminology.hl7.org/CodeSystem/v2-0493#RA'",
       "location": [
-        "Bundle.entry[13].resource/*Immunization/23ef54c6-56cb-4193-8070-f51da20b4c17*/.site",
+        "Bundle.entry[13].resource/*Immunization/e1ee67c2-1558-428b-a662-e2b90cce9279*/.site",
         "Line[1] Col[14953]"
       ]
     },
@@ -420,7 +420,7 @@
       },
       "diagnostics": "Unknown code 'http://terminology.hl7.org/CodeSystem/v2-0493#LA'",
       "location": [
-        "Bundle.entry[14].resource/*Immunization/71efe7d3-1dbf-4fdd-be60-97005d6e2549*/.site",
+        "Bundle.entry[14].resource/*Immunization/db48791f-44ad-47cb-98f5-ea7af788dc50*/.site",
         "Line[1] Col[15673]"
       ]
     },
@@ -451,7 +451,7 @@
       },
       "diagnostics": "Unknown code 'http://terminology.hl7.org/CodeSystem/v2-0493#RA'",
       "location": [
-        "Bundle.entry[15].resource/*Immunization/2183bea9-8c71-4f9b-b2ed-d044c80e5745*/.site",
+        "Bundle.entry[15].resource/*Immunization/31224cd6-11c7-47d6-931a-c57d6933ad4d*/.site",
         "Line[1] Col[16376]"
       ]
     },
@@ -482,7 +482,7 @@
       },
       "diagnostics": "Unknown code 'http://terminology.hl7.org/CodeSystem/v2-0493#RA'",
       "location": [
-        "Bundle.entry[16].resource/*Immunization/1e7c3e4d-a2de-4cda-9856-e57ba662528e*/.site",
+        "Bundle.entry[16].resource/*Immunization/91839b6b-0f02-4432-96f1-f3d6a5e9358b*/.site",
         "Line[1] Col[17040]"
       ]
     },
@@ -513,7 +513,7 @@
       },
       "diagnostics": "Unknown code 'http://terminology.hl7.org/CodeSystem/v2-0493#RA'",
       "location": [
-        "Bundle.entry[17].resource/*Immunization/eb2f1c78-fa8f-4ee3-9605-bb5691bc4d00*/.site",
+        "Bundle.entry[17].resource/*Immunization/38078928-f4d0-4abf-a85f-a9e5321dcacb*/.site",
         "Line[1] Col[17710]"
       ]
     },
@@ -544,7 +544,7 @@
       },
       "diagnostics": "Unknown code 'http://terminology.hl7.org/CodeSystem/v2-0493#RA'",
       "location": [
-        "Bundle.entry[18].resource/*Immunization/ff7252fe-18a0-4e38-9d45-4cb6e2ff55d4*/.site",
+        "Bundle.entry[18].resource/*Immunization/fa7c5ccd-0e93-44e9-9d1e-5fd72c053d3e*/.site",
         "Line[1] Col[18378]"
       ]
     },
@@ -575,7 +575,7 @@
       },
       "diagnostics": "Unknown code 'http://terminology.hl7.org/CodeSystem/v2-0493#RA'",
       "location": [
-        "Bundle.entry[19].resource/*Immunization/d08a5d58-16be-4280-9fcd-cbff4ee1bcf2*/.site",
+        "Bundle.entry[19].resource/*Immunization/5f2a1a32-ac38-43a5-9836-2a2e37abc171*/.site",
         "Line[1] Col[19048]"
       ]
     },
@@ -606,7 +606,7 @@
       },
       "diagnostics": "Unknown code 'http://terminology.hl7.org/CodeSystem/v2-0493#LA'",
       "location": [
-        "Bundle.entry[20].resource/*Immunization/516f67e3-92aa-4fce-af12-ca669a7187d2*/.site",
+        "Bundle.entry[20].resource/*Immunization/2824d7e1-9bdd-4a54-a17a-6f79c5d6d761*/.site",
         "Line[1] Col[19750]"
       ]
     },
@@ -701,7 +701,7 @@
       },
       "diagnostics": "Unable to expand ValueSet because CodeSystem could not be found: http://loinc.org",
       "location": [
-        "Bundle.entry[0].resource/*Composition/ff126bea-25b7-4c11-9760-fe082f735178*/.type",
+        "Bundle.entry[0].resource/*Composition/a2b42518-7a5a-4ad1-81be-d95ca6897aa7*/.type",
         "Line[1] Col[329]"
       ]
     },
@@ -720,7 +720,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[0].resource/*Composition/ff126bea-25b7-4c11-9760-fe082f735178*/",
+        "Bundle.entry[0].resource/*Composition/a2b42518-7a5a-4ad1-81be-d95ca6897aa7*/",
         "Line[1] Col[2420]"
       ]
     },
@@ -739,7 +739,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[1].resource/*Patient/4404bec0-aad2-4a40-b9c7-259d522adc7b*/",
+        "Bundle.entry[1].resource/*Patient/02124992-c303-4c91-b810-01baf53a4af6*/",
         "Line[1] Col[8973]"
       ]
     },
@@ -777,7 +777,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[3].resource/*Condition/07462255-75b7-4324-9494-ac5e711ce7e8*/",
+        "Bundle.entry[3].resource/*Condition/5e7e549b-6289-4902-85a0-ede788044ab4*/",
         "Line[1] Col[9457]"
       ]
     },
@@ -796,7 +796,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[4].resource/*Condition/fe3b8b9e-3b44-4698-83c8-67b6a06006c2*/",
+        "Bundle.entry[4].resource/*Condition/74dc5661-93fe-4a16-81cd-2fe4cc622466*/",
         "Line[1] Col[9812]"
       ]
     },
@@ -815,7 +815,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[5].resource/*Condition/33444db7-f39e-4eb1-a97f-658bbeb2b41c*/",
+        "Bundle.entry[5].resource/*Condition/02847efd-6c90-405c-a718-240f6a877bdc*/",
         "Line[1] Col[10158]"
       ]
     },
@@ -846,7 +846,7 @@
       },
       "diagnostics": "value should not start or finish with whitespace '\\talendronic acid (alendronate sodium) 70 mg oral tablet'",
       "location": [
-        "Bundle.entry[6].resource/*MedicationStatement/bc2d409d-8c7a-4df5-89d5-c6c06d3403ec*/.medication.ofType(CodeableConcept).coding[0].display",
+        "Bundle.entry[6].resource/*MedicationStatement/da5935bd-b3a9-4313-8758-3b727c18db3f*/.medication.ofType(CodeableConcept).coding[0].display",
         "Line[1] Col[10584]"
       ]
     },
@@ -865,7 +865,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[6].resource/*MedicationStatement/bc2d409d-8c7a-4df5-89d5-c6c06d3403ec*/",
+        "Bundle.entry[6].resource/*MedicationStatement/da5935bd-b3a9-4313-8758-3b727c18db3f*/",
         "Line[1] Col[10608]"
       ]
     },
@@ -884,7 +884,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[7].resource/*MedicationStatement/2f2d4d9c-fa64-4099-9eb0-63891ed6d7e2*/",
+        "Bundle.entry[7].resource/*MedicationStatement/ea876fe3-97e1-4779-b451-841cea1b308c*/",
         "Line[1] Col[11034]"
       ]
     },
@@ -903,7 +903,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[8].resource/*MedicationStatement/88699f52-6988-4bc0-9838-adf22c795665*/",
+        "Bundle.entry[8].resource/*MedicationStatement/5221900d-4799-4947-8d60-d478cf42ea7b*/",
         "Line[1] Col[11478]"
       ]
     },
@@ -922,7 +922,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[9].resource/*AllergyIntolerance/5e0465c4-f820-48c0-9517-ee72103e2e70*/",
+        "Bundle.entry[9].resource/*AllergyIntolerance/422049fd-ef26-4905-a26e-628653e875a9*/",
         "Line[1] Col[12271]"
       ]
     },
@@ -941,7 +941,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[10].resource/*AllergyIntolerance/c084961e-da97-47c5-a0d6-7084890575a7*/",
+        "Bundle.entry[10].resource/*AllergyIntolerance/e95080f7-3a78-4ef5-b332-8de546db4157*/",
         "Line[1] Col[13064]"
       ]
     },
@@ -960,7 +960,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[11].resource/*Immunization/54d00619-3400-422d-9272-6743002b2456*/",
+        "Bundle.entry[11].resource/*Immunization/7cd121f0-8461-46b3-a8de-ae9076b0eb73*/",
         "Line[1] Col[13730]"
       ]
     },
@@ -979,7 +979,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[12].resource/*Immunization/a24cba17-e4ed-496e-a87c-fcb02d801ee9*/",
+        "Bundle.entry[12].resource/*Immunization/ba875aa0-f6fc-4f92-9b89-4534b1b9029e*/",
         "Line[1] Col[14395]"
       ]
     },
@@ -998,7 +998,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[13].resource/*Immunization/23ef54c6-56cb-4193-8070-f51da20b4c17*/",
+        "Bundle.entry[13].resource/*Immunization/e1ee67c2-1558-428b-a662-e2b90cce9279*/",
         "Line[1] Col[15065]"
       ]
     },
@@ -1017,7 +1017,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[14].resource/*Immunization/71efe7d3-1dbf-4fdd-be60-97005d6e2549*/",
+        "Bundle.entry[14].resource/*Immunization/db48791f-44ad-47cb-98f5-ea7af788dc50*/",
         "Line[1] Col[15785]"
       ]
     },
@@ -1036,7 +1036,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[15].resource/*Immunization/2183bea9-8c71-4f9b-b2ed-d044c80e5745*/",
+        "Bundle.entry[15].resource/*Immunization/31224cd6-11c7-47d6-931a-c57d6933ad4d*/",
         "Line[1] Col[16488]"
       ]
     },
@@ -1055,7 +1055,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[16].resource/*Immunization/1e7c3e4d-a2de-4cda-9856-e57ba662528e*/",
+        "Bundle.entry[16].resource/*Immunization/91839b6b-0f02-4432-96f1-f3d6a5e9358b*/",
         "Line[1] Col[17152]"
       ]
     },
@@ -1074,7 +1074,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[17].resource/*Immunization/eb2f1c78-fa8f-4ee3-9605-bb5691bc4d00*/",
+        "Bundle.entry[17].resource/*Immunization/38078928-f4d0-4abf-a85f-a9e5321dcacb*/",
         "Line[1] Col[17822]"
       ]
     },
@@ -1093,7 +1093,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[18].resource/*Immunization/ff7252fe-18a0-4e38-9d45-4cb6e2ff55d4*/",
+        "Bundle.entry[18].resource/*Immunization/fa7c5ccd-0e93-44e9-9d1e-5fd72c053d3e*/",
         "Line[1] Col[18490]"
       ]
     },
@@ -1112,7 +1112,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[19].resource/*Immunization/d08a5d58-16be-4280-9fcd-cbff4ee1bcf2*/",
+        "Bundle.entry[19].resource/*Immunization/5f2a1a32-ac38-43a5-9836-2a2e37abc171*/",
         "Line[1] Col[19160]"
       ]
     },
@@ -1131,7 +1131,7 @@
       "code": "processing",
       "diagnostics": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
       "location": [
-        "Bundle.entry[20].resource/*Immunization/516f67e3-92aa-4fce-af12-ca669a7187d2*/",
+        "Bundle.entry[20].resource/*Immunization/2824d7e1-9bdd-4a54-a17a-6f79c5d6d761*/",
         "Line[1] Col[19862]"
       ]
     }
@@ -1164,7 +1164,7 @@
       },
       "diagnostics": "None of the codings provided are in the value set 'FHIR Document Type Codes' (http://hl7.org/fhir/ValueSet/doc-typecodes|4.0.1), and a coding is recommended to come from this value set (codes = http://loinc.org#60591-5)",
       "location": [
-        "Bundle.entry[0].resource/*Composition/ff126bea-25b7-4c11-9760-fe082f735178*/.type",
+        "Bundle.entry[0].resource/*Composition/a2b42518-7a5a-4ad1-81be-d95ca6897aa7*/.type",
         "Line[1] Col[329]"
       ]
     }

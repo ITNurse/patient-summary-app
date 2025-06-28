@@ -3,10 +3,10 @@
   "type": "document",
   "entry": [
     {
-      "fullUrl": "urn:uuid:812847a8-aac1-4dfe-a8ec-c01ab652f2cf",
+      "fullUrl": "urn:uuid:324448c2-a8de-4dcc-84eb-a82cfa204d9a",
       "resource": {
         "resourceType": "Composition",
-        "id": "812847a8-aac1-4dfe-a8ec-c01ab652f2cf",
+        "id": "324448c2-a8de-4dcc-84eb-a82cfa204d9a",
         "status": "final",
         "type": {
           "coding": [
@@ -18,16 +18,16 @@
           ]
         },
         "subject": {
-          "reference": "urn:uuid:61e19029-fd72-4195-85f2-0d986d78f3ac"
+          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
         },
-        "date": "2025-06-23T23:51:27.141137+00:00",
-        "title": "PS-CA Patient Summary",
+        "date": "2025-06-28T20:38:05.659852+00:00",
         "author": [
           {
             "reference": "urn:uuid:psca-author-org",
             "display": "Wellness Way Hospital"
           }
         ],
+        "title": "PS-CA Patient Summary",
         "custodian": {
           "reference": "urn:uuid:psca-author-org",
           "display": "Wellness Way Hospital"
@@ -46,10 +46,10 @@
             },
             "entry": [
               {
-                "reference": "urn:uuid:ad7dc3d2-9c40-42b9-a0e5-7584edb69e2c"
+                "reference": "urn:uuid:beeaaee3-06fc-407a-9b3b-af3218ae0b0f"
               },
               {
-                "reference": "urn:uuid:bceda08d-ad31-4999-a828-8e3963aabe67"
+                "reference": "urn:uuid:ebd9346e-41f4-4eac-bbc3-d8921dad1299"
               }
             ]
           },
@@ -66,10 +66,10 @@
             },
             "entry": [
               {
-                "reference": "urn:uuid:288e3aac-cb84-4c7a-9916-52942970799e"
+                "reference": "urn:uuid:eea3a53a-16c2-46f1-9040-6ffabd871ea8"
               },
               {
-                "reference": "urn:uuid:be8929d6-8b24-4c89-b5ae-4b523954eca2"
+                "reference": "urn:uuid:6155b8ce-22b0-457e-a70c-c7e49e54375b"
               }
             ]
           },
@@ -86,10 +86,10 @@
             },
             "entry": [
               {
-                "reference": "urn:uuid:7a4eeea6-6096-4188-b22a-dfa0e3d59eda"
+                "reference": "urn:uuid:17fa111c-0afb-4d80-ad01-8fdd72b600ba"
               },
               {
-                "reference": "urn:uuid:18728f96-ca01-48bb-9e64-c96c0fc172f0"
+                "reference": "urn:uuid:f0f0db9b-6538-44ac-932a-6f4346f405eb"
               }
             ]
           },
@@ -106,19 +106,19 @@
             },
             "entry": [
               {
-                "reference": "urn:uuid:9c12ce10-321a-429d-8e23-09b28b69a1f6"
+                "reference": "urn:uuid:7b231e34-e281-4f4d-8c84-2189af5de76c"
               },
               {
-                "reference": "urn:uuid:5c1d4b90-61b4-41a8-b880-e0d18fd154cb"
+                "reference": "urn:uuid:f74ece12-b462-4c0c-8311-f98a2df065db"
               },
               {
-                "reference": "urn:uuid:df40971a-c07e-4e95-b063-79b7ef8920c5"
+                "reference": "urn:uuid:9a013cf3-135d-4fb1-9091-d6a3919a8127"
               },
               {
-                "reference": "urn:uuid:396f970f-d2e6-4a3a-9808-b8be23b25c96"
+                "reference": "urn:uuid:2e2b2cae-522f-402f-bdf5-ee0bccdd6000"
               },
               {
-                "reference": "urn:uuid:ce3af7d1-92b5-4ec6-b17f-5552a29ff642"
+                "reference": "urn:uuid:3c4a6f35-bfa8-40ac-86cd-9d68a2bc2b83"
               }
             ]
           }
@@ -126,10 +126,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:61e19029-fd72-4195-85f2-0d986d78f3ac",
+      "fullUrl": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8",
       "resource": {
         "resourceType": "Patient",
-        "id": "61e19029-fd72-4195-85f2-0d986d78f3ac",
+        "id": "0625b942-21da-425d-93af-fb223c9d6ae8",
         "identifier": [
           {
             "system": "http://example.org/healthcardnumber",
@@ -144,8 +144,6 @@
             ]
           }
         ],
-        "gender": "other",
-        "birthDate": "1977-07-02",
         "telecom": [
           {
             "system": "phone",
@@ -158,6 +156,8 @@
             "use": "home"
           }
         ],
+        "gender": "other",
+        "birthDate": "1977-07-02",
         "address": [
           {
             "line": [
@@ -186,13 +186,114 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:288e3aac-cb84-4c7a-9916-52942970799e",
+      "fullUrl": "urn:uuid:beeaaee3-06fc-407a-9b3b-af3218ae0b0f",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "beeaaee3-06fc-407a-9b3b-af3218ae0b0f",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "criticality": "high",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "282100009",
+              "display": "Tree nuts"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
+        },
+        "reaction": [
+          {
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "422587007",
+                    "display": "Vomiting"
+                  }
+                ]
+              }
+            ],
+            "severity": "mild"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ebd9346e-41f4-4eac-bbc3-d8921dad1299",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "ebd9346e-41f4-4eac-bbc3-d8921dad1299",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "criticality": "high",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233678006",
+              "display": "Egg protein"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
+        },
+        "reaction": [
+          {
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "271757001",
+                    "display": "Anaphylaxis"
+                  }
+                ]
+              }
+            ],
+            "severity": "mild"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:eea3a53a-16c2-46f1-9040-6ffabd871ea8",
       "resource": {
         "resourceType": "Condition",
-        "id": "288e3aac-cb84-4c7a-9916-52942970799e",
-        "subject": {
-          "reference": "urn:uuid:61e19029-fd72-4195-85f2-0d986d78f3ac"
-        },
+        "id": "eea3a53a-16c2-46f1-9040-6ffabd871ea8",
         "code": {
           "coding": [
             {
@@ -201,17 +302,17 @@
               "display": "Osteoarthritis (disorder)"
             }
           ]
+        },
+        "subject": {
+          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:be8929d6-8b24-4c89-b5ae-4b523954eca2",
+      "fullUrl": "urn:uuid:6155b8ce-22b0-457e-a70c-c7e49e54375b",
       "resource": {
         "resourceType": "Condition",
-        "id": "be8929d6-8b24-4c89-b5ae-4b523954eca2",
-        "subject": {
-          "reference": "urn:uuid:61e19029-fd72-4195-85f2-0d986d78f3ac"
-        },
+        "id": "6155b8ce-22b0-457e-a70c-c7e49e54375b",
         "code": {
           "coding": [
             {
@@ -220,17 +321,18 @@
               "display": "Viral upper respiratory tract infection (disorder)"
             }
           ]
+        },
+        "subject": {
+          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:7a4eeea6-6096-4188-b22a-dfa0e3d59eda",
+      "fullUrl": "urn:uuid:17fa111c-0afb-4d80-ad01-8fdd72b600ba",
       "resource": {
         "resourceType": "MedicationStatement",
-        "id": "7a4eeea6-6096-4188-b22a-dfa0e3d59eda",
-        "subject": {
-          "reference": "urn:uuid:61e19029-fd72-4195-85f2-0d986d78f3ac"
-        },
+        "id": "17fa111c-0afb-4d80-ad01-8fdd72b600ba",
+        "status": "active",
         "medicationCodeableConcept": {
           "coding": [
             {
@@ -240,17 +342,17 @@
             }
           ]
         },
-        "status": "active"
+        "subject": {
+          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
+        }
       }
     },
     {
-      "fullUrl": "urn:uuid:18728f96-ca01-48bb-9e64-c96c0fc172f0",
+      "fullUrl": "urn:uuid:f0f0db9b-6538-44ac-932a-6f4346f405eb",
       "resource": {
         "resourceType": "MedicationStatement",
-        "id": "18728f96-ca01-48bb-9e64-c96c0fc172f0",
-        "subject": {
-          "reference": "urn:uuid:61e19029-fd72-4195-85f2-0d986d78f3ac"
-        },
+        "id": "f0f0db9b-6538-44ac-932a-6f4346f405eb",
+        "status": "active",
         "medicationCodeableConcept": {
           "coding": [
             {
@@ -260,118 +362,16 @@
             }
           ]
         },
-        "status": "active"
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:ad7dc3d2-9c40-42b9-a0e5-7584edb69e2c",
-      "resource": {
-        "resourceType": "AllergyIntolerance",
-        "id": "ad7dc3d2-9c40-42b9-a0e5-7584edb69e2c",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
-              "code": "active"
-            }
-          ]
-        },
-        "verificationStatus": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
-              "code": "confirmed"
-            }
-          ]
-        },
-        "criticality": "high",
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": 282100009,
-              "display": "Tree nuts"
-            }
-          ]
-        },
-        "reaction": [
-          {
-            "manifestation": [
-              {
-                "coding": [
-                  {
-                    "system": "http://snomed.info/sct",
-                    "code": 422587007,
-                    "display": "Vomiting"
-                  }
-                ]
-              }
-            ],
-            "severity": "mild"
-          }
-        ],
-        "patient": {
-          "reference": "urn:uuid:61e19029-fd72-4195-85f2-0d986d78f3ac"
+        "subject": {
+          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:bceda08d-ad31-4999-a828-8e3963aabe67",
-      "resource": {
-        "resourceType": "AllergyIntolerance",
-        "id": "bceda08d-ad31-4999-a828-8e3963aabe67",
-        "clinicalStatus": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
-              "code": "active"
-            }
-          ]
-        },
-        "verificationStatus": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
-              "code": "confirmed"
-            }
-          ]
-        },
-        "criticality": "high",
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": 233678006,
-              "display": "Egg protein"
-            }
-          ]
-        },
-        "reaction": [
-          {
-            "manifestation": [
-              {
-                "coding": [
-                  {
-                    "system": "http://snomed.info/sct",
-                    "code": 271757001,
-                    "display": "Anaphylaxis"
-                  }
-                ]
-              }
-            ],
-            "severity": "mild"
-          }
-        ],
-        "patient": {
-          "reference": "urn:uuid:61e19029-fd72-4195-85f2-0d986d78f3ac"
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:9c12ce10-321a-429d-8e23-09b28b69a1f6",
+      "fullUrl": "urn:uuid:7b231e34-e281-4f4d-8c84-2189af5de76c",
       "resource": {
         "resourceType": "Immunization",
-        "id": "9c12ce10-321a-429d-8e23-09b28b69a1f6",
+        "id": "7b231e34-e281-4f4d-8c84-2189af5de76c",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -383,9 +383,9 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:61e19029-fd72-4195-85f2-0d986d78f3ac"
+          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
         },
-        "occurrenceDateTime": "2020-11-06",
+        "occurrenceDateTime": "2020-11-06T00:00:00",
         "primarySource": true,
         "site": {
           "coding": [
@@ -400,7 +400,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": 78421000,
+              "code": "78421000",
               "display": "Intramuscular: IM"
             }
           ]
@@ -408,10 +408,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:5c1d4b90-61b4-41a8-b880-e0d18fd154cb",
+      "fullUrl": "urn:uuid:f74ece12-b462-4c0c-8311-f98a2df065db",
       "resource": {
         "resourceType": "Immunization",
-        "id": "5c1d4b90-61b4-41a8-b880-e0d18fd154cb",
+        "id": "f74ece12-b462-4c0c-8311-f98a2df065db",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -423,9 +423,9 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:61e19029-fd72-4195-85f2-0d986d78f3ac"
+          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
         },
-        "occurrenceDateTime": "2023-12-22",
+        "occurrenceDateTime": "2023-12-22T00:00:00",
         "primarySource": true,
         "site": {
           "coding": [
@@ -440,7 +440,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": 78421000,
+              "code": "78421000",
               "display": "Intramuscular: IM"
             }
           ]
@@ -448,10 +448,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:df40971a-c07e-4e95-b063-79b7ef8920c5",
+      "fullUrl": "urn:uuid:9a013cf3-135d-4fb1-9091-d6a3919a8127",
       "resource": {
         "resourceType": "Immunization",
-        "id": "df40971a-c07e-4e95-b063-79b7ef8920c5",
+        "id": "9a013cf3-135d-4fb1-9091-d6a3919a8127",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -463,9 +463,9 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:61e19029-fd72-4195-85f2-0d986d78f3ac"
+          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
         },
-        "occurrenceDateTime": "2021-08-10",
+        "occurrenceDateTime": "2021-08-10T00:00:00",
         "primarySource": true,
         "site": {
           "coding": [
@@ -480,7 +480,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": 78421000,
+              "code": "78421000",
               "display": "Intramuscular: IM"
             }
           ]
@@ -488,10 +488,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:396f970f-d2e6-4a3a-9808-b8be23b25c96",
+      "fullUrl": "urn:uuid:2e2b2cae-522f-402f-bdf5-ee0bccdd6000",
       "resource": {
         "resourceType": "Immunization",
-        "id": "396f970f-d2e6-4a3a-9808-b8be23b25c96",
+        "id": "2e2b2cae-522f-402f-bdf5-ee0bccdd6000",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -503,9 +503,9 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:61e19029-fd72-4195-85f2-0d986d78f3ac"
+          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
         },
-        "occurrenceDateTime": "2024-01-12",
+        "occurrenceDateTime": "2024-01-12T00:00:00",
         "primarySource": true,
         "site": {
           "coding": [
@@ -520,7 +520,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": 78421000,
+              "code": "78421000",
               "display": "Intramuscular: IM"
             }
           ]
@@ -528,10 +528,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:ce3af7d1-92b5-4ec6-b17f-5552a29ff642",
+      "fullUrl": "urn:uuid:3c4a6f35-bfa8-40ac-86cd-9d68a2bc2b83",
       "resource": {
         "resourceType": "Immunization",
-        "id": "ce3af7d1-92b5-4ec6-b17f-5552a29ff642",
+        "id": "3c4a6f35-bfa8-40ac-86cd-9d68a2bc2b83",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -543,9 +543,9 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:61e19029-fd72-4195-85f2-0d986d78f3ac"
+          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
         },
-        "occurrenceDateTime": "2024-09-16",
+        "occurrenceDateTime": "2024-09-16T00:00:00",
         "primarySource": true,
         "site": {
           "coding": [
@@ -560,7 +560,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": 78421000,
+              "code": "78421000",
               "display": "Intramuscular: IM"
             }
           ]

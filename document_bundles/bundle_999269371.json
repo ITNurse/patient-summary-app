@@ -3,10 +3,10 @@
   "type": "document",
   "entry": [
     {
-      "fullUrl": "urn:uuid:c790fb53-7bca-466e-9152-b5d17448bfd9",
+      "fullUrl": "urn:uuid:3cf65a9c-89c3-43fe-b381-69b00a20a9f1",
       "resource": {
         "resourceType": "Composition",
-        "id": "c790fb53-7bca-466e-9152-b5d17448bfd9",
+        "id": "3cf65a9c-89c3-43fe-b381-69b00a20a9f1",
         "status": "final",
         "type": {
           "coding": [
@@ -18,16 +18,16 @@
           ]
         },
         "subject": {
-          "reference": "urn:uuid:9a67e98b-0fb4-4dbf-b233-342a15d46774"
+          "reference": "urn:uuid:13e7b127-159f-4842-9358-ccc02b63af16"
         },
-        "date": "2025-06-23T23:51:27.686661+00:00",
-        "title": "PS-CA Patient Summary",
+        "date": "2025-06-28T20:38:06.238885+00:00",
         "author": [
           {
             "reference": "urn:uuid:psca-author-org",
             "display": "Wellness Way Hospital"
           }
         ],
+        "title": "PS-CA Patient Summary",
         "custodian": {
           "reference": "urn:uuid:psca-author-org",
           "display": "Wellness Way Hospital"
@@ -46,13 +46,13 @@
             },
             "entry": [
               {
-                "reference": "urn:uuid:3203feee-db99-4543-8342-d2c103c6bfae"
+                "reference": "urn:uuid:34519501-4e08-4fd1-9632-88fcd9ccbd2e"
               },
               {
-                "reference": "urn:uuid:349bbf23-c8d5-434d-a9bf-fc1f9fd8057f"
+                "reference": "urn:uuid:da51ca85-0661-4057-a262-b8100bd833b7"
               },
               {
-                "reference": "urn:uuid:72c878ba-b91a-4d65-a5fd-58307b1e6d5e"
+                "reference": "urn:uuid:8157839c-bd0c-4e2a-bc7f-0ac42b09b57d"
               }
             ]
           },
@@ -69,10 +69,10 @@
             },
             "entry": [
               {
-                "reference": "urn:uuid:b06e6be9-73fa-4af0-9ee7-9fbcadb5b726"
+                "reference": "urn:uuid:3a1c73a2-0db1-4e36-9d57-ab9653772892"
               },
               {
-                "reference": "urn:uuid:04fd626e-f0c2-4906-8a66-f3d9a8a31bc7"
+                "reference": "urn:uuid:3c09894b-fe03-4cd8-af61-80af959e7976"
               }
             ]
           },
@@ -89,13 +89,13 @@
             },
             "entry": [
               {
-                "reference": "urn:uuid:c53fe599-85cd-4518-91d4-37f3d2a7f78d"
+                "reference": "urn:uuid:a2362ef5-dc12-4d41-aa32-df33545ac420"
               },
               {
-                "reference": "urn:uuid:4b3ecb2c-4aa0-42a5-bbb6-f09d348facd4"
+                "reference": "urn:uuid:2142a06b-05cf-4278-a5a9-4db11ed7c227"
               },
               {
-                "reference": "urn:uuid:73b374f8-89a1-4f8d-8d39-dc19bb728904"
+                "reference": "urn:uuid:0cbbb95a-8e01-437a-aea5-20761f0f2bbc"
               }
             ]
           },
@@ -112,22 +112,22 @@
             },
             "entry": [
               {
-                "reference": "urn:uuid:25f36ccf-8005-4f76-8b43-6503e06d4528"
+                "reference": "urn:uuid:c8610089-ac47-4df9-9068-db2219c11f1b"
               },
               {
-                "reference": "urn:uuid:5aa99a49-a57c-4793-a9f0-f5683c407281"
+                "reference": "urn:uuid:f68c5832-ee53-45ad-95a3-961987dad034"
               },
               {
-                "reference": "urn:uuid:7dc2639e-8ff2-4b50-8877-ac626a0f5803"
+                "reference": "urn:uuid:d82f34e1-a55b-49aa-aa0a-af69d037673c"
               },
               {
-                "reference": "urn:uuid:07fcb15c-bb43-49fe-aacc-09134949734d"
+                "reference": "urn:uuid:45f587f9-4046-4ce3-81ee-e38eb0cb4c54"
               },
               {
-                "reference": "urn:uuid:2c0b8602-dff4-4b71-a4db-2df6e892a76b"
+                "reference": "urn:uuid:8826a2d3-d115-458c-8855-0f88593d6bba"
               },
               {
-                "reference": "urn:uuid:7a8fa17a-fc0f-4633-bcdf-4051a142c49a"
+                "reference": "urn:uuid:236559ca-55ae-4d49-8623-4e077c1ac418"
               }
             ]
           }
@@ -135,10 +135,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:9a67e98b-0fb4-4dbf-b233-342a15d46774",
+      "fullUrl": "urn:uuid:13e7b127-159f-4842-9358-ccc02b63af16",
       "resource": {
         "resourceType": "Patient",
-        "id": "9a67e98b-0fb4-4dbf-b233-342a15d46774",
+        "id": "13e7b127-159f-4842-9358-ccc02b63af16",
         "identifier": [
           {
             "system": "http://example.org/healthcardnumber",
@@ -153,8 +153,6 @@
             ]
           }
         ],
-        "gender": "other",
-        "birthDate": "1981-12-08",
         "telecom": [
           {
             "system": "phone",
@@ -167,6 +165,8 @@
             "use": "home"
           }
         ],
+        "gender": "other",
+        "birthDate": "1981-12-08",
         "address": [
           {
             "line": [
@@ -195,108 +195,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:b06e6be9-73fa-4af0-9ee7-9fbcadb5b726",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "b06e6be9-73fa-4af0-9ee7-9fbcadb5b726",
-        "subject": {
-          "reference": "urn:uuid:9a67e98b-0fb4-4dbf-b233-342a15d46774"
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "239873007",
-              "display": "Gastroesophageal reflux disease (disorder)"
-            }
-          ]
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:04fd626e-f0c2-4906-8a66-f3d9a8a31bc7",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "04fd626e-f0c2-4906-8a66-f3d9a8a31bc7",
-        "subject": {
-          "reference": "urn:uuid:9a67e98b-0fb4-4dbf-b233-342a15d46774"
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "13645005",
-              "display": "Osteoarthritis (disorder)"
-            }
-          ]
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:c53fe599-85cd-4518-91d4-37f3d2a7f78d",
-      "resource": {
-        "resourceType": "MedicationStatement",
-        "id": "c53fe599-85cd-4518-91d4-37f3d2a7f78d",
-        "subject": {
-          "reference": "urn:uuid:9a67e98b-0fb4-4dbf-b233-342a15d46774"
-        },
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/hc-CCDD",
-              "code": "9000973",
-              "display": "\talendronic acid (alendronate sodium) 70 mg oral tablet"
-            }
-          ]
-        },
-        "status": "active"
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:4b3ecb2c-4aa0-42a5-bbb6-f09d348facd4",
-      "resource": {
-        "resourceType": "MedicationStatement",
-        "id": "4b3ecb2c-4aa0-42a5-bbb6-f09d348facd4",
-        "subject": {
-          "reference": "urn:uuid:9a67e98b-0fb4-4dbf-b233-342a15d46774"
-        },
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/hc-CCDD",
-              "code": "9009619",
-              "display": "furosemide 40 mg oral tablet"
-            }
-          ]
-        },
-        "status": "active"
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:73b374f8-89a1-4f8d-8d39-dc19bb728904",
-      "resource": {
-        "resourceType": "MedicationStatement",
-        "id": "73b374f8-89a1-4f8d-8d39-dc19bb728904",
-        "subject": {
-          "reference": "urn:uuid:9a67e98b-0fb4-4dbf-b233-342a15d46774"
-        },
-        "medicationCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/hc-CCDD",
-              "code": "9000336",
-              "display": "omeprazole 20 mg gastro-resistant capsule"
-            }
-          ]
-        },
-        "status": "active"
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:3203feee-db99-4543-8342-d2c103c6bfae",
+      "fullUrl": "urn:uuid:34519501-4e08-4fd1-9632-88fcd9ccbd2e",
       "resource": {
         "resourceType": "AllergyIntolerance",
-        "id": "3203feee-db99-4543-8342-d2c103c6bfae",
+        "id": "34519501-4e08-4fd1-9632-88fcd9ccbd2e",
         "clinicalStatus": {
           "coding": [
             {
@@ -318,10 +220,13 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": 294954003,
+              "code": "294954003",
               "display": "Bee venom"
             }
           ]
+        },
+        "patient": {
+          "reference": "urn:uuid:13e7b127-159f-4842-9358-ccc02b63af16"
         },
         "reaction": [
           {
@@ -330,7 +235,7 @@
                 "coding": [
                   {
                     "system": "http://snomed.info/sct",
-                    "code": 422400008,
+                    "code": "422400008",
                     "display": "Rash"
                   }
                 ]
@@ -338,17 +243,14 @@
             ],
             "severity": "mild"
           }
-        ],
-        "patient": {
-          "reference": "urn:uuid:9a67e98b-0fb4-4dbf-b233-342a15d46774"
-        }
+        ]
       }
     },
     {
-      "fullUrl": "urn:uuid:349bbf23-c8d5-434d-a9bf-fc1f9fd8057f",
+      "fullUrl": "urn:uuid:da51ca85-0661-4057-a262-b8100bd833b7",
       "resource": {
         "resourceType": "AllergyIntolerance",
-        "id": "349bbf23-c8d5-434d-a9bf-fc1f9fd8057f",
+        "id": "da51ca85-0661-4057-a262-b8100bd833b7",
         "clinicalStatus": {
           "coding": [
             {
@@ -370,10 +272,13 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": 91930004,
+              "code": "91930004",
               "display": "Latex"
             }
           ]
+        },
+        "patient": {
+          "reference": "urn:uuid:13e7b127-159f-4842-9358-ccc02b63af16"
         },
         "reaction": [
           {
@@ -382,7 +287,7 @@
                 "coding": [
                   {
                     "system": "http://snomed.info/sct",
-                    "code": 247472004,
+                    "code": "247472004",
                     "display": "Hives"
                   }
                 ]
@@ -390,17 +295,14 @@
             ],
             "severity": "moderate"
           }
-        ],
-        "patient": {
-          "reference": "urn:uuid:9a67e98b-0fb4-4dbf-b233-342a15d46774"
-        }
+        ]
       }
     },
     {
-      "fullUrl": "urn:uuid:72c878ba-b91a-4d65-a5fd-58307b1e6d5e",
+      "fullUrl": "urn:uuid:8157839c-bd0c-4e2a-bc7f-0ac42b09b57d",
       "resource": {
         "resourceType": "AllergyIntolerance",
-        "id": "72c878ba-b91a-4d65-a5fd-58307b1e6d5e",
+        "id": "8157839c-bd0c-4e2a-bc7f-0ac42b09b57d",
         "clinicalStatus": {
           "coding": [
             {
@@ -422,10 +324,13 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": 91936005,
+              "code": "91936005",
               "display": "Penicillin"
             }
           ]
+        },
+        "patient": {
+          "reference": "urn:uuid:13e7b127-159f-4842-9358-ccc02b63af16"
         },
         "reaction": [
           {
@@ -434,7 +339,7 @@
                 "coding": [
                   {
                     "system": "http://snomed.info/sct",
-                    "code": 247472004,
+                    "code": "247472004",
                     "display": "Hives"
                   }
                 ]
@@ -442,17 +347,112 @@
             ],
             "severity": "severe"
           }
-        ],
-        "patient": {
-          "reference": "urn:uuid:9a67e98b-0fb4-4dbf-b233-342a15d46774"
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3a1c73a2-0db1-4e36-9d57-ab9653772892",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "3a1c73a2-0db1-4e36-9d57-ab9653772892",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "239873007",
+              "display": "Gastroesophageal reflux disease (disorder)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:13e7b127-159f-4842-9358-ccc02b63af16"
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:25f36ccf-8005-4f76-8b43-6503e06d4528",
+      "fullUrl": "urn:uuid:3c09894b-fe03-4cd8-af61-80af959e7976",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "3c09894b-fe03-4cd8-af61-80af959e7976",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "13645005",
+              "display": "Osteoarthritis (disorder)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:13e7b127-159f-4842-9358-ccc02b63af16"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a2362ef5-dc12-4d41-aa32-df33545ac420",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "a2362ef5-dc12-4d41-aa32-df33545ac420",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/hc-CCDD",
+              "code": "9000973",
+              "display": "\talendronic acid (alendronate sodium) 70 mg oral tablet"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:13e7b127-159f-4842-9358-ccc02b63af16"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2142a06b-05cf-4278-a5a9-4db11ed7c227",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "2142a06b-05cf-4278-a5a9-4db11ed7c227",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/hc-CCDD",
+              "code": "9009619",
+              "display": "furosemide 40 mg oral tablet"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:13e7b127-159f-4842-9358-ccc02b63af16"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0cbbb95a-8e01-437a-aea5-20761f0f2bbc",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "0cbbb95a-8e01-437a-aea5-20761f0f2bbc",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/hc-CCDD",
+              "code": "9000336",
+              "display": "omeprazole 20 mg gastro-resistant capsule"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:13e7b127-159f-4842-9358-ccc02b63af16"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c8610089-ac47-4df9-9068-db2219c11f1b",
       "resource": {
         "resourceType": "Immunization",
-        "id": "25f36ccf-8005-4f76-8b43-6503e06d4528",
+        "id": "c8610089-ac47-4df9-9068-db2219c11f1b",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -464,9 +464,9 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:9a67e98b-0fb4-4dbf-b233-342a15d46774"
+          "reference": "urn:uuid:13e7b127-159f-4842-9358-ccc02b63af16"
         },
-        "occurrenceDateTime": "2024-05-04",
+        "occurrenceDateTime": "2024-05-04T00:00:00",
         "primarySource": true,
         "site": {
           "coding": [
@@ -481,7 +481,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": 78421000,
+              "code": "78421000",
               "display": "Intramuscular: IM"
             }
           ]
@@ -489,10 +489,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:5aa99a49-a57c-4793-a9f0-f5683c407281",
+      "fullUrl": "urn:uuid:f68c5832-ee53-45ad-95a3-961987dad034",
       "resource": {
         "resourceType": "Immunization",
-        "id": "5aa99a49-a57c-4793-a9f0-f5683c407281",
+        "id": "f68c5832-ee53-45ad-95a3-961987dad034",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -504,9 +504,9 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:9a67e98b-0fb4-4dbf-b233-342a15d46774"
+          "reference": "urn:uuid:13e7b127-159f-4842-9358-ccc02b63af16"
         },
-        "occurrenceDateTime": "2023-05-18",
+        "occurrenceDateTime": "2023-05-18T00:00:00",
         "primarySource": true,
         "site": {
           "coding": [
@@ -521,7 +521,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": 78421000,
+              "code": "78421000",
               "display": "Intramuscular: IM"
             }
           ]
@@ -529,10 +529,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:7dc2639e-8ff2-4b50-8877-ac626a0f5803",
+      "fullUrl": "urn:uuid:d82f34e1-a55b-49aa-aa0a-af69d037673c",
       "resource": {
         "resourceType": "Immunization",
-        "id": "7dc2639e-8ff2-4b50-8877-ac626a0f5803",
+        "id": "d82f34e1-a55b-49aa-aa0a-af69d037673c",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -544,9 +544,9 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:9a67e98b-0fb4-4dbf-b233-342a15d46774"
+          "reference": "urn:uuid:13e7b127-159f-4842-9358-ccc02b63af16"
         },
-        "occurrenceDateTime": "2020-10-20",
+        "occurrenceDateTime": "2020-10-20T00:00:00",
         "primarySource": true,
         "site": {
           "coding": [
@@ -561,7 +561,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": 78421000,
+              "code": "78421000",
               "display": "Intramuscular: IM"
             }
           ]
@@ -569,10 +569,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:07fcb15c-bb43-49fe-aacc-09134949734d",
+      "fullUrl": "urn:uuid:45f587f9-4046-4ce3-81ee-e38eb0cb4c54",
       "resource": {
         "resourceType": "Immunization",
-        "id": "07fcb15c-bb43-49fe-aacc-09134949734d",
+        "id": "45f587f9-4046-4ce3-81ee-e38eb0cb4c54",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -584,9 +584,9 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:9a67e98b-0fb4-4dbf-b233-342a15d46774"
+          "reference": "urn:uuid:13e7b127-159f-4842-9358-ccc02b63af16"
         },
-        "occurrenceDateTime": "2023-05-06",
+        "occurrenceDateTime": "2023-05-06T00:00:00",
         "primarySource": true,
         "site": {
           "coding": [
@@ -601,7 +601,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": 78421000,
+              "code": "78421000",
               "display": "Intramuscular: IM"
             }
           ]
@@ -609,10 +609,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:2c0b8602-dff4-4b71-a4db-2df6e892a76b",
+      "fullUrl": "urn:uuid:8826a2d3-d115-458c-8855-0f88593d6bba",
       "resource": {
         "resourceType": "Immunization",
-        "id": "2c0b8602-dff4-4b71-a4db-2df6e892a76b",
+        "id": "8826a2d3-d115-458c-8855-0f88593d6bba",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -624,9 +624,9 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:9a67e98b-0fb4-4dbf-b233-342a15d46774"
+          "reference": "urn:uuid:13e7b127-159f-4842-9358-ccc02b63af16"
         },
-        "occurrenceDateTime": "2024-10-19",
+        "occurrenceDateTime": "2024-10-19T00:00:00",
         "primarySource": true,
         "site": {
           "coding": [
@@ -641,7 +641,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": 78421000,
+              "code": "78421000",
               "display": "Intramuscular: IM"
             }
           ]
@@ -649,10 +649,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:7a8fa17a-fc0f-4633-bcdf-4051a142c49a",
+      "fullUrl": "urn:uuid:236559ca-55ae-4d49-8623-4e077c1ac418",
       "resource": {
         "resourceType": "Immunization",
-        "id": "7a8fa17a-fc0f-4633-bcdf-4051a142c49a",
+        "id": "236559ca-55ae-4d49-8623-4e077c1ac418",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -664,9 +664,9 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:9a67e98b-0fb4-4dbf-b233-342a15d46774"
+          "reference": "urn:uuid:13e7b127-159f-4842-9358-ccc02b63af16"
         },
-        "occurrenceDateTime": "2020-07-29",
+        "occurrenceDateTime": "2020-07-29T00:00:00",
         "primarySource": true,
         "site": {
           "coding": [
@@ -681,7 +681,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": 78421000,
+              "code": "78421000",
               "display": "Intramuscular: IM"
             }
           ]
