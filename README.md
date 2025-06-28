@@ -78,10 +78,8 @@ MIT
 
 # Learn More
 
-- [What is FHIR?](docs/fhir-overview.md)
-- [IPS and PS-CA Implementation Guide](docs/ips-and-psca.md)
-- [CSV File Design Decisions](docs/csv-design.md)
-- [Terminology & Value Set Encoding](docs/value-sets.md)
+- [What is the Pan-Canadian Patient Summary?](docs/pan-canadian-patient-summary.md)
+- [CSV File Design Decisions and Value Sets](docs/csv-design-and-value-sets.md)
 - [Using the HAPI FHIR Server](docs/hapi-server.md)
 - [How the Python App Works](docs/python-pipeline.md)
 - [Using Power Query and Power BI](docs/power-query-bi.md)
