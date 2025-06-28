@@ -1,16 +1,18 @@
 # Patient Summary App
 
-This project generates and validates HL7 FHIR-based patient summaries.
+This project generates synthetic HL7 FHIR-based patient summaries aligned with the Pan-Canadian Patient Summary (PS-CA) standard. It posts them to a HAPI FHIR server, which is used as the data source for a Patient Viewer dashboard built with Microsoft Power BI.
 
 ## Features
+- Includes synthetic patient data aligned with PS-CA value sets
 - Creates FHIR Patient Summary Bundles
-- Validates bundles against HL7 implementation guides
-- Includes sample synthetic patient data
+- Posts bundles to HAPI FHIR server
+- Includes Microsoft Power BI file that connects to HAPI FHIR server, unpacks .json into tables, and visualizes the data
 
 ## Requirements
 - Python 3.x
 - Docker (for running HAPI FHIR server)
 - Python packages listed in `requirements.txt`
+- Microsoft Power BI desktop
 
 ## Getting Started
 
