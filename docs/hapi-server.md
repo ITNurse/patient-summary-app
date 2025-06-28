@@ -4,7 +4,7 @@
 ```bash
 #Start a new HAPI FHIR server container in Docker, with the name hapi-fhir, using the hapiproject/hapi:latest image.
 #Also mounts the hapi_data volume to the server's database directory
-docker run -d -p 8080:8080 --name hapi-fhir -v hapi_data:/hapi-fhir-jpaserver-start/db hapiproject/hapi:latest #run HAPI 
+docker run -d -p 8080:8080 --name hapi-fhir -v hapi_data:/hapi-fhir-jpaserver-start/db hapiproject/hapi:latest 
 
 #To restart the server
 docker ps #Check running containers
