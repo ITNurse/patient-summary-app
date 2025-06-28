@@ -121,18 +121,6 @@ def main():
             # Save document bundle to file
             bundle_path = save_document_bundle(document_bundle, hcn)
             
-            # Validate bundle before uploading
-            is_valid = validate_bundle(bundle_path, hcn, index, len(patients_df))
-            if not is_valid:
-                log.append({
-                    "HealthCard": hcn,
-                    "Action": "Bundle Validation",
-                    "Status": "Failed",
-                    "FilePath": bundle_path
-                })
-                print(f"⏭️ Skipping upload for {hcn} due to validation failure")
-                continue  # Skip to next patient
-            
             # Upload transaction bundle to server
             success, status_code, response_text = upload_bundle_to_server(transaction_bundle)
             
