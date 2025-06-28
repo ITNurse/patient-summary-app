@@ -76,7 +76,7 @@ def validate_data(patients_df, conditions_df, medications_df, allergies_df, immu
         print("❌ Patients CSV is empty")
         return False
     
-    print(f"✅ Data validation passed")
+    print(f"✅ Data import validation passed")
     print(f"   - {len(patients_df)} patients")
     print(f"   - {len(conditions_df)} conditions")
     print(f"   - {len(medications_df)} medications")

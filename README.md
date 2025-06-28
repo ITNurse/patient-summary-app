@@ -33,7 +33,17 @@ venv\Scripts\activate      # On Windows
 pip install -r requirements.txt
 ```
 
-### 3. Start the HAPI FHIR server (via Docker)
+### 3. Install Docker (if you haven’t already)
+
+Docker is required to run the HAPI FHIR server locally.
+
+- Download and install Docker Desktop from:  
+  [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
+
+- After installing, make sure Docker is **running** in the background.  
+  Look for the whale 🐳 icon in your system tray (Windows/macOS).
+
+### 4. Start the HAPI FHIR server (via Docker)
 
 ```bash
 docker run -d -p 8080:8080 hapiproject/hapi:latest
@@ -41,16 +51,15 @@ docker run -d -p 8080:8080 hapiproject/hapi:latest
 
 > Or use your own `application.yaml` configuration (instructions coming soon).
 
-### 4. Run the application
+### 5. Run the application
 
 ```bash
 python main.py
 ```
 
-### 5. Output
+### 6. Output
 
 FHIR Bundles will be created in the `document_bundles/` folder and POSTed to the FHIR server.
 
 ## License
-
 MIT
