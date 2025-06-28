@@ -36,7 +36,7 @@ def process_patient(patient_row, conditions_df, medications_df, allergies_df, im
         conditions_df: Conditions DataFrame
         medications_df: Medications DataFrame
         allergies_df: Allergies DataFrame
-        immunizations_df: IMmunizations DataFrame
+        immunizations_df: Immunizations DataFrame
         
     Returns:
         tuple: (transaction_bundle, document_bundle, hcn)
@@ -73,12 +73,12 @@ def process_patient(patient_row, conditions_df, medications_df, allergies_df, im
     # Create bundles
     transaction_bundle = create_transaction_bundle(
         patient_id, patient_resource, org_id, org_resource,
-        composition_id, composition_resource, all_resource_entries
+        allergy_entries, condition_entries, medication_entries, immunization_entries
     )
     
     document_bundle = create_document_bundle(
-        patient_id, patient_resource, org_id, org_resource,
-        composition_id, composition_resource, all_resource_entries
+        patient_id, patient_resource, org_id, org_resource, composition_resource,
+        allergy_entries, condition_entries, medication_entries, immunization_entries
     )
     
     return transaction_bundle, document_bundle, hcn
