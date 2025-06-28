@@ -61,5 +61,28 @@ python main.py
 
 FHIR Bundles will be created in the `document_bundles/` folder and POSTed to the FHIR server.
 
+### 7. Open and Refresh the Power BI Report
+
+The Power BI report file is located in the `powerbi/` folder.
+
+To open and refresh the report:
+
+1. Open `powerbi/patient-summary-report.pbix` in Power BI Desktop.
+2. Click **Refresh** to load data directly from your running FHIR server.
+3. If prompted, select **Web** as the data source type and ensure the FHIR server (e.g., `http://localhost:8080/fhir`) is running.
+
+> **Note:** Some fields (e.g., `identifier`) may not appear correctly if you're connecting to a summary endpoint. Connect directly to each resource endpoint for full access.
+
 ## License
 MIT
+
+# Learn More
+
+- [What is FHIR?](docs/fhir-overview.md)
+- [IPS and PS-CA Implementation Guide](docs/ips-and-psca.md)
+- [CSV File Design Decisions](docs/csv-design.md)
+- [Terminology & Value Set Encoding](docs/value-sets.md)
+- [Using the HAPI FHIR Server](docs/hapi-server.md)
+- [How the Python App Works](docs/python-pipeline.md)
+- [Using Power Query and Power BI](docs/power-query-bi.md)
+
