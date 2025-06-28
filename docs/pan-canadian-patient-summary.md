@@ -1,3 +1,11 @@
-# What is FHIR?
+# Introduction
 
-Explain the HL7 FHIR standard, its purpose, and its relevance to your project.
+## Interoperability
+
+## Health Information Exchange Standards
+
+## Controlled Terminology Standards
+
+## FHIR
+
+## IPS & PS-CA
