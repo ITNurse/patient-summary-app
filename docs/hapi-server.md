@@ -9,7 +9,7 @@ docker run -d -p 8080:8080 --name hapi-fhir -v hapi_data:/hapi-fhir-jpaserver-st
 #To restart the server
 docker ps #Check running containers
 docker rm hapi-fhir #if hapi-fhir container is already running, stop it
-docker volume rm hapi-data #Erases all saved FHIR data
+docker volume rm hapi_data #Erases all saved FHIR data
 
 # Start HAPI FHIR Docker Container with Custom Config
 # (Runs the HAPI FHIR container on port 8080, mounts application.yaml config, sets SPRING_CONFIG_LOCATION so that the config file is recognized)
