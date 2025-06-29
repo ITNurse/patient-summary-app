@@ -33,13 +33,13 @@ def create_composition_resource(patient_id, allergy_refs, condition_refs, medica
         )
 
     if allergy_refs:
-        sections.append(build_section("Allergies", "48765-2", "Allergies and adverse reactions", allergy_refs))
+        sections.append(build_section("Allergies", "48765-2", "Allergies and adverse reactions Document", allergy_refs))
     if condition_refs:
-        sections.append(build_section("Problems", "11450-4", "Problem List", condition_refs))
+        sections.append(build_section("Problems", "11450-4", "Problem List - Reported", condition_refs))
     if medication_refs:
-        sections.append(build_section("Medications", "10160-0", "History of Medication Use", medication_refs))
+        sections.append(build_section("Medications", "10160-0", "History of Medication use Narrative", medication_refs))
     if immunization_refs:
-        sections.append(build_section("Immunizations", "11369-6", "History of immunizations", immunization_refs))
+        sections.append(build_section("Immunizations", "11369-6", "History of Immunization Narrative", immunization_refs))
 
     composition = Composition(
         id=composition_id,
@@ -47,7 +47,7 @@ def create_composition_resource(patient_id, allergy_refs, condition_refs, medica
         type=CodeableConcept(coding=[Coding(
             system=LOINC_SYSTEM,
             code="60591-5",
-            display="Patient Summary"
+            display="Patient summary Document"
         )]),
         subject=Reference(reference=f"urn:uuid:{patient_id}"),
         date=str(datetime.datetime.now(datetime.timezone.utc).isoformat()),
