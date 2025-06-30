@@ -3,24 +3,24 @@
   "type": "document",
   "entry": [
     {
-      "fullUrl": "urn:uuid:324448c2-a8de-4dcc-84eb-a82cfa204d9a",
+      "fullUrl": "urn:uuid:21c5cbad-489c-496a-84e3-5edcbf2b2df1",
       "resource": {
         "resourceType": "Composition",
-        "id": "324448c2-a8de-4dcc-84eb-a82cfa204d9a",
+        "id": "21c5cbad-489c-496a-84e3-5edcbf2b2df1",
         "status": "final",
         "type": {
           "coding": [
             {
               "system": "http://loinc.org",
               "code": "60591-5",
-              "display": "Patient Summary"
+              "display": "Patient summary Document"
             }
           ]
         },
         "subject": {
-          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
+          "reference": "urn:uuid:5abc2328-9129-4992-b1c0-16d774567ffd"
         },
-        "date": "2025-06-28T20:38:05.659852+00:00",
+        "date": "2025-06-30T16:25:29.422291+00:00",
         "author": [
           {
             "reference": "urn:uuid:psca-author-org",
@@ -40,36 +40,16 @@
                 {
                   "system": "http://loinc.org",
                   "code": "48765-2",
-                  "display": "Allergies and adverse reactions"
+                  "display": "Allergies and adverse reactions Document"
                 }
               ]
             },
             "entry": [
               {
-                "reference": "urn:uuid:beeaaee3-06fc-407a-9b3b-af3218ae0b0f"
+                "reference": "urn:uuid:a4822144-d219-49d7-93f6-aeb7a955dcca"
               },
               {
-                "reference": "urn:uuid:ebd9346e-41f4-4eac-bbc3-d8921dad1299"
-              }
-            ]
-          },
-          {
-            "title": "Problems",
-            "code": {
-              "coding": [
-                {
-                  "system": "http://loinc.org",
-                  "code": "11450-4",
-                  "display": "Problem List"
-                }
-              ]
-            },
-            "entry": [
-              {
-                "reference": "urn:uuid:eea3a53a-16c2-46f1-9040-6ffabd871ea8"
-              },
-              {
-                "reference": "urn:uuid:6155b8ce-22b0-457e-a70c-c7e49e54375b"
+                "reference": "urn:uuid:ef9d1d7f-13b5-4d94-9701-66f23565b9ef"
               }
             ]
           },
@@ -80,16 +60,16 @@
                 {
                   "system": "http://loinc.org",
                   "code": "10160-0",
-                  "display": "History of Medication Use"
+                  "display": "History of Medication use Narrative"
                 }
               ]
             },
             "entry": [
               {
-                "reference": "urn:uuid:17fa111c-0afb-4d80-ad01-8fdd72b600ba"
+                "reference": "urn:uuid:e42659b5-8f5a-44fb-aff2-f1d6f85ce1e4"
               },
               {
-                "reference": "urn:uuid:f0f0db9b-6538-44ac-932a-6f4346f405eb"
+                "reference": "urn:uuid:440ea1f8-aedb-4b58-923f-2c6054fa9ddd"
               }
             ]
           },
@@ -100,25 +80,25 @@
                 {
                   "system": "http://loinc.org",
                   "code": "11369-6",
-                  "display": "History of immunizations"
+                  "display": "History of Immunization Narrative"
                 }
               ]
             },
             "entry": [
               {
-                "reference": "urn:uuid:7b231e34-e281-4f4d-8c84-2189af5de76c"
+                "reference": "urn:uuid:1472072c-7e73-405c-a839-1d93750e3180"
               },
               {
-                "reference": "urn:uuid:f74ece12-b462-4c0c-8311-f98a2df065db"
+                "reference": "urn:uuid:ecd3f779-607b-4b4b-8a24-f98bfaf5f791"
               },
               {
-                "reference": "urn:uuid:9a013cf3-135d-4fb1-9091-d6a3919a8127"
+                "reference": "urn:uuid:ce062d96-bbfb-4e16-a846-c070a4e52118"
               },
               {
-                "reference": "urn:uuid:2e2b2cae-522f-402f-bdf5-ee0bccdd6000"
+                "reference": "urn:uuid:e1c4ca97-1048-4c90-9f05-b66dd37d5467"
               },
               {
-                "reference": "urn:uuid:3c4a6f35-bfa8-40ac-86cd-9d68a2bc2b83"
+                "reference": "urn:uuid:481892a3-40de-48d5-b456-db6422fc7349"
               }
             ]
           }
@@ -126,10 +106,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8",
+      "fullUrl": "urn:uuid:5abc2328-9129-4992-b1c0-16d774567ffd",
       "resource": {
         "resourceType": "Patient",
-        "id": "0625b942-21da-425d-93af-fb223c9d6ae8",
+        "id": "5abc2328-9129-4992-b1c0-16d774567ffd",
         "identifier": [
           {
             "system": "http://example.org/healthcardnumber",
@@ -186,10 +166,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:beeaaee3-06fc-407a-9b3b-af3218ae0b0f",
+      "fullUrl": "urn:uuid:a4822144-d219-49d7-93f6-aeb7a955dcca",
       "resource": {
         "resourceType": "AllergyIntolerance",
-        "id": "beeaaee3-06fc-407a-9b3b-af3218ae0b0f",
+        "id": "a4822144-d219-49d7-93f6-aeb7a955dcca",
         "clinicalStatus": {
           "coding": [
             {
@@ -206,7 +186,6 @@
             }
           ]
         },
-        "criticality": "high",
         "code": {
           "coding": [
             {
@@ -217,7 +196,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
+          "reference": "urn:uuid:5abc2328-9129-4992-b1c0-16d774567ffd"
         },
         "reaction": [
           {
@@ -238,10 +217,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:ebd9346e-41f4-4eac-bbc3-d8921dad1299",
+      "fullUrl": "urn:uuid:ef9d1d7f-13b5-4d94-9701-66f23565b9ef",
       "resource": {
         "resourceType": "AllergyIntolerance",
-        "id": "ebd9346e-41f4-4eac-bbc3-d8921dad1299",
+        "id": "ef9d1d7f-13b5-4d94-9701-66f23565b9ef",
         "clinicalStatus": {
           "coding": [
             {
@@ -258,7 +237,6 @@
             }
           ]
         },
-        "criticality": "high",
         "code": {
           "coding": [
             {
@@ -269,7 +247,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
+          "reference": "urn:uuid:5abc2328-9129-4992-b1c0-16d774567ffd"
         },
         "reaction": [
           {
@@ -290,48 +268,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:eea3a53a-16c2-46f1-9040-6ffabd871ea8",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "eea3a53a-16c2-46f1-9040-6ffabd871ea8",
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "13645005",
-              "display": "Osteoarthritis (disorder)"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:6155b8ce-22b0-457e-a70c-c7e49e54375b",
-      "resource": {
-        "resourceType": "Condition",
-        "id": "6155b8ce-22b0-457e-a70c-c7e49e54375b",
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "444814009",
-              "display": "Viral upper respiratory tract infection (disorder)"
-            }
-          ]
-        },
-        "subject": {
-          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:17fa111c-0afb-4d80-ad01-8fdd72b600ba",
+      "fullUrl": "urn:uuid:e42659b5-8f5a-44fb-aff2-f1d6f85ce1e4",
       "resource": {
         "resourceType": "MedicationStatement",
-        "id": "17fa111c-0afb-4d80-ad01-8fdd72b600ba",
+        "id": "e42659b5-8f5a-44fb-aff2-f1d6f85ce1e4",
         "status": "active",
         "medicationCodeableConcept": {
           "coding": [
@@ -343,15 +283,15 @@
           ]
         },
         "subject": {
-          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
+          "reference": "urn:uuid:5abc2328-9129-4992-b1c0-16d774567ffd"
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:f0f0db9b-6538-44ac-932a-6f4346f405eb",
+      "fullUrl": "urn:uuid:440ea1f8-aedb-4b58-923f-2c6054fa9ddd",
       "resource": {
         "resourceType": "MedicationStatement",
-        "id": "f0f0db9b-6538-44ac-932a-6f4346f405eb",
+        "id": "440ea1f8-aedb-4b58-923f-2c6054fa9ddd",
         "status": "active",
         "medicationCodeableConcept": {
           "coding": [
@@ -363,15 +303,15 @@
           ]
         },
         "subject": {
-          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
+          "reference": "urn:uuid:5abc2328-9129-4992-b1c0-16d774567ffd"
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:7b231e34-e281-4f4d-8c84-2189af5de76c",
+      "fullUrl": "urn:uuid:1472072c-7e73-405c-a839-1d93750e3180",
       "resource": {
         "resourceType": "Immunization",
-        "id": "7b231e34-e281-4f4d-8c84-2189af5de76c",
+        "id": "1472072c-7e73-405c-a839-1d93750e3180",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -383,7 +323,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
+          "reference": "urn:uuid:5abc2328-9129-4992-b1c0-16d774567ffd"
         },
         "occurrenceDateTime": "2020-11-06T00:00:00",
         "primarySource": true,
@@ -408,10 +348,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:f74ece12-b462-4c0c-8311-f98a2df065db",
+      "fullUrl": "urn:uuid:ecd3f779-607b-4b4b-8a24-f98bfaf5f791",
       "resource": {
         "resourceType": "Immunization",
-        "id": "f74ece12-b462-4c0c-8311-f98a2df065db",
+        "id": "ecd3f779-607b-4b4b-8a24-f98bfaf5f791",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -423,7 +363,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
+          "reference": "urn:uuid:5abc2328-9129-4992-b1c0-16d774567ffd"
         },
         "occurrenceDateTime": "2023-12-22T00:00:00",
         "primarySource": true,
@@ -448,10 +388,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:9a013cf3-135d-4fb1-9091-d6a3919a8127",
+      "fullUrl": "urn:uuid:ce062d96-bbfb-4e16-a846-c070a4e52118",
       "resource": {
         "resourceType": "Immunization",
-        "id": "9a013cf3-135d-4fb1-9091-d6a3919a8127",
+        "id": "ce062d96-bbfb-4e16-a846-c070a4e52118",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -463,7 +403,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
+          "reference": "urn:uuid:5abc2328-9129-4992-b1c0-16d774567ffd"
         },
         "occurrenceDateTime": "2021-08-10T00:00:00",
         "primarySource": true,
@@ -488,10 +428,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:2e2b2cae-522f-402f-bdf5-ee0bccdd6000",
+      "fullUrl": "urn:uuid:e1c4ca97-1048-4c90-9f05-b66dd37d5467",
       "resource": {
         "resourceType": "Immunization",
-        "id": "2e2b2cae-522f-402f-bdf5-ee0bccdd6000",
+        "id": "e1c4ca97-1048-4c90-9f05-b66dd37d5467",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -503,7 +443,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
+          "reference": "urn:uuid:5abc2328-9129-4992-b1c0-16d774567ffd"
         },
         "occurrenceDateTime": "2024-01-12T00:00:00",
         "primarySource": true,
@@ -528,10 +468,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:3c4a6f35-bfa8-40ac-86cd-9d68a2bc2b83",
+      "fullUrl": "urn:uuid:481892a3-40de-48d5-b456-db6422fc7349",
       "resource": {
         "resourceType": "Immunization",
-        "id": "3c4a6f35-bfa8-40ac-86cd-9d68a2bc2b83",
+        "id": "481892a3-40de-48d5-b456-db6422fc7349",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -543,7 +483,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:0625b942-21da-425d-93af-fb223c9d6ae8"
+          "reference": "urn:uuid:5abc2328-9129-4992-b1c0-16d774567ffd"
         },
         "occurrenceDateTime": "2024-09-16T00:00:00",
         "primarySource": true,

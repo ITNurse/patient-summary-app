@@ -31,12 +31,11 @@ def create_allergy_resources(allergies_df, hcn, patient_id):
         allergy = AllergyIntolerance(
             id=allergy_id,
             clinicalStatus=CodeableConcept(coding=[
-                Coding(system=ALLERGY_CLINICAL_SYSTEM, code="active")
+                Coding(system=ALLERGY_CLINICAL_SYSTEM, code=allergy_row["clinicalStatus"])
             ]),
             verificationStatus=CodeableConcept(coding=[
-                Coding(system=ALLERGY_VERIFICATION_SYSTEM, code="confirmed")
+                Coding(system=ALLERGY_VERIFICATION_SYSTEM, code=allergy_row["verificationStatus"])
             ]),
-            criticality=allergy_row["criticality"].replace(" ", "-").lower(),
             code=CodeableConcept(coding=[
                 Coding(
                     system=SNOMED_SYSTEM,
