@@ -6,13 +6,21 @@
 #Also mounts the hapi_data volume to the server's database directory
 docker run -d -p 8080:8080 --name hapi-fhir -v hapi_data:/hapi-fhir-jpaserver-start/db hapiproject/hapi:latest 
 
+#To check logs as server is starting
+docker logs -f hapi-fhir
+
 #To restart the server
 docker ps #Check running containers
+docker stop hapi-fhir
 docker rm hapi-fhir #if hapi-fhir container is already running, stop it
 docker volume rm hapi_data #Erases all saved FHIR data
+
 
 # Start HAPI FHIR Docker Container with Custom Config
 # (Runs the HAPI FHIR container on port 8080, mounts application.yaml config, sets SPRING_CONFIG_LOCATION so that the config file is recognized)
 docker run -d -p 8080:8080 --name hapi-fhir -v C:\Python\Wellness_Way\hapi-config:/configs -e SPRING_CONFIG_LOCATION=file:///configs/application.yaml hapiproject/hapi:latest
 
 ```
+
+Where I found the info for the Canadian Baseline and PS-CA Implementation Guides
+https://github.com/FHIR/ig-registry/blob/master/fhir-ig-list.json
