@@ -5,6 +5,7 @@ from fhir.resources.composition import Composition, CompositionSection
 from fhir.resources.codeableconcept import CodeableConcept
 from fhir.resources.coding import Coding
 from fhir.resources.reference import Reference
+from resources.profile_utils import add_meta_profile
 from config import LOINC_SYSTEM, ORGANIZATION_ID, ORGANIZATION_NAME
 
 
@@ -57,4 +58,4 @@ def create_composition_resource(patient_id, allergy_refs, condition_refs, medica
         section=sections
     )
 
-    return composition_id, json.loads(composition.json(by_alias=True))
+    return composition_id, add_meta_profile(json.loads(composition.json(by_alias=True)), "Composition")
