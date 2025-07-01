@@ -2,18 +2,19 @@ import json
 import os
 import requests
 
-FHIR_SERVER_URL = "http://localhost:8080/fhir"  # Change if needed
+# Use the HAPI FHIR public test server
+FHIR_SERVER_URL = "https://hapi.fhir.org/baseR4"
 
 def validate_bundle(bundle_path, hcn, index, total):
     """
     Validate a FHIR bundle using HAPI FHIR's $validate endpoint and save a JSON validation log.
-    
+
     Args:
         bundle_path (str): Path to the saved document bundle file.
         hcn (str): Health Card Number (used in filenames and logs).
         index (int): Patient index in loop.
         total (int): Total number of patients being processed.
-    
+
     Returns:
         bool: True if bundle is valid (no errors), False otherwise.
     """
