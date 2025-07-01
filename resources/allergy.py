@@ -5,6 +5,7 @@ from fhir.resources.coding import Coding
 from fhir.resources.reference import Reference
 from fhir.resources.annotation import Annotation
 from fhir.resources.fhirtypes import DateTime
+from resources.profile_utils import add_meta_profile
 
 from config import SNOMED_SYSTEM, ALLERGY_CLINICAL_SYSTEM, ALLERGY_VERIFICATION_SYSTEM
 
@@ -58,7 +59,7 @@ def create_allergy_resources(allergies_df, hcn, patient_id):
 
         allergy_entry = {
             "fullUrl": f"urn:uuid:{allergy_id}",
-            "resource": allergy.dict(by_alias=True),
+            "resource": add_meta_profile(allergy.dict(by_alias=True),"AllergyIntolerance"),
             "request": {
                 "method": "PUT",
                 "url": f"AllergyIntolerance/{allergy_id}"
