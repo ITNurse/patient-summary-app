@@ -3,6 +3,7 @@ from fhir.resources.condition import Condition
 from fhir.resources.codeableconcept import CodeableConcept
 from fhir.resources.coding import Coding
 from fhir.resources.reference import Reference
+from resources.profile_utils import add_meta_profile
 from config import SNOMED_SYSTEM
 
 
@@ -38,7 +39,7 @@ def create_condition_resources(conditions_df, hcn, patient_id):
 
         condition_entry = {
             "fullUrl": f"urn:uuid:{condition_id}",
-            "resource": condition.dict(by_alias=True),
+            "resource": add_meta_profile(condition.dict(by_alias=True), "Condition"),
             "request": {
                 "method": "PUT",
                 "url": f"Condition/{condition_id}"
