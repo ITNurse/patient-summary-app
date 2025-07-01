@@ -96,7 +96,7 @@ def main():
         sys.exit(1)
     print("✅ FHIR server connection successful")
     
-    # Load and validate data
+    # Load and validate csv data
     print("\n📁 Loading CSV data...")
     try:
         patients_df, conditions_df, medications_df, allergies_df, immunizations_df = load_csv_data()
