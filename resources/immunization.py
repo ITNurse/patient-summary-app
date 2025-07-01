@@ -5,6 +5,7 @@ from fhir.resources.immunization import Immunization
 from fhir.resources.codeableconcept import CodeableConcept
 from fhir.resources.coding import Coding
 from fhir.resources.reference import Reference
+from resources.profile_utils import add_meta_profile
 from config import SNOMED_SYSTEM
 
 
@@ -57,13 +58,13 @@ def create_immunization_resources(immunizations_df, hcn, patient_id):
         )
 
         immunization_entry = {
-            "fullUrl": f"urn:uuid:{immunization_id}",
-            "resource": json.loads(immunization.json(by_alias=True)),  # ✅ Handles datetime serialization
-            "request": {
-                "method": "PUT",
-                "url": f"Immunization/{immunization_id}"
-            }
+        "fullUrl": f"urn:uuid:{immunization_id}",
+        "resource": add_meta_profile(json.loads(immunization.json(by_alias=True)),"Immunization"),
+        "request": {
+            "method": "PUT",
+            "url": f"Immunization/{immunization_id}"
         }
+    }
 
         immunization_entries.append(immunization_entry)
 
