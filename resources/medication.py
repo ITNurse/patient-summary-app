@@ -3,7 +3,7 @@ from fhir.resources.medicationstatement import MedicationStatement
 from fhir.resources.codeableconcept import CodeableConcept
 from fhir.resources.coding import Coding
 from fhir.resources.reference import Reference
-
+from resources.profile_utils import add_meta_profile
 from config import MEDICATION_SYSTEM
 
 
@@ -40,7 +40,7 @@ def create_medication_resources(medications_df, hcn, patient_id):
 
         medication_entry = {
             "fullUrl": f"urn:uuid:{medication_id}",
-            "resource": medication.dict(by_alias=True),
+            "resource": add_meta_profile(medication.dict(by_alias=True), "MedicationStatement"),
             "request": {
                 "method": "PUT",
                 "url": f"MedicationStatement/{medication_id}"
