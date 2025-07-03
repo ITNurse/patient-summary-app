@@ -3,10 +3,10 @@
   "type": "document",
   "entry": [
     {
-      "fullUrl": "urn:uuid:5e181cf1-b4c3-40c7-bf8b-2ec179b3adcc",
+      "fullUrl": "urn:uuid:db0395ff-fb1d-4ba4-afbb-e861fe2b6c9e",
       "resource": {
         "resourceType": "Composition",
-        "id": "5e181cf1-b4c3-40c7-bf8b-2ec179b3adcc",
+        "id": "db0395ff-fb1d-4ba4-afbb-e861fe2b6c9e",
         "status": "final",
         "type": {
           "coding": [
@@ -18,18 +18,18 @@
           ]
         },
         "subject": {
-          "reference": "urn:uuid:70f25e0c-45d6-4c55-92d7-56a8547074cb"
+          "reference": "urn:uuid:7aea6975-044a-4db1-b8eb-77cf75c7c690"
         },
-        "date": "2025-07-01T16:14:47.556919+00:00",
+        "date": "2025-07-03T14:56:37.550404+00:00",
         "author": [
           {
-            "reference": "urn:uuid:psca-author-org",
+            "reference": "urn:uuid:53570ea3-0847-4b53-96c5-d694aa66e919",
             "display": "Wellness Way Hospital"
           }
         ],
         "title": "PS-CA Patient Summary",
         "custodian": {
-          "reference": "urn:uuid:psca-author-org",
+          "reference": "urn:uuid:53570ea3-0847-4b53-96c5-d694aa66e919",
           "display": "Wellness Way Hospital"
         },
         "section": [
@@ -46,10 +46,10 @@
             },
             "entry": [
               {
-                "reference": "urn:uuid:1456a261-cbdc-4b6d-b348-a3271bad255a"
+                "reference": "urn:uuid:27c5b043-fb55-4586-ae86-199fa253cf2d"
               },
               {
-                "reference": "urn:uuid:a15b4a4e-003d-4df9-9fc4-b3dbfbddbc75"
+                "reference": "urn:uuid:88148cb1-a759-4812-a895-cac3e9f662fd"
               }
             ]
           },
@@ -66,10 +66,10 @@
             },
             "entry": [
               {
-                "reference": "urn:uuid:fc0a7e7a-591e-4071-a19f-107124e3f706"
+                "reference": "urn:uuid:e86970a1-dbf4-471f-a76e-cece8cede39f"
               },
               {
-                "reference": "urn:uuid:22c4fa16-86ba-46a0-be99-135cb1624b4f"
+                "reference": "urn:uuid:34d696fa-535f-4782-9082-d8f153f7ad7c"
               }
             ]
           },
@@ -86,47 +86,42 @@
             },
             "entry": [
               {
-                "reference": "urn:uuid:cdebcfc6-1c0f-4e68-9947-a185ff1e5aa7"
+                "reference": "urn:uuid:facd7076-bd8f-42dc-9ce4-dd7911f8f83c"
               },
               {
-                "reference": "urn:uuid:c6a14482-a378-4bd0-a8f3-9c0d7a10540c"
+                "reference": "urn:uuid:12472075-791f-47ef-80d2-192188d91e22"
               },
               {
-                "reference": "urn:uuid:51654dfa-a348-40e5-84b7-6e27c02714e3"
+                "reference": "urn:uuid:bfc1cfe4-42a4-48c2-88f9-c31028df9990"
               },
               {
-                "reference": "urn:uuid:e2ca762d-e85c-4fa7-b917-435f5f7204a7"
+                "reference": "urn:uuid:72a9d5cb-69d5-4e68-993f-06b31fba71ee"
               },
               {
-                "reference": "urn:uuid:8a7628d5-f8b2-4c48-8828-0826d6add01d"
+                "reference": "urn:uuid:89abc0aa-3bf5-4a2c-b11b-e65b4a035a3a"
               },
               {
-                "reference": "urn:uuid:6de61b5c-defc-4c75-b811-c179f27ab71d"
+                "reference": "urn:uuid:46fad6c0-911f-4072-920d-5a2a03a61cc0"
               },
               {
-                "reference": "urn:uuid:11de35df-cfa8-4665-ac88-3c6f2c9cc802"
+                "reference": "urn:uuid:becc4068-e895-45b2-84b7-f74e68f616e5"
               },
               {
-                "reference": "urn:uuid:32ecd197-fbbf-4ea4-86e4-249cdf746ec5"
+                "reference": "urn:uuid:02b02aff-308d-4dee-8f5c-e5f0b0caa4c0"
               },
               {
-                "reference": "urn:uuid:f90ec19f-2e35-4662-a6f5-1721ac8e324b"
+                "reference": "urn:uuid:90bbdb35-0b4c-4915-8b51-4bc283fdf193"
               }
             ]
           }
-        ],
-        "meta": {
-          "profile": [
-            "http://fhir.infoway-inforoute.ca/io/psca/StructureDefinition/Composition-ps-ca"
-          ]
-        }
+        ]
       }
     },
     {
-      "fullUrl": "urn:uuid:70f25e0c-45d6-4c55-92d7-56a8547074cb",
+      "fullUrl": "urn:uuid:7aea6975-044a-4db1-b8eb-77cf75c7c690",
       "resource": {
         "resourceType": "Patient",
-        "id": "70f25e0c-45d6-4c55-92d7-56a8547074cb",
+        "id": "7aea6975-044a-4db1-b8eb-77cf75c7c690",
         "identifier": [
           {
             "system": "http://example.org/healthcardnumber",
@@ -171,32 +166,22 @@
             "contentType": "image/jpeg",
             "data": "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"
           }
-        ],
-        "meta": {
-          "profile": [
-            "http://fhir.infoway-inforoute.ca/io/psca/StructureDefinition/Patient-ps-ca"
-          ]
-        }
+        ]
       }
     },
     {
-      "fullUrl": "urn:uuid:psca-author-org",
+      "fullUrl": "urn:uuid:53570ea3-0847-4b53-96c5-d694aa66e919",
       "resource": {
         "resourceType": "Organization",
-        "id": "psca-author-org",
-        "name": "Wellness Way Hospital",
-        "meta": {
-          "profile": [
-            "http://fhir.infoway-inforoute.ca/io/psca/StructureDefinition/Organization-ps-ca"
-          ]
-        }
+        "id": "53570ea3-0847-4b53-96c5-d694aa66e919",
+        "name": "Wellness Way Hospital"
       }
     },
     {
-      "fullUrl": "urn:uuid:1456a261-cbdc-4b6d-b348-a3271bad255a",
+      "fullUrl": "urn:uuid:27c5b043-fb55-4586-ae86-199fa253cf2d",
       "resource": {
         "resourceType": "AllergyIntolerance",
-        "id": "1456a261-cbdc-4b6d-b348-a3271bad255a",
+        "id": "27c5b043-fb55-4586-ae86-199fa253cf2d",
         "clinicalStatus": {
           "coding": [
             {
@@ -223,7 +208,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:70f25e0c-45d6-4c55-92d7-56a8547074cb"
+          "reference": "urn:uuid:7aea6975-044a-4db1-b8eb-77cf75c7c690"
         },
         "reaction": [
           {
@@ -240,19 +225,14 @@
             ],
             "severity": "severe"
           }
-        ],
-        "meta": {
-          "profile": [
-            "http://fhir.infoway-inforoute.ca/io/psca/StructureDefinition/AllergyIntolerance-ps-ca"
-          ]
-        }
+        ]
       }
     },
     {
-      "fullUrl": "urn:uuid:a15b4a4e-003d-4df9-9fc4-b3dbfbddbc75",
+      "fullUrl": "urn:uuid:88148cb1-a759-4812-a895-cac3e9f662fd",
       "resource": {
         "resourceType": "AllergyIntolerance",
-        "id": "a15b4a4e-003d-4df9-9fc4-b3dbfbddbc75",
+        "id": "88148cb1-a759-4812-a895-cac3e9f662fd",
         "clinicalStatus": {
           "coding": [
             {
@@ -279,7 +259,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:70f25e0c-45d6-4c55-92d7-56a8547074cb"
+          "reference": "urn:uuid:7aea6975-044a-4db1-b8eb-77cf75c7c690"
         },
         "reaction": [
           {
@@ -296,19 +276,14 @@
             ],
             "severity": "mild"
           }
-        ],
-        "meta": {
-          "profile": [
-            "http://fhir.infoway-inforoute.ca/io/psca/StructureDefinition/AllergyIntolerance-ps-ca"
-          ]
-        }
+        ]
       }
     },
     {
-      "fullUrl": "urn:uuid:fc0a7e7a-591e-4071-a19f-107124e3f706",
+      "fullUrl": "urn:uuid:e86970a1-dbf4-471f-a76e-cece8cede39f",
       "resource": {
         "resourceType": "MedicationStatement",
-        "id": "fc0a7e7a-591e-4071-a19f-107124e3f706",
+        "id": "e86970a1-dbf4-471f-a76e-cece8cede39f",
         "status": "active",
         "medicationCodeableConcept": {
           "coding": [
@@ -320,20 +295,15 @@
           ]
         },
         "subject": {
-          "reference": "urn:uuid:70f25e0c-45d6-4c55-92d7-56a8547074cb"
-        },
-        "meta": {
-          "profile": [
-            "http://fhir.infoway-inforoute.ca/io/psca/StructureDefinition/MedicationStatement-ps-ca"
-          ]
+          "reference": "urn:uuid:7aea6975-044a-4db1-b8eb-77cf75c7c690"
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:22c4fa16-86ba-46a0-be99-135cb1624b4f",
+      "fullUrl": "urn:uuid:34d696fa-535f-4782-9082-d8f153f7ad7c",
       "resource": {
         "resourceType": "MedicationStatement",
-        "id": "22c4fa16-86ba-46a0-be99-135cb1624b4f",
+        "id": "34d696fa-535f-4782-9082-d8f153f7ad7c",
         "status": "active",
         "medicationCodeableConcept": {
           "coding": [
@@ -345,20 +315,15 @@
           ]
         },
         "subject": {
-          "reference": "urn:uuid:70f25e0c-45d6-4c55-92d7-56a8547074cb"
-        },
-        "meta": {
-          "profile": [
-            "http://fhir.infoway-inforoute.ca/io/psca/StructureDefinition/MedicationStatement-ps-ca"
-          ]
+          "reference": "urn:uuid:7aea6975-044a-4db1-b8eb-77cf75c7c690"
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:cdebcfc6-1c0f-4e68-9947-a185ff1e5aa7",
+      "fullUrl": "urn:uuid:facd7076-bd8f-42dc-9ce4-dd7911f8f83c",
       "resource": {
         "resourceType": "Immunization",
-        "id": "cdebcfc6-1c0f-4e68-9947-a185ff1e5aa7",
+        "id": "facd7076-bd8f-42dc-9ce4-dd7911f8f83c",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -370,7 +335,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:70f25e0c-45d6-4c55-92d7-56a8547074cb"
+          "reference": "urn:uuid:7aea6975-044a-4db1-b8eb-77cf75c7c690"
         },
         "occurrenceDateTime": "2024-10-02T00:00:00",
         "primarySource": true,
@@ -391,19 +356,14 @@
               "display": "Intramuscular: IM"
             }
           ]
-        },
-        "meta": {
-          "profile": [
-            "http://fhir.infoway-inforoute.ca/io/psca/StructureDefinition/Immunization-ps-ca"
-          ]
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:c6a14482-a378-4bd0-a8f3-9c0d7a10540c",
+      "fullUrl": "urn:uuid:12472075-791f-47ef-80d2-192188d91e22",
       "resource": {
         "resourceType": "Immunization",
-        "id": "c6a14482-a378-4bd0-a8f3-9c0d7a10540c",
+        "id": "12472075-791f-47ef-80d2-192188d91e22",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -415,7 +375,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:70f25e0c-45d6-4c55-92d7-56a8547074cb"
+          "reference": "urn:uuid:7aea6975-044a-4db1-b8eb-77cf75c7c690"
         },
         "occurrenceDateTime": "2022-12-13T00:00:00",
         "primarySource": true,
@@ -436,19 +396,14 @@
               "display": "Intramuscular: IM"
             }
           ]
-        },
-        "meta": {
-          "profile": [
-            "http://fhir.infoway-inforoute.ca/io/psca/StructureDefinition/Immunization-ps-ca"
-          ]
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:51654dfa-a348-40e5-84b7-6e27c02714e3",
+      "fullUrl": "urn:uuid:bfc1cfe4-42a4-48c2-88f9-c31028df9990",
       "resource": {
         "resourceType": "Immunization",
-        "id": "51654dfa-a348-40e5-84b7-6e27c02714e3",
+        "id": "bfc1cfe4-42a4-48c2-88f9-c31028df9990",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -460,7 +415,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:70f25e0c-45d6-4c55-92d7-56a8547074cb"
+          "reference": "urn:uuid:7aea6975-044a-4db1-b8eb-77cf75c7c690"
         },
         "occurrenceDateTime": "2024-09-14T00:00:00",
         "primarySource": true,
@@ -481,19 +436,14 @@
               "display": "Intramuscular: IM"
             }
           ]
-        },
-        "meta": {
-          "profile": [
-            "http://fhir.infoway-inforoute.ca/io/psca/StructureDefinition/Immunization-ps-ca"
-          ]
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:e2ca762d-e85c-4fa7-b917-435f5f7204a7",
+      "fullUrl": "urn:uuid:72a9d5cb-69d5-4e68-993f-06b31fba71ee",
       "resource": {
         "resourceType": "Immunization",
-        "id": "e2ca762d-e85c-4fa7-b917-435f5f7204a7",
+        "id": "72a9d5cb-69d5-4e68-993f-06b31fba71ee",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -505,7 +455,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:70f25e0c-45d6-4c55-92d7-56a8547074cb"
+          "reference": "urn:uuid:7aea6975-044a-4db1-b8eb-77cf75c7c690"
         },
         "occurrenceDateTime": "2022-03-18T00:00:00",
         "primarySource": true,
@@ -526,19 +476,14 @@
               "display": "Intramuscular: IM"
             }
           ]
-        },
-        "meta": {
-          "profile": [
-            "http://fhir.infoway-inforoute.ca/io/psca/StructureDefinition/Immunization-ps-ca"
-          ]
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:8a7628d5-f8b2-4c48-8828-0826d6add01d",
+      "fullUrl": "urn:uuid:89abc0aa-3bf5-4a2c-b11b-e65b4a035a3a",
       "resource": {
         "resourceType": "Immunization",
-        "id": "8a7628d5-f8b2-4c48-8828-0826d6add01d",
+        "id": "89abc0aa-3bf5-4a2c-b11b-e65b4a035a3a",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -550,7 +495,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:70f25e0c-45d6-4c55-92d7-56a8547074cb"
+          "reference": "urn:uuid:7aea6975-044a-4db1-b8eb-77cf75c7c690"
         },
         "occurrenceDateTime": "2024-08-02T00:00:00",
         "primarySource": true,
@@ -571,19 +516,14 @@
               "display": "Intramuscular: IM"
             }
           ]
-        },
-        "meta": {
-          "profile": [
-            "http://fhir.infoway-inforoute.ca/io/psca/StructureDefinition/Immunization-ps-ca"
-          ]
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:6de61b5c-defc-4c75-b811-c179f27ab71d",
+      "fullUrl": "urn:uuid:46fad6c0-911f-4072-920d-5a2a03a61cc0",
       "resource": {
         "resourceType": "Immunization",
-        "id": "6de61b5c-defc-4c75-b811-c179f27ab71d",
+        "id": "46fad6c0-911f-4072-920d-5a2a03a61cc0",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -595,7 +535,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:70f25e0c-45d6-4c55-92d7-56a8547074cb"
+          "reference": "urn:uuid:7aea6975-044a-4db1-b8eb-77cf75c7c690"
         },
         "occurrenceDateTime": "2024-11-05T00:00:00",
         "primarySource": true,
@@ -616,19 +556,14 @@
               "display": "Intramuscular: IM"
             }
           ]
-        },
-        "meta": {
-          "profile": [
-            "http://fhir.infoway-inforoute.ca/io/psca/StructureDefinition/Immunization-ps-ca"
-          ]
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:11de35df-cfa8-4665-ac88-3c6f2c9cc802",
+      "fullUrl": "urn:uuid:becc4068-e895-45b2-84b7-f74e68f616e5",
       "resource": {
         "resourceType": "Immunization",
-        "id": "11de35df-cfa8-4665-ac88-3c6f2c9cc802",
+        "id": "becc4068-e895-45b2-84b7-f74e68f616e5",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -640,7 +575,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:70f25e0c-45d6-4c55-92d7-56a8547074cb"
+          "reference": "urn:uuid:7aea6975-044a-4db1-b8eb-77cf75c7c690"
         },
         "occurrenceDateTime": "2020-08-30T00:00:00",
         "primarySource": true,
@@ -661,19 +596,14 @@
               "display": "Intramuscular: IM"
             }
           ]
-        },
-        "meta": {
-          "profile": [
-            "http://fhir.infoway-inforoute.ca/io/psca/StructureDefinition/Immunization-ps-ca"
-          ]
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:32ecd197-fbbf-4ea4-86e4-249cdf746ec5",
+      "fullUrl": "urn:uuid:02b02aff-308d-4dee-8f5c-e5f0b0caa4c0",
       "resource": {
         "resourceType": "Immunization",
-        "id": "32ecd197-fbbf-4ea4-86e4-249cdf746ec5",
+        "id": "02b02aff-308d-4dee-8f5c-e5f0b0caa4c0",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -685,7 +615,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:70f25e0c-45d6-4c55-92d7-56a8547074cb"
+          "reference": "urn:uuid:7aea6975-044a-4db1-b8eb-77cf75c7c690"
         },
         "occurrenceDateTime": "2023-10-08T00:00:00",
         "primarySource": true,
@@ -706,19 +636,14 @@
               "display": "Intramuscular: IM"
             }
           ]
-        },
-        "meta": {
-          "profile": [
-            "http://fhir.infoway-inforoute.ca/io/psca/StructureDefinition/Immunization-ps-ca"
-          ]
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:f90ec19f-2e35-4662-a6f5-1721ac8e324b",
+      "fullUrl": "urn:uuid:90bbdb35-0b4c-4915-8b51-4bc283fdf193",
       "resource": {
         "resourceType": "Immunization",
-        "id": "f90ec19f-2e35-4662-a6f5-1721ac8e324b",
+        "id": "90bbdb35-0b4c-4915-8b51-4bc283fdf193",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -730,7 +655,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:70f25e0c-45d6-4c55-92d7-56a8547074cb"
+          "reference": "urn:uuid:7aea6975-044a-4db1-b8eb-77cf75c7c690"
         },
         "occurrenceDateTime": "2021-08-09T00:00:00",
         "primarySource": true,
@@ -750,11 +675,6 @@
               "code": "78421000",
               "display": "Intramuscular: IM"
             }
-          ]
-        },
-        "meta": {
-          "profile": [
-            "http://fhir.infoway-inforoute.ca/io/psca/StructureDefinition/Immunization-ps-ca"
           ]
         }
       }

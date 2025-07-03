@@ -1,4 +1,5 @@
 import os
+import uuid
 
 # ============================
 # File Paths Configuration
@@ -13,8 +14,8 @@ ALLERGY_CSV = os.path.join(BASE_DIR, "data", "PS-CA_AllergyIntolerance.csv")
 IMMUNIZATION_CSV = os.path.join(BASE_DIR, "data", "PS-CA_Immunization.csv")
 
 # Output paths
-LOG_OUTPUT_PATH = os.path.join(BASE_DIR, "fhir_upload_bundle_log_document.csv")
 OUTPUT_DIR = os.path.join(BASE_DIR, "document_bundles")
+LOG_OUTPUT_PATH = os.path.join(OUTPUT_DIR, "upload_log.csv")
 
 # ============================
 # FHIR Server Configuration
@@ -25,7 +26,7 @@ FHIR_HEADERS = {"Content-Type": "application/fhir+json"}
 # ============================
 # Organization Configuration
 # ============================
-ORGANIZATION_ID = "psca-author-org"
+ORGANIZATION_ID =  str(uuid.uuid4())
 ORGANIZATION_NAME = "Wellness Way Hospital"
 
 # ============================

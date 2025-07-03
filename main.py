@@ -8,15 +8,11 @@ import pandas as pd
 import sys
 from pathlib import Path
 
-
-
 # Import our modules
 from data_loader import load_csv_data, validate_data
 from fhir_client import upload_bundle_to_server, test_server_connection
 from bundle_builder import create_transaction_bundle, create_document_bundle, save_document_bundle
-from validate_bundle import validate_bundle
-from summarize_validation_logs import summarize_validation_logs, flatten_validation_issues
-from config import LOG_OUTPUT_PATH
+from config import LOG_OUTPUT_PATH, FHIR_SERVER_URL
 
 # Import resource modules
 from resources.patient import create_patient_resource
@@ -64,11 +60,6 @@ def process_patient(patient_row, conditions_df, medications_df, allergies_df, im
     composition_id, composition_resource = create_composition_resource(
         patient_id, allergy_refs, condition_refs, medication_refs, immunization_refs
     )
-
-    # Combine all entries
-    all_resource_entries = (
-        condition_entries + medication_entries + allergy_entries + immunization_entries
-    )
     
     # Create bundles
     transaction_bundle = create_transaction_bundle(
@@ -90,72 +81,95 @@ def main():
     print("=" * 50)
     
     # Test server connection
-    print("🔗 Testing FHIR server connection...")
+    print("Testing FHIR server connection...")
     if not test_server_connection():
-        print("❌ Cannot connect to FHIR server. Please check server is running.")        
+        print("Cannot connect to FHIR server. Please check server is running.")        
         sys.exit(1)
-    print("✅ FHIR server connection successful")
+    print("FHIR server connection successful")
     
     # Load and validate csv data
-    print("\n📁 Loading CSV data...")
+    print("\nLoading CSV data...")
     try:
         patients_df, conditions_df, medications_df, allergies_df, immunizations_df = load_csv_data()
     except Exception as e:
-        print(f"❌ Exception during CSV loading: {e}")
+        print(f"Exception during CSV loading: {e}")
         sys.exit(1)
     if not validate_data(patients_df, conditions_df, medications_df, allergies_df, immunizations_df):
-        print("❌ Data validation failed. Please check the structure and contents of your CSV files.")
+        print("CSV file data validation failed. Please check the structure and contents of your CSV files.")
         sys.exit(1)
     
     # Process each patient
-    print(f"\n🔄 Processing {len(patients_df)} patients...")
+    print(f"\nProcessing {len(patients_df)} patients...")
     log = []
     
     for index, patient_row in patients_df.iterrows():
+        print(f"\n[Patient {index+1}/{len(patients_df)}]")
         try:
             # Process patient
             transaction_bundle, document_bundle, hcn = process_patient(
                 patient_row, conditions_df, medications_df, allergies_df, immunizations_df
             )
-            
+
             # Save document bundle to file
-            bundle_path = save_document_bundle(document_bundle, hcn)
-            
-            # Upload transaction bundle to server
-            success, status_code, response_text = upload_bundle_to_server(transaction_bundle)
-            
-            if success:
+            save_success, bundle_path = save_document_bundle(document_bundle, hcn)
+
+            if save_success:
                 log.append({
                     "HealthCard": hcn,
-                    "Action": "Bundle Upload",
+                    "Action": "Save Bundle",
                     "Status": "Success",
                     "FilePath": bundle_path
                 })
-                print(f"✅ [{index+1}/{len(patients_df)}] Uploaded bundle for patient {hcn}")
+                print(f"✅ Created and saved bundle for patient {hcn} to {bundle_path}")
             else:
                 log.append({
                     "HealthCard": hcn,
-                    "Action": "Bundle Upload",
-                    "Status": f"Failed ({status_code})",
-                    "FilePath": bundle_path
+                    "Action": "Save Bundle",
+                    "Status": "Failed",
+                    "FilePath": ""
                 })
-                print(f"❌ [{index+1}/{len(patients_df)}] Failed to upload bundle for patient {hcn}: {status_code}")
-                if status_code != 0:  # Don't print response for connection errors
+                print(f"❌ Failed to save bundle for patient {hcn}")
+                continue  # Skip upload if save failed
+
+            # Upload transaction bundle to server
+            success, status_code, response_text = upload_bundle_to_server(transaction_bundle)
+
+            if success:
+                log.append({
+                    "HealthCard": hcn,
+                    "Action": "Upload Bundle",
+                    "Status": f"Success ({status_code})",
+                })
+                print(f"✅ Uploaded bundle for patient {hcn} to {FHIR_SERVER_URL}")
+            else:
+                log.append({
+                    "HealthCard": hcn,
+                    "Action": "Upload Bundle",
+                    "Status": f"Failed ({status_code})"
+                })
+                print(f"❌ Failed to upload bundle for patient {hcn}: {status_code}")
+                if status_code != 0:
                     print(f"   Response: {response_text[:200]}...")
-                    
+
         except Exception as e:
             log.append({
                 "HealthCard": patient_row.get("identifier", "Unknown"),
-                "Action": "Bundle Upload",
-                "Status": f"Error: {str(e)[:100]}",
-                "FilePath": ""
+                "Action": "Process Patient",
+                "Status": f"Error: {str(e)[:100]}"
             })
-            print(f"❌ [{index+1}/{len(patients_df)}] Error processing patient: {e}")
+            print(f"Error processing patient: {e}")
+
     
     # Save log
-    print(f"\n📄 Saving upload log...")
-    summarize_validation_logs()
-    flatten_validation_issues()
+    print(f"\nSaving upload log to {LOG_OUTPUT_PATH}...")
+
+    try:
+        df_log = pd.DataFrame(log)
+        df_log.to_csv(LOG_OUTPUT_PATH, index=False)
+        print("✅ Upload log saved successfully.")
+    except Exception as e:
+        print(f"❌ Failed to save upload log: {e}")
+
 
 if __name__ == "__main__":
     main()

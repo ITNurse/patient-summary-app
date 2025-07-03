@@ -8,7 +8,6 @@ from fhir.resources.identifier import Identifier
 from fhir.resources.contactpoint import ContactPoint
 from fhir.resources.address import Address
 from fhir.resources.attachment import Attachment
-from resources.profile_utils import add_meta_profile
 from config import HEALTH_CARD_SYSTEM
 
 
@@ -76,4 +75,4 @@ def create_patient_resource(patient_row):
         photo=photo
     )
 
-    return patient_id, add_meta_profile(json.loads(patient.json(by_alias=True)), "Patient")
+    return patient_id, json.loads(patient.json(by_alias=True))
