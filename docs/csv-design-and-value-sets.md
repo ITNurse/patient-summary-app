@@ -78,16 +78,18 @@ The fields selected for the PS-CA_Composition.csv file correspond to those marke
 ![Screenshot of PS-CA_Condition.csv file](images/ps-ca_patient.jpg)
 
 ## Condition Resource
-| Field                                  | Requirement | Notes                                                                                                                                                                                                                                                                                     |
-|----------------------------------------|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Condition.subject.reference` (string) | Required    | A reference to a location at which the other resource is found.                                                                                                                                                                                                                           |
-| `Condition.code` (CodeableConceptPSCA) | Required    | Preferred Binding: **ClinicalFindingCode**
+### Condition Profile Fields and Bindings
+
+| Field                                     | Requirement | Notes                                                                                                                                                                                                                                                                                     |
+|------------------------------------------|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Condition.subject.reference` (string)   | Required    | A reference to a location at which the other resource is found.                                                                                                                                                                                                                           |
+| `Condition.code` (CodeableConceptPSCA)   | Required    | Binding: **ClinicalFindingCode** (preferred)  
 This subset was defined using the intensional definition of `404684003 | Clinical finding (finding)` against the substrate SNOMED CT Canadian Edition.  
 This resource is an informative value set; a normative subset containing the expanded values can be found on Canada Health Infoway's Terminology Gateway.  
-https://fhir.infoway-inforoute.ca/ValueSet/clinicalfindingcode |
-| `Condition.code.coding.system` (uri)   | Required |                                                                                                                                                                                                                                                                                           |
-| `Condition.code.coding.code` (code)    | Required |                                                                                                                                                                                                                                                                                           |
-| `Condition.code.coding.display` (string) |  Required|                                                                                                                                                                                                                                                                                           |
+[https://fhir.infoway-inforoute.ca/ValueSet/clinicalfindingcode](https://fhir.infoway-inforoute.ca/ValueSet/clinicalfindingcode) |
+| `Condition.code.coding.system` (uri)     | Not required|                                                                                                                                                                                                                                                                                           |
+| `Condition.code.coding.code` (code)      | Not required|                                                                                                                                                                                                                                                                                           |
+| `Condition.code.coding.display` (string) | Not required|                                                                                                                                                                                                                                                                                           |
 
 
 ## PS-CA_AllergyIntolerance.csv
