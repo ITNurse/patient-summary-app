@@ -19,7 +19,7 @@ In an effort to make this project a more well-rounded educational resource, the 
 - [ImmunizationPSCA](https://simplifier.net/ps-ca-r1/immunizationpsca)
 - [OrganizationCACore](https://simplifier.net/ca-core/organization-ca-core)
 
-## Composition.csv
+## PS-CA_Composition.csv
 [Enter screenshot here]
 ### PS-CA Composition Resource Specification
 The fields selected for the PS-CA_Composition.csv file correspond to those marked as Required in the PS-CA Composition profile. The values entered conform to the expected data types and, where applicable, to the specified value set bindings. Details are outlined in the table below:
@@ -39,14 +39,14 @@ The fields selected for the PS-CA_Composition.csv file correspond to those marke
 | `Composition.section:sectionProblems.title`             | `string`       | Required    |                                                                                                                                                                    |
 | `Composition.section:sectionProblems.code`              | `CodeableConcept` | Required | RequiredBinding: [DocumentSectionCodes](https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879)                                                             |
 
-## Organization.csv
+## PS-CA_Organization.csv
 [Enter screenshot here]
 
 ### Organization Resource
 [Enter table here]
 
-## Patient.csv
-[Enter screenshot here]
+## PS-CA_Patient.csv
+![Screenshot of PS-CA_Patient.csv file](images/ps-ca_patient.jpg)
 
 ### Patient Resource
 The fields selected for the PS-CA_Composition.csv file correspond to those marked as Required in the PS-CA Patient profile, along with a few others to round out example for educational purposes. The values entered conform to the expected data types and, where applicable, to the specified value set bindings. Details are outlined in the table below:
@@ -68,7 +68,7 @@ The fields selected for the PS-CA_Composition.csv file correspond to those marke
 | `Patient.identifier.system`                 | `uri`          | Required     |                                                                                                                                                    |
 | `Patient.identifier.value`                  | `string`       | Required     |                                                                                                                                                    |
 
-## PS-Medication.csv
+## PS-CA_Medication.csv
 [Enter screenshot here]
 
 ## Medication Resource
