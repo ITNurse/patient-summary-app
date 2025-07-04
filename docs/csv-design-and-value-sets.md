@@ -86,7 +86,8 @@ The fields selected for the PS-CA_Composition.csv file correspond to those marke
 | `Condition.code`                         | `date`         | Required     | Preferred Binding: Clinical Finding Code <br>  This subset was defined using the intensional definition of 404684003 | Clinical finding (finding) against the substrate SNOMED CT Canadian Edition. <br> This resource is an informative value set; a normative subset containing the expanded values can be found on Canada Health Infoway's Terminology Gateway. <br> [https://fhir.infoway-inforoute.ca/ValueSet/clinicalfindingcode](https://fhir.infoway-inforoute.ca/ValueSet/clinicalfindingcode) |
 | `Condition.code.coding.system`          | `uri`         | Required |                                                                                                                                                                                             |
 | `Condition.code.coding.code`            | `code`         | Required |                                                                                                                                                                                             |
-| `Condition.code.coding.display`             | `string`       | Required |                                                                                                                                                                                        
+| `Condition.code.coding.display`             | `string`       | Required |                                                                                                                                                                                        |
+
 
 ## PS-CA_AllergyIntolerance.csv
 [Enter screenshot here]
