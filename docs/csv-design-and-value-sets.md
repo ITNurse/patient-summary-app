@@ -4,7 +4,7 @@ This section identifies the rationale behind why the csv files used as the base 
 ## PS-CA Implementation Guide
 The Trial Implementation version (v1.0.0 TI) of the [PS-CA implementation guide](https://simplifier.net/guide/pan-canadian-patient-summary-v1.0-ti-fhir-implementation-guide?version=1.0.0) and the associated resource definitions on simplifier.net were used as the basis for all design decisions. The PS-CA is closely aligned with the [International Patient Summary (IPS) Implementation Guide](https://hl7.org/fhir/uv/ips/), which indicates that every IPS must include the following sections: Header (subject, authorh, attester, custodian), Medication Summary, Allergies & Intolerances, and Problem List.
 
-![Screenshot of IPS composition showing required sections as: Header (subject, author, attester, custodian), Medication Summary, Allergies & Intolerances, and Problem List](docs/images/patient-summary-viewer-screenshot.jpg)
+![Screenshot of IPS composition showing required sections as: Header (subject, author, attester, custodian), Medication Summary, Allergies & Intolerances, and Problem List](images/patient-summary-viewer-screenshot.jpg)
 docs\images\ips-composition.png
 
 Therefore, the following FHIR resources are required for the PS-CA:
@@ -21,7 +21,6 @@ In an effort to make this project a more well-rounded educational resource, the 
 - [OrganizationCACore](https://simplifier.net/ca-core/organization-ca-core)
 
 ## Composition
-### CompositionPSCA Profile Fields and Bindings
 
 | Field                                                   | Type           | Requirement | Notes                                                                                                                                                              |
 |---------------------------------------------------------|----------------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
