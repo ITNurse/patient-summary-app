@@ -35,9 +35,9 @@ The fields selected for the PS-CA_Composition.csv file correspond to those marke
 | `Composition.section:sectionMedications.title`          | `string`       | Required    |                                                                                                                                                                    |
 | `Composition.section:sectionMedications.code`           | `CodeableConcept` | Required | Required Binding: [DocumentSectionCodes](https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879)                                                             |
 | `Composition.section:sectionAllergies.title`            | `string`       | Required    |                                                                                                                                                                    |
-| `Composition.section:sectionAllergies.code`             | `CodeableConcept` | Required | RequiredBinding: [DocumentSectionCodes](https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879)                                                             |
+| `Composition.section:sectionAllergies.code`             | `CodeableConcept` | Required | Required Binding: [DocumentSectionCodes](https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879)                                                             |
 | `Composition.section:sectionProblems.title`             | `string`       | Required    |                                                                                                                                                                    |
-| `Composition.section:sectionProblems.code`              | `CodeableConcept` | Required | RequiredBinding: [DocumentSectionCodes](https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879)                                                             |
+| `Composition.section:sectionProblems.code`              | `CodeableConcept` | Required | Required Binding: [DocumentSectionCodes](https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879)                                                             |
 
 ## PS-CA_Organization.csv
 [Enter screenshot here]
@@ -80,13 +80,13 @@ The fields selected for the PS-CA_Composition.csv file correspond to those marke
 ## Condition Resource
 ### Condition Profile Fields and Bindings
 
-| Field                                        | Type           | Requirement  | Notes      |
-|---------------------------------------------|----------------|--------------|-------------|
+| Field                                        | Type           | Requirement  | Notes                                                                                                                                                                            |
+|---------------------------------------------|----------------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `Condition.subject.reference`            | `string`       | Required     | A reference to a location at which the other resource is found  |
 | `Condition.code`                         | `date`         | Required     | Preferred Binding: Clinical Finding Code <br>  This subset was defined using the intensional definition of `404684003 | Clinical finding (finding)` against the substrate SNOMED CT Canadian Edition. <br> This resource is an informative value set; a normative subset containing the expanded values can be found on Canada Health Infoway's Terminology Gateway. <br> [https://fhir.infoway-inforoute.ca/ValueSet/clinicalfindingcode](https://fhir.infoway-inforoute.ca/ValueSet/clinicalfindingcode) |
-| `Condition.code.coding.system`          | `uri`         | Required | |
-| `Condition.code.coding.code`            | `code`         | Required | |
-| `Condition.code.coding.display`             | `string`       | Required |  |
+| `Condition.code.coding.system`          | `uri`         | Required |                                                                                                                                                                                             |
+| `Condition.code.coding.code`            | `code`         | Required |                                                                                                                                                                                             |
+| `Condition.code.coding.display`             | `string`       | Required |                                                                                                                                                                                        
 
 ## PS-CA_AllergyIntolerance.csv
 [Enter screenshot here]
