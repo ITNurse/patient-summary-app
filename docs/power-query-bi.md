@@ -58,6 +58,47 @@ in
 ### Conditions
 ### Immunizations
 ### Medications
+```bash
+let
+    // Step 1: Retrieve MedicationStatement resources from the local FHIR server
+    Source = Json.Document(Web.Contents("http://localhost:8080/fhir/MedicationStatement?_count=100&_summary=false")),
+    MedicationEntries = Source[entry],
+
+    // Step 2: Convert the list of entries into a table and expand the main columns
+    ToTable = Table.FromList(MedicationEntries, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+    ExpandedEntry = Table.ExpandRecordColumn(ToTable, "Column1", {"fullUrl", "resource", "search"}, {"FullUrl", "Resource", "Search"}),
+
+    // Step 3: Expand fields from the resource object
+    ExpandedResource = Table.ExpandRecordColumn(ExpandedEntry, "Resource", {"resourceType", "id", "meta", "status", "medicationCodeableConcept", "subject"}, {"ResourceType", "ID", "Meta", "Status", "MedicationCodeableConcept", "Subject"}),
+
+    // Step 4: Expand metadata to access versioning and timestamp info
+    ExpandedMeta = Table.ExpandRecordColumn(ExpandedResource, "Meta", {"versionId", "lastUpdated", "source"}, {"VersionId", "LastUpdated", "Source"}),
+
+    // Step 5: Expand the medication codeable concept to access codings
+    ExpandedMedicationConcept = Table.ExpandRecordColumn(ExpandedMeta, "MedicationCodeableConcept", {"coding"}, {"Coding"}),
+
+    // Step 6: Unpack the list of codings into individual rows (in case of multiple codings per medication)
+    ExpandedCodingList = Table.ExpandListColumn(ExpandedMedicationConcept, "Coding"),
+
+    // Step 7: Expand each coding object to get system, code, and display text
+    ExpandedCoding = Table.ExpandRecordColumn(ExpandedCodingList, "Coding", {"system", "code", "display"}, {"System", "MedicationCode", "MedicationDisplay"}),
+
+    // Step 8: Extract patient ID from subject.reference (e.g. "Patient/123" becomes "123")
+    ExpandedSubject = Table.ExpandRecordColumn(ExpandedCoding, "Subject", {"reference"}, {"PatientReference"}),
+    ExtractedPatientID = Table.ReplaceValue(ExpandedSubject, "Patient/", "", Replacer.ReplaceText, {"PatientReference"}),
+
+    // Step 9: Rename columns for clarity
+    RenamedPatientID = Table.RenameColumns(ExtractedPatientID, {{"PatientReference", "PatientID"}}),
+
+    // Step 10: Keep only the necessary columns
+    SelectedColumns = Table.SelectColumns(RenamedPatientID, {"ID", "PatientID", "MedicationCode", "MedicationDisplay", "Status", "System"}),
+
+    // Step 11: Final column renaming for clarity
+    FinalOutput = Table.RenameColumns(SelectedColumns, {{"ID", "MedicationStatementID"}})
+in
+    FinalOutput
+```
+
 ### Allergies
 ```bash
 let
