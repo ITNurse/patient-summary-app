@@ -19,8 +19,12 @@ In an effort to make this project a more well-rounded educational resource, the 
 - [ImmunizationPSCA](https://simplifier.net/ps-ca-r1/immunizationpsca)
 - [OrganizationCACore](https://simplifier.net/ca-core/organization-ca-core)
 
+## Special Note: 
+Because the patient data is created as CSV files, any values within those files that contain commas (i.e. a condition display name) will cause issues. To get around this, all text fields should be wrapped in double quotes.
+
 ## PS-CA_Composition.csv
 [Enter screenshot here]
+
 ### PS-CA Composition Resource Specification
 The fields selected for the PS-CA_Composition.csv file correspond to those marked as Required in the PS-CA Composition profile. The values entered conform to the expected data types and, where applicable, to the specified value set bindings. Details are outlined in the table below:
 | Field                                                   | Type           | Requirement | Notes                                                                                                                                                              |
