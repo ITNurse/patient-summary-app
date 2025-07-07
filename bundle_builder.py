@@ -3,7 +3,7 @@ import os
 from config import OUTPUT_DIR
 
 
-def create_transaction_bundle(patient_id, patient_resource, org_id, org_resource,
+def create_transaction_bundle(patient_id, patient_resource, org_id, org_resource, composition_resource,
                               allergy_entries, condition_entries, medication_entries, immunization_entries):
     """
     Create a FHIR transaction bundle for Patient, Organization, AllergyIntolerance, Condition, MedicationStatement, and Immunization resources.
@@ -24,24 +24,23 @@ def create_transaction_bundle(patient_id, patient_resource, org_id, org_resource
     transaction_bundle = {
         "resourceType": "Bundle",
         "type": "transaction",
-        "entry": [
-            {
-                "fullUrl": f"urn:uuid:{patient_id}",
-                "resource": patient_resource,
-                "request": {
-                    "method": "PUT",
-                    "url": f"Patient/{patient_id}"
-                }
-            },
-            {
-                "fullUrl": f"urn:uuid:{org_id}",
-                "resource": org_resource,
-                "request": {
-                    "method": "PUT",
-                    "url": f"Organization/{org_id}"
-                }
-            }
-        ] + allergy_entries + condition_entries + medication_entries + immunization_entries
+    "entry": [
+        {
+            "fullUrl": f"urn:uuid:{patient_id}",
+            "resource": patient_resource,
+            "request": {"method": "PUT", "url": f"Patient/{patient_id}"}
+        },
+        {
+            "fullUrl": f"urn:uuid:{org_id}",
+            "resource": org_resource,
+            "request": {"method": "PUT", "url": f"Organization/{org_id}"}
+        },
+        {
+            "fullUrl": f"urn:uuid:{composition_resource['id']}",
+            "resource": composition_resource,
+            "request": {"method": "PUT", "url": f"Composition/{composition_resource['id']}"}
+        }
+    ] + allergy_entries + condition_entries + medication_entries + immunization_entries
     }
 
     return transaction_bundle
