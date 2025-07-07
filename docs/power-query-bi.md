@@ -4,7 +4,7 @@ The Microsoft Power BI desktop application (with built-in Power Query) was used 
 ## Web Connector vs FHIR Connector
 
 ## Unpacking json to tabular format
-
+The m code used in Power Query to connect to each FHIR endpoint and unpack the json data into tabular format is below.
 ### Patients
 ```bash
 let
@@ -59,6 +59,42 @@ in
 ### Immunizations
 ### Medications
 ### Allergies
+```bash
+let
+    // Step 1: Load JSON data from the FHIR AllergyIntolerance endpoint
+    Source = Json.Document(Web.Contents("http://localhost:8080/fhir/AllergyIntolerance?_count=100")),
+    AllergyEntries = Source[entry],
+
+    // Step 2: Convert list of entries into a table and expand top-level entry fields
+    AllergyList = Table.FromList(AllergyEntries, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+    ExpandedEntry = Table.ExpandRecordColumn(AllergyList, "Column1", {"fullUrl", "resource"}, {"FullUrl", "Resource"}),
+
+    // Step 3: Expand key fields from the resource
+    ExpandedResource = Table.ExpandRecordColumn(ExpandedEntry, "Resource", {"id", "patient", "code", "reaction", "criticality"}, {"ID", "Patient", "Substance", "Reaction", "Criticality"}),
+
+    // Step 4: Extract patient ID from the Patient reference (e.g. "Patient/12345" -> "12345")
+    ExtractedPatientRef = Table.AddColumn(ExpandedResource, "PatientID", each Text.AfterDelimiter([Patient][reference], "/")),
+
+    // Step 5: Expand allergen substance coding to get code and display
+    SubstanceCoding = Table.ExpandRecordColumn(ExtractedPatientRef, "Substance", {"coding"}, {"Coding"}),
+    ExpandedCodingList = Table.ExpandListColumn(SubstanceCoding, "Coding"),
+    ExpandedCoding = Table.ExpandRecordColumn(ExpandedCodingList, "Coding", {"code", "display"}, {"AllergenCode", "AllergenDisplay"}),
+
+    // Step 6: Expand the first reaction and its manifestations (if any)
+    FirstReactionOnly = Table.TransformColumns(ExpandedCoding, {{"Reaction", each if List.IsEmpty(_) then null else _{0}}}),
+    ExpandedReaction = Table.ExpandRecordColumn(FirstReactionOnly, "Reaction", {"manifestation", "severity"}, {"ManifestationList", "Severity"}),
+
+    // Step 7: Expand first manifestation coding to get reaction display text
+    FirstManifestation = Table.TransformColumns(ExpandedReaction, {{"ManifestationList", each if List.IsEmpty(_) then null else _{0}}}),
+    ExpandedManifestation = Table.ExpandRecordColumn(FirstManifestation, "ManifestationList", {"coding"}, {"ManifestationCoding"}),
+    ManifestationCodeList = Table.ExpandListColumn(ExpandedManifestation, "ManifestationCoding"),
+    ExpandedManifestationCode = Table.ExpandRecordColumn(ManifestationCodeList, "ManifestationCoding", {"code", "display"}, {"ReactionCode", "ReactionDisplay"}),
+
+    // Step 8: Keep only final columns of interest
+    FinalOutput = Table.SelectColumns(ExpandedManifestationCode, {"ID", "PatientID", "AllergenCode", "AllergenDisplay", "ReactionCode", "ReactionDisplay", "Severity", "Criticality"})
+in
+    FinalOutput
+```
 
 ## Relating tables
 
