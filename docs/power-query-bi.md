@@ -5,6 +5,85 @@ The Microsoft Power BI desktop application (with built-in Power Query) was used 
 
 ## Unpacking json to tabular format
 The m code used in Power Query to connect to each FHIR endpoint and unpack the json data into tabular format is below.
+
+### Composition
+``` bash
+let
+    // Step 1: Retrieve Composition resources from local FHIR server
+    Source = Json.Document(Web.Contents("http://localhost:8080/fhir/Composition?_count=50&_summary=false")),
+    CompositionEntries = Source[entry],
+
+    // Step 2: Convert entry list to table and expand the top-level fields
+    ToTable = Table.FromList(CompositionEntries, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+    ExpandedTopLevel = Table.ExpandRecordColumn(ToTable, "Column1", {"fullUrl", "resource"}, {"FullUrl", "Resource"}),
+
+    // Step 3: Expand key fields from the Composition resource
+    ExpandedResource = Table.ExpandRecordColumn(ExpandedTopLevel, "Resource", {
+        "resourceType", "id", "meta", "status", "type", "subject", 
+        "date", "author", "title", "custodian", "section"
+    }, {
+        "ResourceType", "CompositionID", "Meta", "Status", "Type", "Subject", 
+        "Date", "Author", "Title", "Custodian", "Sections"
+    }),
+
+    // Step 4: Expand author and subject references
+    ExpandedAuthor = Table.ExpandListColumn(ExpandedResource, "Author"),
+    ExpandedSubject = Table.ExpandRecordColumn(ExpandedAuthor, "Subject", {"reference"}, {"PatientReference"}),
+
+    // Step 5: Expand custodian organization info
+    ExpandedCustodian = Table.ExpandRecordColumn(ExpandedSubject, "Custodian", {"reference", "display"}, {"OrganizationRef", "OrganizationName"}),
+
+    // Step 6: Expand section data
+    ExpandedSectionList = Table.ExpandListColumn(ExpandedCustodian, "Sections"),
+    ExpandedSectionDetails = Table.ExpandRecordColumn(ExpandedSectionList, "Sections", {"title", "code", "entry"}, {"SectionTitle", "SectionCode", "SectionEntries"}),
+
+    // Step 7: Expand author reference inside section
+    ExpandedSectionAuthor = Table.ExpandRecordColumn(ExpandedSectionDetails, "Author", {"reference", "display"}, {"AuthorRef", "AuthorDisplay"}),
+
+    // Step 8: Expand type coding for document type
+    ExpandedTypeCoding = Table.ExpandRecordColumn(ExpandedSectionAuthor, "Type", {"coding"}, {"TypeCoding"}),
+    ExpandedTypeCodingList = Table.ExpandListColumn(ExpandedTypeCoding, "TypeCoding"),
+    ExpandedTypeDetails = Table.ExpandRecordColumn(ExpandedTypeCodingList, "TypeCoding", {"system", "code", "display"}, {"TypeSystem", "TypeCode", "TypeDisplay"}),
+
+    // Step 9: Expand metadata
+    ExpandedMeta = Table.ExpandRecordColumn(ExpandedTypeDetails, "Meta", {"versionId", "lastUpdated", "source"}, {"VersionId", "LastUpdated", "Source"}),
+
+    // Step 10: Expand section entries
+    ExpandedSectionEntryList = Table.ExpandListColumn(ExpandedMeta, "SectionEntries"),
+    ExpandedSectionEntry = Table.ExpandRecordColumn(ExpandedSectionEntryList, "SectionEntries", {"reference"}, {"SectionEntryRef"}),
+
+    // Step 11: Expand section code info
+    ExpandedSectionCode = Table.ExpandRecordColumn(ExpandedSectionEntry, "SectionCode", {"coding"}, {"SectionCoding"}),
+    ExpandedSectionCodingList = Table.ExpandListColumn(ExpandedSectionCode, "SectionCoding"),
+    ExpandedSectionCoding = Table.ExpandRecordColumn(ExpandedSectionCodingList, "SectionCoding", {"system", "code", "display"}, {"SectionCodeSystem", "SectionCodeValue", "SectionDisplay"}),
+
+    // Step 12: Keep only relevant columns for report use
+    SelectedColumns = Table.SelectColumns(ExpandedSectionCoding, {
+        "FullUrl", "ResourceType", "CompositionID", "VersionId", "LastUpdated", "Status",
+        "TypeSystem", "TypeCode", "TypeDisplay", "PatientReference", 
+        "AuthorRef", "AuthorDisplay", "OrganizationRef", "OrganizationName", 
+        "SectionTitle", "SectionCodeValue", "SectionDisplay"
+    }),
+
+    // Step 13: Clean up column names
+    RenamedColumns = Table.RenameColumns(SelectedColumns, {
+        {"PatientReference", "PatientID"},
+        {"OrganizationRef", "OrganizationID"},
+        {"SectionCodeValue", "SectionCode"},
+        {"SectionDisplay", "SectionName"},
+        {"TypeDisplay", "DocumentType"},
+        {"SectionTitle", "SectionTitleText"}
+    }),
+
+    // Step 14: Clean up Patient ID format
+    CleanedPatientID = Table.ReplaceValue(RenamedColumns, "Patient/", "", Replacer.ReplaceText, {"PatientID"}),
+
+    // Step 15: Convert lastUpdated timestamp to datetime type
+    ConvertedTypes = Table.TransformColumnTypes(CleanedPatientID, {{"LastUpdated", type datetime}})
+in
+    ConvertedTypes
+```
+
 ### Patients
 ```bash
 let
@@ -56,6 +135,38 @@ in
 
 ```
 ### Conditions
+```bash
+let
+    // Step 1: Load and extract Condition resources from the local FHIR server
+    Source = Json.Document(Web.Contents("http://localhost:8080/fhir/Condition?_count=100&_summary=false")),
+    ConditionEntries = Source[entry],
+
+    // Step 2: Convert JSON list to table and extract relevant fields
+    ToTable = Table.FromList(ConditionEntries, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+    ExpandedTopLevel = Table.ExpandRecordColumn(ToTable, "Column1", {"fullUrl", "resource"}, {"FullUrl", "Resource"}),
+
+    // Step 3: Expand top-level fields from the Condition resource
+    ExpandedResource = Table.ExpandRecordColumn(ExpandedTopLevel, "Resource", {"id", "subject", "code"}, {"ConditionID", "Subject", "Code"}),
+
+    // Step 4: Extract Patient ID from the subject reference field
+    ExtractedPatientID = Table.AddColumn(ExpandedResource, "PatientID", each Text.AfterDelimiter([Subject][reference], "/")),
+
+    // Step 5: Expand SNOMED CT condition coding
+    ExpandedCode = Table.ExpandRecordColumn(ExtractedPatientID, "Code", {"coding"}, {"CodingList"}),
+    ExpandedCodingList = Table.ExpandListColumn(ExpandedCode, "CodingList"),
+    ExpandedCoding = Table.ExpandRecordColumn(ExpandedCodingList, "CodingList", {"code", "display"}, {"ConditionCode", "ConditionDisplay"}),
+
+    // Step 6: Clean up columns and formatting
+    SelectedColumns = Table.SelectColumns(ExpandedCoding, {"ConditionID", "PatientID", "ConditionCode", "ConditionDisplay"}),
+    RemovedDisorderSuffix = Table.ReplaceValue(SelectedColumns, " (disorder)", "", Replacer.ReplaceText, {"ConditionDisplay"}),
+
+    // Step 7: Add a fixed column for the code system used
+    AddCodeSystem = Table.AddColumn(RemovedDisorderSuffix, "CodeSystem", each "http://snomed.info/sct")
+
+in
+    AddCodeSystem
+```
+
 ### Immunizations
 ```bash
 let

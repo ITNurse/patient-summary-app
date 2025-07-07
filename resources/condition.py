@@ -19,7 +19,7 @@ def create_condition_resources(conditions_df, hcn, patient_id):
     Returns:
         list: List of condition resource entries for bundle
     """
-    condition_entries = []
+    condition_entries = []    
     patient_conditions = conditions_df[conditions_df["patient.identifier"] == hcn]
 
     for _, condition_row in patient_conditions.iterrows():
