@@ -81,6 +81,6 @@ def validate_data(patients_df, conditions_df, medications_df, allergies_df, immu
     print(f"   - {len(conditions_df)} conditions")
     print(f"   - {len(medications_df)} medications")
     print(f"   - {len(allergies_df)} allergies")
-    print(f"   - {len(immunizations_df)} allergies")
+    print(f"   - {len(immunizations_df)} immunizations")
     
     return True
