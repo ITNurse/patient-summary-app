@@ -57,6 +57,56 @@ in
 ```
 ### Conditions
 ### Immunizations
+```bash
+let
+    // Step 1: Retrieve Immunization resources from the local FHIR server
+    Source = Json.Document(Web.Contents("http://localhost:8080/fhir/Immunization?_count=100&_summary=false")),
+    ImmunizationEntries = Source[entry],
+
+    // Step 2: Convert the list of entries to a table and expand top-level columns
+    ToTable = Table.FromList(ImmunizationEntries, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+    ExpandedEntry = Table.ExpandRecordColumn(ToTable, "Column1", {"fullUrl", "resource", "search"}, {"FullUrl", "Resource", "Search"}),
+
+    // Step 3: Expand fields from the Immunization resource
+    ExpandedResource = Table.ExpandRecordColumn(ExpandedEntry, "Resource", {
+        "resourceType", "id", "meta", "status", "vaccineCode", 
+        "patient", "occurrenceDateTime", "primarySource", "site", "route"
+    }, {
+        "ResourceType", "ImmunizationID", "Meta", "Status", "VaccineCode", 
+        "Patient", "Date", "PrimarySource", "Site", "Route"
+    }),
+
+    // Step 4: Expand vaccine code details
+    ExpandedVaccineCode = Table.ExpandRecordColumn(ExpandedResource, "VaccineCode", {"coding"}, {"VaccineCoding"}),
+    ExpandedVaccineCodingList = Table.ExpandListColumn(ExpandedVaccineCode, "VaccineCoding"),
+    ExpandedVaccineCoding = Table.ExpandRecordColumn(ExpandedVaccineCodingList, "VaccineCoding", {"system", "code", "display"}, {"VaccineCodeSystem", "VaccineCode", "Vaccine"}),
+
+    // Step 5: Extract Patient ID from the patient reference
+    ExpandedPatient = Table.ExpandRecordColumn(ExpandedVaccineCoding, "Patient", {"reference"}, {"PatientReference"}),
+    ExtractedPatientID = Table.ReplaceValue(ExpandedPatient, "Patient/", "", Replacer.ReplaceText, {"PatientReference"}),
+
+    // Step 6: Expand site details (e.g. injection site)
+    ExpandedSite = Table.ExpandRecordColumn(ExtractedPatientID, "Site", {"coding"}, {"SiteCoding"}),
+    ExpandedSiteList = Table.ExpandListColumn(ExpandedSite, "SiteCoding"),
+    ExpandedSiteCoding = Table.ExpandRecordColumn(ExpandedSiteList, "SiteCoding", {"system", "code", "display"}, {"SiteCodeSystem", "SiteCode", "Site"}),
+
+    // Step 7: Expand route details (e.g. intramuscular)
+    ExpandedRoute = Table.ExpandRecordColumn(ExpandedSiteCoding, "Route", {"coding"}, {"RouteCoding"}),
+    ExpandedRouteList = Table.ExpandListColumn(ExpandedRoute, "RouteCoding"),
+    ExpandedRouteCoding = Table.ExpandRecordColumn(ExpandedRouteList, "RouteCoding", {"system", "code", "display"}, {"RouteCodeSystem", "RouteCode", "Route"}),
+
+    // Step 8: Remove unneeded metadata fields
+    RemovedExtras = Table.RemoveColumns(ExpandedRouteCoding, {"Meta", "ResourceType", "PrimarySource"}),
+
+    // Step 9: Rename columns for clarity
+    RenamedColumns = Table.RenameColumns(RemovedExtras, {
+        {"PatientReference", "PatientID"},
+        {"Date", "OccurrenceDate"}
+    })
+in
+    RenamedColumns
+```
+
 ### Medications
 ```bash
 let
