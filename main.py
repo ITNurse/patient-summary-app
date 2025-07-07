@@ -63,7 +63,7 @@ def process_patient(patient_row, conditions_df, medications_df, allergies_df, im
     
     # Create bundles
     transaction_bundle = create_transaction_bundle(
-        patient_id, patient_resource, org_id, org_resource,
+        patient_id, patient_resource, org_id, org_resource, composition_resource,
         allergy_entries, condition_entries, medication_entries, immunization_entries
     )
     
@@ -72,7 +72,7 @@ def process_patient(patient_row, conditions_df, medications_df, allergies_df, im
         allergy_entries, condition_entries, medication_entries, immunization_entries
     )
     
-    return transaction_bundle, document_bundle, hcn
+    return transaction_bundle, document_bundle, hcn, composition_resource
 
 
 def main():
@@ -106,7 +106,7 @@ def main():
         print(f"\n[Patient {index+1}/{len(patients_df)}]")
         try:
             # Process patient
-            transaction_bundle, document_bundle, hcn = process_patient(
+            transaction_bundle, document_bundle, hcn, composition_resource = process_patient(
                 patient_row, conditions_df, medications_df, allergies_df, immunizations_df
             )
 
