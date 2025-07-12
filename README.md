@@ -62,6 +62,9 @@ Wait a couple of minutes for the server to start, then open a web browser and na
 ```bash
 python main.py
 ```
+You should see the following output:
+
+![Screenshot of command line output from running the application](docs/images/command_line.jpg)
 
 ### 6. Output
 
@@ -75,6 +78,7 @@ To open and refresh the report:
 
 1. Open `powerbi/patient-summary-report.pbix` in Power BI Desktop.
 2. Click **Refresh** to load data directly from your running FHIR server.
+3. You should see the synthetic data from the csv files used to created the patient summaries.
 
 ## License
 MIT
