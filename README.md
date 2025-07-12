@@ -2,7 +2,7 @@
 
 This project generates synthetic HL7 FHIR-based patient summaries aligned with the Pan-Canadian Patient Summary (PS-CA) standard. It posts them to a HAPI FHIR server, which is used as the data source for a Patient Viewer dashboard built with Microsoft Power BI.
 
-![Screenshot of Patient Viewer dashboard built with Microsoft Power BI](docs/images/patient-summary-viewer-screenshot.jpg)
+![GIF demo of Patient Viewer dashboard built with Microsoft Power BI](docs/images/demo.gif)
 
 ## Features
 - Creates FHIR Patient Summary Bundles based on synthetic patient data aligned with PS-CA value sets
@@ -64,7 +64,7 @@ python main.py
 ```
 You should see the following output:
 
-![Screenshot of command line output from running the application](docs/images/command_line.jpg)
+![Screenshot of command line output from running the application](docs/images/hapi-fhir-localhost.jpg)
 
 ### 6. Output
 
@@ -91,3 +91,6 @@ MIT
 - [How the Python App Works](docs/python-pipeline.md)
 - [Using Power Query and Power BI](docs/power-query-bi.md)
 
+
+
+[def]: docs/images/command_line.jpg
