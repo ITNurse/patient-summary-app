@@ -3,10 +3,10 @@
   "type": "document",
   "entry": [
     {
-      "fullUrl": "urn:uuid:fe291938-b900-449c-b574-e4bfc0540166",
+      "fullUrl": "urn:uuid:72cf77db-0c66-486d-90af-01a5307907a2",
       "resource": {
         "resourceType": "Composition",
-        "id": "fe291938-b900-449c-b574-e4bfc0540166",
+        "id": "72cf77db-0c66-486d-90af-01a5307907a2",
         "status": "final",
         "type": {
           "coding": [
@@ -18,18 +18,18 @@
           ]
         },
         "subject": {
-          "reference": "urn:uuid:37b9756a-c442-4703-910f-75e05c42413d"
+          "reference": "urn:uuid:8633d889-ee83-408c-b459-28857eeade50"
         },
-        "date": "2025-07-03T14:56:37.489071+00:00",
+        "date": "2025-07-12T13:00:05.465425+00:00",
         "author": [
           {
-            "reference": "urn:uuid:53570ea3-0847-4b53-96c5-d694aa66e919",
+            "reference": "urn:uuid:fb0d063e-a6e6-45d9-8b1c-1688e73793a6",
             "display": "Wellness Way Hospital"
           }
         ],
         "title": "PS-CA Patient Summary",
         "custodian": {
-          "reference": "urn:uuid:53570ea3-0847-4b53-96c5-d694aa66e919",
+          "reference": "urn:uuid:fb0d063e-a6e6-45d9-8b1c-1688e73793a6",
           "display": "Wellness Way Hospital"
         },
         "section": [
@@ -46,10 +46,36 @@
             },
             "entry": [
               {
-                "reference": "urn:uuid:0c1af809-95f9-430c-a6fb-f7d56b19a954"
+                "reference": "urn:uuid:fb20b627-7cfa-4f99-896b-81d85b81da28"
               },
               {
-                "reference": "urn:uuid:c3fdd4d8-eb14-4fbc-bfa2-e06745625b16"
+                "reference": "urn:uuid:62928f93-ac42-4e24-b55c-f3e87c4029ca"
+              }
+            ]
+          },
+          {
+            "title": "Problems",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11450-4",
+                  "display": "Problem List - Reported"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:5e5fa69d-7b2e-449e-aa1c-24b940e12528"
+              },
+              {
+                "reference": "urn:uuid:75934263-1a20-4089-a2f7-5732e3c1ff64"
+              },
+              {
+                "reference": "urn:uuid:bc65b0f6-1b07-4dd2-a6f8-317dcf43042c"
+              },
+              {
+                "reference": "urn:uuid:acce5778-9ed9-4f09-9227-838d651aff54"
               }
             ]
           },
@@ -66,10 +92,10 @@
             },
             "entry": [
               {
-                "reference": "urn:uuid:3da02f92-0e9f-4484-b177-46f0ef475b35"
+                "reference": "urn:uuid:60b55dab-3bd3-474d-ad25-670eba868e95"
               },
               {
-                "reference": "urn:uuid:a42d5445-5156-4fdd-8527-b3d30924d4bf"
+                "reference": "urn:uuid:cf842919-174a-4770-b9bd-d184b365a7ef"
               }
             ]
           },
@@ -86,19 +112,19 @@
             },
             "entry": [
               {
-                "reference": "urn:uuid:0daa4ece-b49d-420a-a7dd-c6d8b5cc3933"
+                "reference": "urn:uuid:d352827b-95d5-4b78-a3f4-08b0c52f0b63"
               },
               {
-                "reference": "urn:uuid:db8ebd83-e465-41b0-b9d0-e689f8cfa755"
+                "reference": "urn:uuid:14c60a92-5231-4165-887d-82d1926aa234"
               },
               {
-                "reference": "urn:uuid:aa569fa0-fc36-44e3-9d8b-53911d9eee2a"
+                "reference": "urn:uuid:771bdb6d-b05e-4ab4-b0f9-f7cd49426ee4"
               },
               {
-                "reference": "urn:uuid:8932b263-65f2-4447-b689-beb80ae646da"
+                "reference": "urn:uuid:2f0cae83-6734-4a0d-a7a2-21f6b1cbcc5f"
               },
               {
-                "reference": "urn:uuid:d43b4d5b-b01f-4cfe-a05a-ff23fbff581b"
+                "reference": "urn:uuid:000630bb-b1c2-42f4-9fc4-19277de565bf"
               }
             ]
           }
@@ -106,10 +132,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:37b9756a-c442-4703-910f-75e05c42413d",
+      "fullUrl": "urn:uuid:8633d889-ee83-408c-b459-28857eeade50",
       "resource": {
         "resourceType": "Patient",
-        "id": "37b9756a-c442-4703-910f-75e05c42413d",
+        "id": "8633d889-ee83-408c-b459-28857eeade50",
         "identifier": [
           {
             "system": "http://example.org/healthcardnumber",
@@ -158,18 +184,18 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:53570ea3-0847-4b53-96c5-d694aa66e919",
+      "fullUrl": "urn:uuid:fb0d063e-a6e6-45d9-8b1c-1688e73793a6",
       "resource": {
         "resourceType": "Organization",
-        "id": "53570ea3-0847-4b53-96c5-d694aa66e919",
+        "id": "fb0d063e-a6e6-45d9-8b1c-1688e73793a6",
         "name": "Wellness Way Hospital"
       }
     },
     {
-      "fullUrl": "urn:uuid:0c1af809-95f9-430c-a6fb-f7d56b19a954",
+      "fullUrl": "urn:uuid:fb20b627-7cfa-4f99-896b-81d85b81da28",
       "resource": {
         "resourceType": "AllergyIntolerance",
-        "id": "0c1af809-95f9-430c-a6fb-f7d56b19a954",
+        "id": "fb20b627-7cfa-4f99-896b-81d85b81da28",
         "clinicalStatus": {
           "coding": [
             {
@@ -196,7 +222,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:37b9756a-c442-4703-910f-75e05c42413d"
+          "reference": "urn:uuid:8633d889-ee83-408c-b459-28857eeade50"
         },
         "reaction": [
           {
@@ -217,10 +243,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:c3fdd4d8-eb14-4fbc-bfa2-e06745625b16",
+      "fullUrl": "urn:uuid:62928f93-ac42-4e24-b55c-f3e87c4029ca",
       "resource": {
         "resourceType": "AllergyIntolerance",
-        "id": "c3fdd4d8-eb14-4fbc-bfa2-e06745625b16",
+        "id": "62928f93-ac42-4e24-b55c-f3e87c4029ca",
         "clinicalStatus": {
           "coding": [
             {
@@ -247,7 +273,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:37b9756a-c442-4703-910f-75e05c42413d"
+          "reference": "urn:uuid:8633d889-ee83-408c-b459-28857eeade50"
         },
         "reaction": [
           {
@@ -268,10 +294,86 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:3da02f92-0e9f-4484-b177-46f0ef475b35",
+      "fullUrl": "urn:uuid:5e5fa69d-7b2e-449e-aa1c-24b940e12528",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "5e5fa69d-7b2e-449e-aa1c-24b940e12528",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "13645005",
+              "display": "Chronic obstructuve pulmonary disease (disorder)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:8633d889-ee83-408c-b459-28857eeade50"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:75934263-1a20-4089-a2f7-5732e3c1ff64",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "75934263-1a20-4089-a2f7-5732e3c1ff64",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444814009",
+              "display": "Viral sinusitis (disorder)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:8633d889-ee83-408c-b459-28857eeade50"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:bc65b0f6-1b07-4dd2-a6f8-317dcf43042c",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "bc65b0f6-1b07-4dd2-a6f8-317dcf43042c",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "279039007",
+              "display": "Low back pain (disorder)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:8633d889-ee83-408c-b459-28857eeade50"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:acce5778-9ed9-4f09-9227-838d651aff54",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "acce5778-9ed9-4f09-9227-838d651aff54",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "42741900",
+              "display": "Transformed migraine (disorder)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:8633d889-ee83-408c-b459-28857eeade50"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:60b55dab-3bd3-474d-ad25-670eba868e95",
       "resource": {
         "resourceType": "MedicationStatement",
-        "id": "3da02f92-0e9f-4484-b177-46f0ef475b35",
+        "id": "60b55dab-3bd3-474d-ad25-670eba868e95",
         "status": "active",
         "medicationCodeableConcept": {
           "coding": [
@@ -283,15 +385,15 @@
           ]
         },
         "subject": {
-          "reference": "urn:uuid:37b9756a-c442-4703-910f-75e05c42413d"
+          "reference": "urn:uuid:8633d889-ee83-408c-b459-28857eeade50"
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:a42d5445-5156-4fdd-8527-b3d30924d4bf",
+      "fullUrl": "urn:uuid:cf842919-174a-4770-b9bd-d184b365a7ef",
       "resource": {
         "resourceType": "MedicationStatement",
-        "id": "a42d5445-5156-4fdd-8527-b3d30924d4bf",
+        "id": "cf842919-174a-4770-b9bd-d184b365a7ef",
         "status": "active",
         "medicationCodeableConcept": {
           "coding": [
@@ -303,15 +405,15 @@
           ]
         },
         "subject": {
-          "reference": "urn:uuid:37b9756a-c442-4703-910f-75e05c42413d"
+          "reference": "urn:uuid:8633d889-ee83-408c-b459-28857eeade50"
         }
       }
     },
     {
-      "fullUrl": "urn:uuid:0daa4ece-b49d-420a-a7dd-c6d8b5cc3933",
+      "fullUrl": "urn:uuid:d352827b-95d5-4b78-a3f4-08b0c52f0b63",
       "resource": {
         "resourceType": "Immunization",
-        "id": "0daa4ece-b49d-420a-a7dd-c6d8b5cc3933",
+        "id": "d352827b-95d5-4b78-a3f4-08b0c52f0b63",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -323,7 +425,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:37b9756a-c442-4703-910f-75e05c42413d"
+          "reference": "urn:uuid:8633d889-ee83-408c-b459-28857eeade50"
         },
         "occurrenceDateTime": "2020-11-06T00:00:00",
         "primarySource": true,
@@ -348,10 +450,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:db8ebd83-e465-41b0-b9d0-e689f8cfa755",
+      "fullUrl": "urn:uuid:14c60a92-5231-4165-887d-82d1926aa234",
       "resource": {
         "resourceType": "Immunization",
-        "id": "db8ebd83-e465-41b0-b9d0-e689f8cfa755",
+        "id": "14c60a92-5231-4165-887d-82d1926aa234",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -363,7 +465,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:37b9756a-c442-4703-910f-75e05c42413d"
+          "reference": "urn:uuid:8633d889-ee83-408c-b459-28857eeade50"
         },
         "occurrenceDateTime": "2023-12-22T00:00:00",
         "primarySource": true,
@@ -388,10 +490,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:aa569fa0-fc36-44e3-9d8b-53911d9eee2a",
+      "fullUrl": "urn:uuid:771bdb6d-b05e-4ab4-b0f9-f7cd49426ee4",
       "resource": {
         "resourceType": "Immunization",
-        "id": "aa569fa0-fc36-44e3-9d8b-53911d9eee2a",
+        "id": "771bdb6d-b05e-4ab4-b0f9-f7cd49426ee4",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -403,7 +505,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:37b9756a-c442-4703-910f-75e05c42413d"
+          "reference": "urn:uuid:8633d889-ee83-408c-b459-28857eeade50"
         },
         "occurrenceDateTime": "2021-08-10T00:00:00",
         "primarySource": true,
@@ -428,10 +530,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:8932b263-65f2-4447-b689-beb80ae646da",
+      "fullUrl": "urn:uuid:2f0cae83-6734-4a0d-a7a2-21f6b1cbcc5f",
       "resource": {
         "resourceType": "Immunization",
-        "id": "8932b263-65f2-4447-b689-beb80ae646da",
+        "id": "2f0cae83-6734-4a0d-a7a2-21f6b1cbcc5f",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -443,7 +545,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:37b9756a-c442-4703-910f-75e05c42413d"
+          "reference": "urn:uuid:8633d889-ee83-408c-b459-28857eeade50"
         },
         "occurrenceDateTime": "2024-01-12T00:00:00",
         "primarySource": true,
@@ -468,10 +570,10 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:d43b4d5b-b01f-4cfe-a05a-ff23fbff581b",
+      "fullUrl": "urn:uuid:000630bb-b1c2-42f4-9fc4-19277de565bf",
       "resource": {
         "resourceType": "Immunization",
-        "id": "d43b4d5b-b01f-4cfe-a05a-ff23fbff581b",
+        "id": "000630bb-b1c2-42f4-9fc4-19277de565bf",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -483,7 +585,7 @@
           ]
         },
         "patient": {
-          "reference": "urn:uuid:37b9756a-c442-4703-910f-75e05c42413d"
+          "reference": "urn:uuid:8633d889-ee83-408c-b459-28857eeade50"
         },
         "occurrenceDateTime": "2024-09-16T00:00:00",
         "primarySource": true,
