@@ -6,8 +6,9 @@ This project generates synthetic HL7 FHIR-based patient summaries aligned with t
 
 ## Features
 - Creates FHIR Patient Summary Bundles based on synthetic patient data aligned with PS-CA value sets
+- Runs HAPI FHIR server image using Docker
 - Posts bundles to HAPI FHIR server
-- Connects to connects to HAPI FHIR server using Power Query in Microsoft Power BI, unpacks .json into tables, and visualizes the data.
+- Connects to HAPI FHIR server using Power Query in Microsoft Power BI, unpacks .json into tables, and visualizes the data.
 
 ## Requirements
 - Python 3.x
@@ -74,9 +75,6 @@ To open and refresh the report:
 
 1. Open `powerbi/patient-summary-report.pbix` in Power BI Desktop.
 2. Click **Refresh** to load data directly from your running FHIR server.
-3. If prompted, select **Web** as the data source type and ensure the FHIR server (e.g., `http://localhost:8080/fhir`) is running.
-
-> **Note:** Some fields (e.g., `identifier`) may not appear correctly if you're connecting to a summary endpoint. Connect directly to each resource endpoint for full access.
 
 ## License
 MIT
