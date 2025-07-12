@@ -2,7 +2,7 @@
 
 This project generates synthetic HL7 FHIR-based patient summaries aligned with the Pan-Canadian Patient Summary (PS-CA) standard. It posts them to a HAPI FHIR server, which is used as the data source for a Patient Viewer dashboard built with Microsoft Power BI.
 
-![GIF demo of Patient Viewer dashboard built with Microsoft Power BI](docs/images/demo.gif)
+![GIF demo of Patient Viewer dashboard built with Microsoft Power BI](docs/images/Demo.gif)
 
 ## Features
 - Creates FHIR Patient Summary Bundles based on synthetic patient data aligned with PS-CA value sets
