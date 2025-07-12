@@ -40,7 +40,7 @@ def validate_data(patients_df, conditions_df, medications_df, allergies_df, immu
     Returns:
         bool: True if data appears valid
     """
-    required_patient_cols = ["identifier", "name.family", "name.given", "gender", "birthDate"]
+    required_patient_cols = ["identifier","name.given","name.family","gender","birthDate","AddressLine","City","Province","PostalCode","Country","PhoneNumber","Email","profile.photo"]
     required_condition_cols = ["patient.identifier", "condition.code", "condition.display"]
     required_medication_cols = ["patient.identifier", "medication.code", "medication.display"]
     required_allergy_cols = ["patient.identifier", "substance.code", "substance.display", "criticality", "severity"]
