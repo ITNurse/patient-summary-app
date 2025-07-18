@@ -23,12 +23,13 @@ from resources.allergy import create_allergy_resources, get_allergy_references
 from resources.composition import create_composition_resource
 from resources.immunization import create_immunization_resources, get_immunization_references
 
-def process_patient(patient_row, conditions_df, medications_df, allergies_df, immunizations_df):
+def process_patient(patient_row, compositions_df, conditions_df, medications_df, allergies_df, immunizations_df):
     """
     Process a single patient and create all associated resources.
     
     Args:
         patient_row: Patient data row
+        compositions_df: Composition DataFrame
         conditions_df: Conditions DataFrame
         medications_df: Medications DataFrame
         allergies_df: Allergies DataFrame
@@ -39,6 +40,10 @@ def process_patient(patient_row, conditions_df, medications_df, allergies_df, im
     """
     
     hcn = patient_row["identifier"]
+    print("Looking for:", repr(hcn))
+    print("Available composition patient identifiers:", compositions_df["patient.identifier"].unique())
+    print(compositions_df.head(3))
+    print("Column names:", compositions_df.columns.tolist())
     
     # Create core resources
     patient_id, patient_resource = create_patient_resource(patient_row)
@@ -56,9 +61,15 @@ def process_patient(patient_row, conditions_df, medications_df, allergies_df, im
     allergy_refs = get_allergy_references(allergy_entries)
     immunization_refs = get_immunization_references(immunization_entries)
 
-    # Create composition
+    print(compositions_df["patient.identifier"])
+    # Lookup the correct composition metadata row for this patient
+    composition_row = compositions_df[compositions_df["patient.identifier"] == hcn].iloc[0]
+
+
+
+    # Create composition resource
     composition_id, composition_resource = create_composition_resource(
-        patient_id, allergy_refs, condition_refs, medication_refs, immunization_refs
+        patient_id, allergy_refs, condition_refs, medication_refs, immunization_refs, composition_row
     )
     
     # Create bundles
@@ -90,11 +101,11 @@ def main():
     # Load and validate csv data
     print("\nLoading CSV data...")
     try:
-        patients_df, conditions_df, medications_df, allergies_df, immunizations_df = load_csv_data()
+        compositions_df, patients_df, conditions_df, medications_df, allergies_df, immunizations_df = load_csv_data()
     except Exception as e:
         print(f"Exception during CSV loading: {e}")
         sys.exit(1)
-    if not validate_data(patients_df, conditions_df, medications_df, allergies_df, immunizations_df):
+    if not validate_data(compositions_df, patients_df, conditions_df, medications_df, allergies_df, immunizations_df):
         print("CSV file data validation failed. Please check the structure and contents of your CSV files.")
         sys.exit(1)
     
@@ -107,9 +118,9 @@ def main():
         try:
             # Process patient
             transaction_bundle, document_bundle, hcn, composition_resource = process_patient(
-                patient_row, conditions_df, medications_df, allergies_df, immunizations_df
+                patient_row, compositions_df, conditions_df, medications_df, allergies_df, immunizations_df
             )
-
+            
             # Save document bundle to file
             save_success, bundle_path = save_document_bundle(document_bundle, hcn)
 
