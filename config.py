@@ -7,6 +7,7 @@ import uuid
 BASE_DIR = r"C:\Python\Wellness_Way"
 
 # Input CSV files
+COMPOSITION_CSV = os.path.join(BASE_DIR, "data", "PS-CA_Composition.csv")
 PATIENT_CSV = os.path.join(BASE_DIR, "data", "PS-CA_Patient.csv")
 CONDITION_CSV = os.path.join(BASE_DIR, "data", "PS-CA_Condition.csv")
 MEDICATION_CSV = os.path.join(BASE_DIR, "data", "PS-CA_Medication.csv")
