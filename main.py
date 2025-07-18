@@ -40,10 +40,6 @@ def process_patient(patient_row, compositions_df, conditions_df, medications_df,
     """
     
     hcn = patient_row["identifier"]
-    print("Looking for:", repr(hcn))
-    print("Available composition patient identifiers:", compositions_df["patient.identifier"].unique())
-    print(compositions_df.head(3))
-    print("Column names:", compositions_df.columns.tolist())
     
     # Create core resources
     patient_id, patient_resource = create_patient_resource(patient_row)
@@ -64,8 +60,6 @@ def process_patient(patient_row, compositions_df, conditions_df, medications_df,
     print(compositions_df["patient.identifier"])
     # Lookup the correct composition metadata row for this patient
     composition_row = compositions_df[compositions_df["patient.identifier"] == hcn].iloc[0]
-
-
 
     # Create composition resource
     composition_id, composition_resource = create_composition_resource(
