@@ -96,7 +96,7 @@ def save_document_bundle(document_bundle, hcn):
         filename = f"bundle_{hcn.replace(' ', '')}.json"
         file_path = os.path.join(OUTPUT_DIR, filename)
         with open(file_path, "w", encoding="utf-8") as f:
-            json.dump(document_bundle, f, indent=2)
+            json.dump(document_bundle, f, indent=2, default=str)
         return True, file_path
     except Exception as e:
         print(f"Failed to save bundle for {hcn}: {e}")
