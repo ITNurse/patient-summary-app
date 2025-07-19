@@ -6,10 +6,6 @@ from fhir.resources.reference import Reference
 from fhir.resources.annotation import Annotation
 from fhir.resources.fhirtypes import DateTime
 
-
-from config import SNOMED_SYSTEM, ALLERGY_CLINICAL_SYSTEM, ALLERGY_VERIFICATION_SYSTEM
-
-
 def create_allergy_resources(allergies_df, hcn, patient_id):
     """
     Create FHIR AllergyIntolerance resources for a patient using fhir.resources.
@@ -32,27 +28,31 @@ def create_allergy_resources(allergies_df, hcn, patient_id):
         allergy = AllergyIntolerance(
             id=allergy_id,
             clinicalStatus=CodeableConcept(coding=[
-                Coding(system=ALLERGY_CLINICAL_SYSTEM, code=allergy_row["clinicalStatus"])
+                Coding(system=allergy_row["clinicalStatus.coding.system"], 
+                       code=allergy_row["clinicalStatus.coding.code"]
+                )
             ]),
             verificationStatus=CodeableConcept(coding=[
-                Coding(system=ALLERGY_VERIFICATION_SYSTEM, code=allergy_row["verificationStatus"])
+                Coding(system=allergy_row["verificationStatus.coding.code"], 
+                       code=allergy_row["verificationStatus.coding.code"]
+                )
             ]),
             code=CodeableConcept(coding=[
                 Coding(
-                    system=SNOMED_SYSTEM,
-                    code=allergy_row["substance.code"],
-                    display=allergy_row["substance.display"]
+                    system=allergy_row["substance.coding.code"],
+                    code=allergy_row["substance.coding.code"],
+                    display=allergy_row["substance.coding.display"]
                 )
             ]),
             reaction=[{
                 "manifestation": [CodeableConcept(coding=[
                     Coding(
-                        system=SNOMED_SYSTEM,
-                        code=allergy_row["reaction.code"],
-                        display=allergy_row["reaction.display"]
+                        system=allergy_row["reaction.coding.system"],
+                        code=allergy_row["reaction.coding.code"],
+                        display=allergy_row["reaction.coding.display"]
                     )
                 ])],
-                "severity": allergy_row["severity"].lower()
+                "severity": allergy_row["severity.coding.code"]
             }],
             patient=Reference(reference=f"urn:uuid:{patient_id}")
         )
