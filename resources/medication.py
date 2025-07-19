@@ -1,10 +1,9 @@
-import uuid
+import uuid, datetime
+import pandas as pd
 from fhir.resources.medicationstatement import MedicationStatement
 from fhir.resources.codeableconcept import CodeableConcept
 from fhir.resources.coding import Coding
 from fhir.resources.reference import Reference
-
-from config import MEDICATION_SYSTEM
 
 
 def create_medication_resources(medications_df, hcn, patient_id):
@@ -21,19 +20,23 @@ def create_medication_resources(medications_df, hcn, patient_id):
     """
     medication_entries = []
     patient_medications = medications_df[medications_df["patient.identifier"] == hcn]
-
+    
     for _, medication_row in patient_medications.iterrows():
         medication_id = str(uuid.uuid4())
 
         medication = MedicationStatement(
             id=medication_id,
-            status="active",
+            status=medication_row["status.coding.code"],
             subject=Reference(reference=f"urn:uuid:{patient_id}"),
+            
+            # Commenting out the row below as I was unable to resovle the error "Object of type datetime is not JSON serializable" related to this date:
+            # effectiveDateTime=medication_row["effectivedate"],
+            
             medicationCodeableConcept=CodeableConcept(
                 coding=[Coding(
-                    system=MEDICATION_SYSTEM,
-                    code=str(medication_row["medication.code"]),
-                    display=medication_row["medication.display"]
+                    system=medication_row["medication.coding.system"],
+                    code=str(medication_row["medication.coding.code"]),
+                    display=medication_row["medication.coding.display"]
                 )]
             )
         )
