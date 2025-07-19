@@ -107,7 +107,8 @@ def main():
     print(f"\nProcessing {len(patients_df)} patients...")
     log = []
     
-    for index, patient_row in patients_df.iterrows():
+    for index, patient_row in patients_df.head(1).iterrows():
+    #for index, patient_row in patients_df.iterrows():
         print(f"\n[Patient {index+1}/{len(patients_df)}]")
         try:
             # Process patient
