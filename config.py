@@ -36,9 +36,6 @@ ORGANIZATION_NAME = "Wellness Way Hospital"
 HEALTH_CARD_SYSTEM = "http://example.org/healthcardnumber"
 SNOMED_SYSTEM = "http://snomed.info/sct"
 LOINC_SYSTEM = "http://loinc.org"
-MEDICATION_SYSTEM = "http://terminology.hl7.org/CodeSystem/hc-CCDD"
-ALLERGY_CLINICAL_SYSTEM = "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
-ALLERGY_VERIFICATION_SYSTEM = "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"
 
 # Ensure output directory exists
 os.makedirs(OUTPUT_DIR, exist_ok=True)
