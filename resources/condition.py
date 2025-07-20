@@ -30,9 +30,9 @@ def create_condition_resources(conditions_df, hcn, patient_id):
             subject=Reference(reference=f"urn:uuid:{patient_id}"),
             code=CodeableConcept(
                 coding=[Coding(
-                    system=SNOMED_SYSTEM,
-                    code=str(condition_row["condition.code"]),
-                    display=condition_row["condition.display"]
+                    system=condition_row["condition.coding.system"],
+                    code=condition_row["condition.coding.code"],
+                    display=condition_row["condition.coding.display"]
                 )]
             )
         )
