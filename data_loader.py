@@ -17,7 +17,6 @@ def load_csv_data():
         allergies_df = pd.read_csv(ALLERGY_CSV)
         immunizations_df = pd.read_csv(IMMUNIZATION_CSV)
 
-        print("Unique date formats:", medications_df["effectivedate"].apply(type).unique())
         
         return compositions_df, patients_df, conditions_df, medications_df, allergies_df, immunizations_df
     
@@ -45,11 +44,10 @@ def validate_data(compositions_df, patients_df, conditions_df, medications_df, a
     """
     required_composition_cols = ["patient.identifier","id","url","name","title","status","composition.coding.system","composition.coding.code","composition.coding.display","allergy.coding.system","allergy.coding.code","allergy.coding.display","condition.coding.system","condition.coding.code","condition.coding.display","medication.coding.system","medication.coding.code","medication.coding.display","immunization.coding.system","immunization.coding.code","immunization.coding.display"]
     required_patient_cols = ["identifier","name.given","name.family","gender","birthDate","AddressLine","City","Province","PostalCode","Country","PhoneNumber","Email","profile.photo"]
-    required_condition_cols = ["patient.identifier", "condition.code", "condition.display"]
+    required_condition_cols = ["patient.identifier","condition.coding.system","condition.coding.code","condition.coding.display"]
     required_medication_cols = ["patient.identifier","medication.coding.system","medication.coding.code","medication.coding.display","status.coding.system","status.coding.code","effectivedate"]
-    required_allergy_cols = ["patient.identifier","substance.coding.system","substance.coding.code","substance.coding.display","reaction.coding.system","reaction.coding.code","reaction.coding.display","clinicalStatus.coding.system","clinicalStatus.coding.code","verificationStatus.coding.system","verificationStatus.coding.code","criticality.coding.system","criticality.coding.code","severity.coding.system","severity.coding.code"
-]
-    required_immunization_cols = ["patient.identifier", "vaccine.code", "vaccine.display",    "date", "site.code", "site.display", "route.code", "route.system", "route.display"]
+    required_allergy_cols = ["patient.identifier","substance.coding.system","substance.coding.code","substance.coding.display","reaction.coding.system","reaction.coding.code","reaction.coding.display","clinicalStatus.coding.system","clinicalStatus.coding.code","verificationStatus.coding.system","verificationStatus.coding.code","criticality.coding.system","criticality.coding.code","severity.coding.system","severity.coding.code"]
+    required_immunization_cols = ["patient.identifier","occurrence.date","status.coding.system","status.coding.code","status.coding.display","vaccine.coding.system","vaccine.coding.code","vaccine.coding.display","site.coding.system","site.coding.code","site.coding.display","route.coding.system","route.coding.code","route.coding.display"]
 
     # Check required columns exist
     if not all(col in compositions_df.columns for col in required_composition_cols):
