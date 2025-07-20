@@ -6,8 +6,6 @@ from fhir.resources.codeableconcept import CodeableConcept
 from fhir.resources.coding import Coding
 from fhir.resources.reference import Reference
 
-from config import SNOMED_SYSTEM
-
 
 def create_immunization_resources(immunizations_df, hcn, patient_id):
     """
@@ -30,12 +28,18 @@ def create_immunization_resources(immunizations_df, hcn, patient_id):
 
         immunization = Immunization(
             id=immunization_id,
-            status="completed",
+            status=CodeableConcept(coding=[
+                Coding(
+                    system=row["status.coding.system"],
+                    code=row["status.coding.code"],
+                    display=row["status.coding.display"]
+                )
+            ]),
             vaccineCode=CodeableConcept(coding=[
                 Coding(
-                    system=SNOMED_SYSTEM,
-                    code=str(row["vaccine.code"]),
-                    display=row["vaccine.display"]
+                    system=row["vaccine.coding.system"],
+                    code=row["vaccine.coding.code"],
+                    display=row["vaccine.coding.display"]
                 )
             ]),
             patient=Reference(reference=f"urn:uuid:{patient_id}"),
@@ -43,16 +47,16 @@ def create_immunization_resources(immunizations_df, hcn, patient_id):
             primarySource=True,
             site=CodeableConcept(coding=[
                 Coding(
-                    system="http://terminology.hl7.org/CodeSystem/v2-0493",
-                    code=row["site.code"],
-                    display=row["site.display"]
+                    system=row["site.coding.system"],
+                    code=row["site.coding.code"],
+                    display=row["site.coding.display"]
                 )
             ]),
             route=CodeableConcept(coding=[
                 Coding(
-                    system=row["route.system"],
-                    code=row["route.code"],
-                    display=row["route.display"]
+                    system=row["route.coding.system"],
+                    code=row["route.coding.code"],
+                    display=row["route.coding.display"]
                 )
             ])
         )
