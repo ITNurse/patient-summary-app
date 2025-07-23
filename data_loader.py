@@ -15,7 +15,7 @@ def load_csv_data():
         conditions_df = pd.read_csv(CONDITION_CSV)
         medications_df = pd.read_csv(MEDICATION_CSV,dtype=str,keep_default_na=False)
         allergies_df = pd.read_csv(ALLERGY_CSV)
-        immunizations_df = pd.read_csv(IMMUNIZATION_CSV)
+        immunizations_df = pd.read_csv(IMMUNIZATION_CSV,dtype=str,keep_default_na=False)
 
         
         return compositions_df, patients_df, conditions_df, medications_df, allergies_df, immunizations_df

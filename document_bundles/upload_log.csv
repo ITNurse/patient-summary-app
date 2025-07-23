@@ -1,3 +1,4 @@
-HealthCard,Action,Status,FilePath
-999 471 999,Save Bundle,Success,C:\Python\Wellness_Way\document_bundles\bundle_999471999.json
-999 471 999,Upload Bundle,Success (200),
+HealthCard,Action,Status
+999 471 999,Process Patient,"Error: 1 validation error for Immunization
+status
+  str type expected (type=type_error.str)"

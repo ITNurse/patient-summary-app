@@ -5,7 +5,8 @@ from fhir.resources.immunization import Immunization
 from fhir.resources.codeableconcept import CodeableConcept
 from fhir.resources.coding import Coding
 from fhir.resources.reference import Reference
-
+from fhir.resources.fhirtypes import DateTime as dt
+from datetime import datetime
 
 def create_immunization_resources(immunizations_df, hcn, patient_id):
     """
@@ -24,7 +25,13 @@ def create_immunization_resources(immunizations_df, hcn, patient_id):
 
     for _, row in patient_immunizations.iterrows():
         immunization_id = str(uuid.uuid4())
-        occurrence_date = pd.to_datetime(row["date"]).isoformat()
+        #odate = dt.date(row["occurrence.date"])
+       
+        # Get the current date and time
+        current_datetime = datetime.now()
+
+        # Print the current date and time
+        print(current_datetime.strftime("%Y-%m-%d"))
 
         immunization = Immunization(
             id=immunization_id,
@@ -43,7 +50,8 @@ def create_immunization_resources(immunizations_df, hcn, patient_id):
                 )
             ]),
             patient=Reference(reference=f"urn:uuid:{patient_id}"),
-            occurrenceDateTime=occurrence_date,
+            #occurrenceDateTime=dt.date(row["occurrence.date"]),
+            occurrenceDateTime=current_datetime.strftime("%Y-%m-%d"),
             primarySource=True,
             site=CodeableConcept(coding=[
                 Coding(
