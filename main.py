@@ -94,11 +94,11 @@ def main():
     # Load and validate csv data
     print("\nLoading CSV data...")
     try:
-        compositions_df, patients_df, conditions_df, medications_df, allergies_df, immunizations_df = load_csv_data()
+        organization_df, compositions_df, patients_df, conditions_df, medications_df, allergies_df, immunizations_df = load_csv_data()
     except Exception as e:
         print(f"Exception during CSV loading: {e}")
         sys.exit(1)
-    if not validate_data(compositions_df, patients_df, conditions_df, medications_df, allergies_df, immunizations_df):
+    if not validate_data(organization_df, compositions_df, patients_df, conditions_df, medications_df, allergies_df, immunizations_df):
         print("CSV file data validation failed. Please check the structure and contents of your CSV files.")
         sys.exit(1)
     

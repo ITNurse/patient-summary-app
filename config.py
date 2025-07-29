@@ -13,6 +13,7 @@ CONDITION_CSV = os.path.join(BASE_DIR, "data", "PS-CA_Condition.csv")
 MEDICATION_CSV = os.path.join(BASE_DIR, "data", "PS-CA_Medication.csv")
 ALLERGY_CSV = os.path.join(BASE_DIR, "data", "PS-CA_AllergyIntolerance.csv")
 IMMUNIZATION_CSV = os.path.join(BASE_DIR, "data", "PS-CA_Immunization.csv")
+ORGANIZATION_CSV = os.path.join(BASE_DIR, "data", "PS-CA_Organization.csv")
 
 # Output paths
 OUTPUT_DIR = os.path.join(BASE_DIR, "document_bundles")

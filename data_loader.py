@@ -1,5 +1,5 @@
 import pandas as pd
-from config import COMPOSITION_CSV, PATIENT_CSV, CONDITION_CSV, MEDICATION_CSV, ALLERGY_CSV, IMMUNIZATION_CSV
+from config import ORGANIZATION_CSV, COMPOSITION_CSV, PATIENT_CSV, CONDITION_CSV, MEDICATION_CSV, ALLERGY_CSV, IMMUNIZATION_CSV
 
 
 def load_csv_data():
@@ -10,6 +10,7 @@ def load_csv_data():
         tuple: (composition_df, patients_df, conditions_df, medications_df, allergies_df)
     """
     try:
+        organization_df = pd.read_csv(ORGANIZATION_CSV)
         compositions_df = pd.read_csv(COMPOSITION_CSV, sep=",", engine="python", dtype=str)
         patients_df = pd.read_csv(PATIENT_CSV)
         conditions_df = pd.read_csv(CONDITION_CSV)
@@ -18,7 +19,7 @@ def load_csv_data():
         immunizations_df = pd.read_csv(IMMUNIZATION_CSV)
 
         
-        return compositions_df, patients_df, conditions_df, medications_df, allergies_df, immunizations_df
+        return organization_df, compositions_df, patients_df, conditions_df, medications_df, allergies_df, immunizations_df
     
     except FileNotFoundError as e:
         print(f"❌ Error loading CSV file: {e}")
@@ -28,7 +29,7 @@ def load_csv_data():
         raise
 
 
-def validate_data(compositions_df, patients_df, conditions_df, medications_df, allergies_df, immunizations_df):
+def validate_data(organization_df, compositions_df, patients_df, conditions_df, medications_df, allergies_df, immunizations_df):
     """
     Basic validation of loaded data.
     
@@ -42,6 +43,7 @@ def validate_data(compositions_df, patients_df, conditions_df, medications_df, a
     Returns:
         bool: True if data appears valid
     """
+    required_organization_cols = ["organization.name","organization.type"] 
     required_composition_cols = ["patient.identifier","id","url","name","title","status","composition.coding.system","composition.coding.code","composition.coding.display","allergy.coding.system","allergy.coding.code","allergy.coding.display","condition.coding.system","condition.coding.code","condition.coding.display","medication.coding.system","medication.coding.code","medication.coding.display","immunization.coding.system","immunization.coding.code","immunization.coding.display"]
     required_patient_cols = ["identifier","name.given","name.family","gender","birthDate","AddressLine","City","Province","PostalCode","Country","PhoneNumber","Email","profile.photo"]
     required_condition_cols = ["patient.identifier","condition.coding.system","condition.coding.code","condition.coding.display"]
@@ -52,6 +54,10 @@ def validate_data(compositions_df, patients_df, conditions_df, medications_df, a
 
     
     # Check required columns exist
+    if not all(col in organization_df.columns for col in required_organization_cols):
+        print("❌ Missing required columns in organization CSV")
+        return False
+    
     if not all(col in compositions_df.columns for col in required_composition_cols):
         print("❌ Missing required columns in compositions CSV")
         return False
@@ -82,6 +88,7 @@ def validate_data(compositions_df, patients_df, conditions_df, medications_df, a
         return False
     
     print(f"✅ Data import validation passed")
+    print(f"   - {len(organization_df)} organizations") 
     print(f"   - {len(compositions_df)} compositions")   
     print(f"   - {len(patients_df)} patients")
     print(f"   - {len(conditions_df)} conditions")
