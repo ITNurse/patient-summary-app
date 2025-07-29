@@ -57,7 +57,6 @@ def process_patient(patient_row, compositions_df, conditions_df, medications_df,
     allergy_refs = get_allergy_references(allergy_entries)
     immunization_refs = get_immunization_references(immunization_entries)
 
-    print(compositions_df["patient.identifier"])
     # Lookup the correct composition metadata row for this patient
     composition_row = compositions_df[compositions_df["patient.identifier"] == hcn].iloc[0]
 

@@ -44,7 +44,7 @@ def validate_data(compositions_df, patients_df, conditions_df, medications_df, a
     """
     required_composition_cols = ["patient.identifier","id","url","name","title","status","composition.coding.system","composition.coding.code","composition.coding.display","allergy.coding.system","allergy.coding.code","allergy.coding.display","condition.coding.system","condition.coding.code","condition.coding.display","medication.coding.system","medication.coding.code","medication.coding.display","immunization.coding.system","immunization.coding.code","immunization.coding.display"]
     required_patient_cols = ["identifier","name.given","name.family","gender","birthDate","AddressLine","City","Province","PostalCode","Country","PhoneNumber","Email","profile.photo"]
-    required_condition_cols = ["patient.identifier", "condition.code", "condition.display"]
+    required_condition_cols = ["patient.identifier","condition.coding.system","condition.coding.code","condition.coding.display"]
     required_medication_cols = ["patient.identifier", "medication.code", "medication.display"]
     required_allergy_cols = ["patient.identifier", "substance.code", "substance.display", "criticality", "severity"]
     required_immunization_cols = ["patient.identifier", "vaccine.code", "vaccine.display",    "date", "site.code", "site.display", "route.code", "route.system", "route.display"]

@@ -1,4 +1,4 @@
-patient.identifier,substance.code,substance.display,clinicalStatus,verificationStatus,reaction.code,reaction.display,criticality,severity
+"patient.identifier","substance.code","substance.display","clinicalStatus","verificationStatus","reaction.code","reaction.display","criticality","severity"
 "999 471 999","227493005","Milk protein","active","confirmed","422400008","Rash","low","Mild"
 "999 471 999","91937009","Ibuprofen","active","confirmed","422400008","Rash","high","Mild"
 "999 471 999","91932001","Aspirin","active","confirmed","271759003","Wheezing","unable-to-assess","Severe"

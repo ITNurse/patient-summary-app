@@ -1,4 +1,4 @@
-patient.identifier,medication.code,medication.display
+"patient.identifier","medication.code","medication.display"
 "999 471 999","9000723","ramipril 5 mg oral capsule"
 "999 878 645","9009619",furosemide 40 mg oral tablet
 "999 878 645","9000973","alendronic acid (alendronate sodium) 70 mg oral tablet"

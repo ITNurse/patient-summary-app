@@ -1,4 +1,4 @@
-patient.identifier,vaccine.code,vaccine.display,date,site.code,site.display,route.system,route.code,route.display
+"patient.identifier","vaccine.code","vaccine.display","date","site.code","site.display","route.system","route.code","route.display"
 "999 471 999","28581000087106","[COVID-19] COMIRNATY (original strain) 30 mcg/0.3 mL","2024-12-18","RA","Right arm","http://snomed.info/sct","78421000","Intramuscular: IM"
 "999 471 999","31541000087105","[Var] VARILRIX","2023-10-17","RA","Right arm","http://snomed.info/sct","78421000","Intramuscular: IM"
 "999 471 999","7361000087100","[IPV] IMOVAX POLIO","2024-08-24","RA","Right arm","http://snomed.info/sct","78421000","Intramuscular: IM"
