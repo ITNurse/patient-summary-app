@@ -26,16 +26,16 @@ def create_immunization_resources(immunizations_df, hcn, patient_id):
 
     for _, row in patient_immunizations.iterrows():
         immunization_id = str(uuid.uuid4())
-        occurrence_date = pd.to_datetime(row["date"]).isoformat()
+        occurrence_date = pd.to_datetime(row["occurrence.date"]).isoformat()
 
         immunization = Immunization(
             id=immunization_id,
-            status="completed",
+            status=row["status.coding.code"],
             vaccineCode=CodeableConcept(coding=[
                 Coding(
-                    system=SNOMED_SYSTEM,
-                    code=str(row["vaccine.code"]),
-                    display=row["vaccine.display"]
+                    system=row["vaccine.coding.system"],
+                    code=str(row["vaccine.coding.code"]),
+                    display=row["vaccine.coding.display"]
                 )
             ]),
             patient=Reference(reference=f"urn:uuid:{patient_id}"),
@@ -43,16 +43,16 @@ def create_immunization_resources(immunizations_df, hcn, patient_id):
             primarySource=True,
             site=CodeableConcept(coding=[
                 Coding(
-                    system="http://terminology.hl7.org/CodeSystem/v2-0493",
-                    code=row["site.code"],
-                    display=row["site.display"]
+                    system=row["site.coding.system"],
+                    code=row["site.coding.code"],
+                    display=row["site.coding.display"]
                 )
             ]),
             route=CodeableConcept(coding=[
                 Coding(
-                    system=row["route.system"],
-                    code=row["route.code"],
-                    display=row["route.display"]
+                    system=row["route.coding.system"],
+                    code=row["route.coding.code"],
+                    display=row["route.coding.display"]
                 )
             ])
         )
