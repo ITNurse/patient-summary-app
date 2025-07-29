@@ -46,7 +46,7 @@ def validate_data(compositions_df, patients_df, conditions_df, medications_df, a
     required_patient_cols = ["identifier","name.given","name.family","gender","birthDate","AddressLine","City","Province","PostalCode","Country","PhoneNumber","Email","profile.photo"]
     required_condition_cols = ["patient.identifier","condition.coding.system","condition.coding.code","condition.coding.display"]
     required_medication_cols = ["patient.identifier","medication.coding.system","medication.coding.code","medication.coding.display","status.coding.system","status.coding.code","effectivedate"]
-    required_allergy_cols = ["patient.identifier", "substance.code", "substance.display", "criticality", "severity"]
+    required_allergy_cols = ["patient.identifier","substance.coding.system","substance.coding.code","substance.coding.display","reaction.coding.system","reaction.coding.code","reaction.coding.display","clinicalStatus.coding.system","clinicalStatus.coding.code","verificationStatus.coding.system","verificationStatus.coding.code","criticality.coding.system","criticality.coding.code","severity.coding.system","severity.coding.code"]
     required_immunization_cols = ["patient.identifier","occurrence.date","status.coding.system","status.coding.code","status.coding.display","vaccine.coding.system","vaccine.coding.code","vaccine.coding.display","site.coding.system","site.coding.code","site.coding.display","route.coding.system","route.coding.code","route.coding.display"]
 
 
