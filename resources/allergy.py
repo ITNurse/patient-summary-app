@@ -34,6 +34,7 @@ def create_allergy_resources(allergies_df, hcn, patient_id):
             verificationStatus=CodeableConcept(coding=[
                 Coding(system=allergy_row["verificationStatus.coding.system"], code=allergy_row["verificationStatus.coding.code"])
             ]),
+            criticality=allergy_row["criticality.coding.code"],
             code=CodeableConcept(coding=[
                 Coding(
                     system=allergy_row["substance.coding.system"],
