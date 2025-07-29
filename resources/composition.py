@@ -6,10 +6,7 @@ from fhir.resources.codeableconcept import CodeableConcept
 from fhir.resources.coding import Coding
 from fhir.resources.reference import Reference
 
-from config import ORGANIZATION_ID, ORGANIZATION_NAME
-
-
-def create_composition_resource(patient_id, allergy_refs, condition_refs, medication_refs, immunization_refs, composition_row):
+def create_composition_resource(org_id, org_name, patient_id, allergy_refs, condition_refs, medication_refs, immunization_refs, composition_row):
     """
     Create a FHIR Composition resource for patient summary using CSV metadata.
 
@@ -96,8 +93,8 @@ def create_composition_resource(patient_id, allergy_refs, condition_refs, medica
         subject=Reference(reference=f"urn:uuid:{patient_id}"),
         date=str(datetime.datetime.now(datetime.timezone.utc).isoformat()),
         title=composition_row["id"], 
-        author=[Reference(reference=f"urn:uuid:{ORGANIZATION_ID}", display=ORGANIZATION_NAME)],
-        custodian=Reference(reference=f"urn:uuid:{ORGANIZATION_ID}", display=ORGANIZATION_NAME),
+        author=[Reference(reference=f"urn:uuid:{org_id}", display=org_name)],
+        custodian=Reference(reference=f"urn:uuid:{org_id}", display=org_name),
         section=sections
     )
 

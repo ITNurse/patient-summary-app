@@ -6,8 +6,6 @@ from fhir.resources.codeableconcept import CodeableConcept
 from fhir.resources.coding import Coding
 from fhir.resources.reference import Reference
 
-from config import SNOMED_SYSTEM
-
 
 def create_immunization_resources(immunizations_df, hcn, patient_id):
     """

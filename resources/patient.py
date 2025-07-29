@@ -8,7 +8,6 @@ from fhir.resources.identifier import Identifier
 from fhir.resources.contactpoint import ContactPoint
 from fhir.resources.address import Address
 from fhir.resources.attachment import Attachment
-from config import HEALTH_CARD_SYSTEM
 
 
 def encode_image_base64(image_path):
@@ -44,7 +43,7 @@ def create_patient_resource(patient_row):
     patient = Patient(
         id=patient_id,
         identifier=[Identifier(
-            system=HEALTH_CARD_SYSTEM,
+            system="http://example.org/healthcardnumber",
             value=patient_row["identifier"]
         )],
         name=[HumanName(

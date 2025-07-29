@@ -3,7 +3,7 @@ import os
 from config import OUTPUT_DIR
 
 
-def create_transaction_bundle(patient_id, patient_resource, org_id, org_resource, composition_resource,
+def create_transaction_bundle(composition_id, patient_id, patient_resource, org_id, org_resource, composition_resource,
                               allergy_entries, condition_entries, medication_entries, immunization_entries):
     """
     Create a FHIR transaction bundle for Patient, Organization, AllergyIntolerance, Condition, MedicationStatement, and Immunization resources.
@@ -46,7 +46,7 @@ def create_transaction_bundle(patient_id, patient_resource, org_id, org_resource
     return transaction_bundle
 
 
-def create_document_bundle(patient_id, patient_resource, org_id, org_resource, composition_resource,
+def create_document_bundle(composition_id, patient_id, patient_resource, org_id, org_resource, composition_resource,
                            allergy_entries, condition_entries, medication_entries, immunization_entries):
     """
     Create a FHIR document bundle for Patient Summary.

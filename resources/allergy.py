@@ -7,9 +7,6 @@ from fhir.resources.annotation import Annotation
 from fhir.resources.fhirtypes import DateTime
 
 
-from config import SNOMED_SYSTEM, ALLERGY_CLINICAL_SYSTEM, ALLERGY_VERIFICATION_SYSTEM
-
-
 def create_allergy_resources(allergies_df, hcn, patient_id):
     """
     Create FHIR AllergyIntolerance resources for a patient using fhir.resources.

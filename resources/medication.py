@@ -4,8 +4,6 @@ from fhir.resources.codeableconcept import CodeableConcept
 from fhir.resources.coding import Coding
 from fhir.resources.reference import Reference
 
-from config import MEDICATION_SYSTEM
-
 
 def create_medication_resources(medications_df, hcn, patient_id):
     """

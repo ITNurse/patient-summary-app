@@ -23,7 +23,7 @@ from resources.allergy import create_allergy_resources, get_allergy_references
 from resources.composition import create_composition_resource
 from resources.immunization import create_immunization_resources, get_immunization_references
 
-def process_patient(patient_row, compositions_df, conditions_df, medications_df, allergies_df, immunizations_df):
+def process_patient(patient_row, organization_df, compositions_df, conditions_df, medications_df, allergies_df, immunizations_df):
     """
     Process a single patient and create all associated resources.
     
@@ -43,7 +43,7 @@ def process_patient(patient_row, compositions_df, conditions_df, medications_df,
     
     # Create core resources
     patient_id, patient_resource = create_patient_resource(patient_row)
-    org_id, org_resource = create_organization_resource()
+    org_id, org_resource = create_organization_resource(organization_df)
     
     # Create clinical resources
     condition_entries = create_condition_resources(conditions_df, hcn, patient_id)
@@ -62,17 +62,18 @@ def process_patient(patient_row, compositions_df, conditions_df, medications_df,
 
     # Create composition resource
     composition_id, composition_resource = create_composition_resource(
-        patient_id, allergy_refs, condition_refs, medication_refs, immunization_refs, composition_row
+        org_id, org_resource["name"], patient_id, allergy_refs, condition_refs, medication_refs, 
+        immunization_refs, composition_row
     )
     
     # Create bundles
     transaction_bundle = create_transaction_bundle(
-        patient_id, patient_resource, org_id, org_resource, composition_resource,
+        composition_id, patient_id, patient_resource, org_id, org_resource, composition_resource,
         allergy_entries, condition_entries, medication_entries, immunization_entries
     )
     
     document_bundle = create_document_bundle(
-        patient_id, patient_resource, org_id, org_resource, composition_resource,
+        composition_id, patient_id, patient_resource, org_id, org_resource, composition_resource,
         allergy_entries, condition_entries, medication_entries, immunization_entries
     )
     
@@ -111,7 +112,7 @@ def main():
         try:
             # Process patient
             transaction_bundle, document_bundle, hcn, composition_resource = process_patient(
-                patient_row, compositions_df, conditions_df, medications_df, allergies_df, immunizations_df
+                patient_row, organization_df, compositions_df, conditions_df, medications_df, allergies_df, immunizations_df
             )
             
             # Save document bundle to file

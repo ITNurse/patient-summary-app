@@ -4,9 +4,6 @@ from fhir.resources.codeableconcept import CodeableConcept
 from fhir.resources.coding import Coding
 from fhir.resources.reference import Reference
 
-from config import SNOMED_SYSTEM
-
-
 def create_condition_resources(conditions_df, hcn, patient_id):
     """
     Create FHIR Condition resources for a patient using fhir.resources.
