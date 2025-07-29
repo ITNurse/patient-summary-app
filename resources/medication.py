@@ -1,4 +1,5 @@
 import uuid
+import json
 from fhir.resources.medicationstatement import MedicationStatement
 from fhir.resources.codeableconcept import CodeableConcept
 from fhir.resources.coding import Coding
@@ -29,9 +30,7 @@ def create_medication_resources(medications_df, hcn, patient_id):
             id=medication_id,
             status=medication_row["status.coding.code"],
             subject=Reference(reference=f"urn:uuid:{patient_id}"),
-            
-            # Unable to resolve "Object of type datetime is not JSON serializable" issue
-            # effectiveDateTime=effective_date,
+            effectiveDateTime=effective_date,
             
             medicationCodeableConcept=CodeableConcept(
                 coding=[Coding(
@@ -44,7 +43,7 @@ def create_medication_resources(medications_df, hcn, patient_id):
 
         medication_entry = {
             "fullUrl": f"urn:uuid:{medication_id}",
-            "resource": medication.dict(by_alias=True),
+            "resource": json.loads(medication.json(by_alias=True)),
             "request": {
                 "method": "PUT",
                 "url": f"MedicationStatement/{medication_id}"
