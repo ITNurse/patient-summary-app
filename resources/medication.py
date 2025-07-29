@@ -27,13 +27,13 @@ def create_medication_resources(medications_df, hcn, patient_id):
 
         medication = MedicationStatement(
             id=medication_id,
-            status="active",
+            status=medication_row["status.coding.code"],
             subject=Reference(reference=f"urn:uuid:{patient_id}"),
             medicationCodeableConcept=CodeableConcept(
                 coding=[Coding(
-                    system=MEDICATION_SYSTEM,
-                    code=str(medication_row["medication.code"]),
-                    display=medication_row["medication.display"]
+                    system=medication_row["medication.coding.system"],
+                    code=str(medication_row["medication.coding.code"]),
+                    display=medication_row["medication.coding.display"]
                 )]
             )
         )
