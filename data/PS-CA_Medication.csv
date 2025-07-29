@@ -1,4 +1,4 @@
-"patient.identifier","medication.coding.system","medication.coding.code","medication.coding.display","status.coding.system","status.coding.code","effectivedate"
+"patient.identifier","medication.coding.system","medication.coding.code","medication.coding.display","status.coding.system","status.coding.code","effective.date"
 "999 471 999","http://terminology.hl7.org/CodeSystem/hc-CCDD","9000723","ramipril 5 mg oral capsule","http://hl7.org/fhir/CodeSystem/medication-statement-status","active",2023-09-30
 "999 878 645","http://terminology.hl7.org/CodeSystem/hc-CCDD","9009619","furosemide 40 mg oral tablet","http://hl7.org/fhir/CodeSystem/medication-statement-status","completed",2023-11-19
 "999 878 645","http://terminology.hl7.org/CodeSystem/hc-CCDD","9000973","alendronic acid (alendronate sodium) 70 mg oral tablet","http://hl7.org/fhir/CodeSystem/medication-statement-status","intended",2023-12-05

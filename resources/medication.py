@@ -3,6 +3,7 @@ from fhir.resources.medicationstatement import MedicationStatement
 from fhir.resources.codeableconcept import CodeableConcept
 from fhir.resources.coding import Coding
 from fhir.resources.reference import Reference
+import pandas as pd
 
 
 def create_medication_resources(medications_df, hcn, patient_id):
@@ -22,11 +23,16 @@ def create_medication_resources(medications_df, hcn, patient_id):
 
     for _, medication_row in patient_medications.iterrows():
         medication_id = str(uuid.uuid4())
+        effective_date = pd.to_datetime(medication_row["effective.date"]).isoformat()
 
         medication = MedicationStatement(
             id=medication_id,
             status=medication_row["status.coding.code"],
             subject=Reference(reference=f"urn:uuid:{patient_id}"),
+            
+            # Unable to resolve "Object of type datetime is not JSON serializable" issue
+            # effectiveDateTime=effective_date,
+            
             medicationCodeableConcept=CodeableConcept(
                 coding=[Coding(
                     system=medication_row["medication.coding.system"],
