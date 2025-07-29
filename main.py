@@ -6,7 +6,6 @@ Main script to orchestrate the creation and upload of FHIR bundles from CSV data
 
 import pandas as pd
 import sys
-from pathlib import Path
 
 # Import our modules
 from data_loader import load_csv_data, validate_data

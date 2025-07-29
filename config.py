@@ -1,5 +1,4 @@
 import os
-import uuid
 
 # ============================
 # File Paths Configuration

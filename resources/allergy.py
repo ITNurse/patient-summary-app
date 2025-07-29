@@ -3,8 +3,6 @@ from fhir.resources.allergyintolerance import AllergyIntolerance
 from fhir.resources.codeableconcept import CodeableConcept
 from fhir.resources.coding import Coding
 from fhir.resources.reference import Reference
-from fhir.resources.annotation import Annotation
-from fhir.resources.fhirtypes import DateTime
 
 
 def create_allergy_resources(allergies_df, hcn, patient_id):
