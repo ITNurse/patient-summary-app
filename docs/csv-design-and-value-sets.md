@@ -23,11 +23,17 @@ In an effort to make this project a more well-rounded educational resource, the 
 ## Special Note: 
 Because the patient data is created as CSV files, any values within those files that contain commas (i.e. a condition display name) will cause issues. To get around this, all text fields should be wrapped in double quotes.
 
-## PS-CA_Composition.csv
-![Screenshot of PS-CA_Composition.csv file](images/ps-ca_composition.jpg)
+## Organization
 
-### PS-CA Composition Resource Specification
-The fields selected for the PS-CA_Composition.csv file correspond to those marked as Required in the PS-CA Composition profile. The values entered conform to the expected data types and, where applicable, to the specified value set bindings. Details are outlined in the table below:
+| Field                                                   | Type              | Requirement | Notes                                                                                                                                               |
+|---------------------------------------------------------|-------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Organization.name`                                     | `string`          | Required    | Name used for the organization                                                                                                                      |
+| `CompositionPSCA.status`                                | `CodeableConcept` | Optional    | Example Binding: [OrganizationType](http://terminology.hl7.org/CodeSystem/organization-type)                                                        |
+
+
+
+## Composition
+
 | Field                                                   | Type           | Requirement | Notes                                                                                                                                                              |
 |---------------------------------------------------------|----------------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `CompositionPSCA.subject.reference`                     | `string`       | Required    | A reference to a location at which the other resource is found                                                                                                     |
@@ -44,17 +50,8 @@ The fields selected for the PS-CA_Composition.csv file correspond to those marke
 | `Composition.section:sectionProblems.title`             | `string`       | Required    |                                                                                                                                                                    |
 | `Composition.section:sectionProblems.code`              | `CodeableConcept` | Required | Required Binding: [DocumentSectionCodes](https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879)                                                             |
 
-## PS-CA_Organization.csv
-[Enter screenshot here]
 
-### Organization Resource
-[Enter table here]
-
-## PS-CA_Patient.csv
-![Screenshot of PS-CA_Patient.csv file](images/ps-ca_patient.jpg)
-
-### Patient Resource
-The fields selected for the PS-CA_Composition.csv file correspond to those marked as Required in the PS-CA Patient profile, along with a few others to round out example for educational purposes. The values entered conform to the expected data types and, where applicable, to the specified value set bindings. Details are outlined in the table below:
+## Patient
 
 | Field                                        | Type           | Requirement  | Notes                                                                                                                                              |
 |---------------------------------------------|----------------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -73,17 +70,7 @@ The fields selected for the PS-CA_Composition.csv file correspond to those marke
 | `Patient.identifier.system`                 | `uri`          | Required     |                                                                                                                                                    |
 | `Patient.identifier.value`                  | `string`       | Required     |                                                                                                                                                    |
 
-## PS-CA_Medication.csv
-[Enter screenshot here]
-
-## Medication Resource
-[Enter table here]
-
-## PS-CA_Condition.csv
-![Screenshot of PS-CA_Condition.csv file](images/ps-ca_patient.jpg)
-
-## Condition Resource
-### Condition Profile Fields and Bindings
+## Condition
 
 | Field                                        | Type           | Requirement  | Notes                                                                                                                                                                            |
 |---------------------------------------------|----------------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -94,14 +81,11 @@ The fields selected for the PS-CA_Composition.csv file correspond to those marke
 | `Condition.code.coding.display`             | `string`       | Required |                                                                                                                                                                                        |
 
 
-## PS-CA_AllergyIntolerance.csv
-[Enter screenshot here]
-
-### Allergy Intolerance Resource
+## Medication
 [Enter table here]
 
-### PS-CA_Immunization.csv
-[Enter screenshot here]
+## Allergy Intolerance
+[Enter table here]
 
-## Immunization Resource
+## Immunization
 [Enter table here]
