@@ -1,12 +1,17 @@
 ## What is the HAPI FHIR JPA Server?
-<img src="images/hapi.png" alt="HAPI Logo" height="72" style="float: left; margin-right: 15px; margin-bottom: 10px;">
-[HAPI FHIR](https://hapifhir.io) is an implementation of the HL7 FHIR specification for Java. The [HAPI FHIR JPA Server](https://hapifhir.io/hapi-fhir/docs/server_jpa/get_started.html) is a fully contained FHIR server, supporting all standard operations (read/create/delete/etc.).
+<p>
+  <img src="images/hapi.png" alt="HAPI Logo" style="height:1in; float:left; margin-right:10px;" />
+  <a href="https://hapifhir.io">HAPI FHIR</a> is an implementation of the HL7 FHIR specification for Java. The <a href="https://hapifhir.io/hapi-fhir/docs/server_jpa/get_started.html">HAPI FHIR JPA Server</a> is a fully contained FHIR server, supporting all standard operations (read/create/delete/etc.).
+</p>
+<br><br>
 
 ## What is Docker?
-<img src="images/docker.svg" alt="Docker Logo" height="72" style="float: left; margin-right: 15px; margin-bottom: 10px;">
-[Docker](https://www.docker.com/) is a platform that uses containerization to package and run applications. For the purpose of this project, Docker was used to run a HAPI FHIR JPA Server locally on a Microsoft Surface 3 Laptop running Windows 11 Home.
+<p>
+  <img src="images/docker.svg" alt="Docker Logo" style="height:1in; float:left; margin-right:10px;" />
+  <a href="https://hapifhir.io">Docker</a> is a platform that uses containerization to package and run applications. For the purpose of this project, Docker was used to run a HAPI FHIR JPA Server locally on a Microsoft Surface 3 Laptop running Windows 11 Home. <br>
+  The Docker image of HAPI FHIR is a pre-packaged version of a FHIR server that you can run using Docker to easily test, store, and manage healthcare data using the HL7 FHIR standard. Detailed instructions on running the Docker image of the HAPI FHIR JPA Server can be found on the <a href="https://github.com/hapifhir/hapi-fhir-jpaserver-starter">HAPI FHIR GitHub repository</a>.
+</p>
 
-The Docker image of HAPI FHIR is a pre-packaged version of a FHIR server that you can run using Docker to easily test, store, and manage healthcare data using the HL7 FHIR standard. Detailed instructions on running the Docker image of the HAPI FHIR JPA Server can be found on the [HAPI FHIR GitHub repository](https://github.com/hapifhir/hapi-fhir-jpaserver-starter).
 
 ## Interacting with the HAPI FHIR Server through Docker
 ### Running the HAPI FHIR Server
@@ -34,6 +39,3 @@ Runs the HAPI FHIR container on port 8080, mounts application.yaml config, sets 
 ```bash
 docker run -d -p 8080:8080 --name hapi-fhir -v C:\Python\Wellness_Way\hapi-config:/configs -e SPRING_CONFIG_LOCATION=file:///configs/application.yaml hapiproject/hapi:latest
 ```
-
-## Canadian Baseline and PS-CA Implementation Guides:
-https://github.com/FHIR/ig-registry/blob/master/fhir-ig-list.json
