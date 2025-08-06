@@ -1,10 +1,6 @@
 # Pan-Canadian Patient Summary (PS-CA)
 
-## Introduction
-
-The Pan-Canadian Patient Summary (PS-CA) is a standardized extract of a patient’s health record designed to support continuity of care across borders and healthcare settings. It is based on the International Patient Summary (IPS) standard, and adapts this global framework to the Canadian context by incorporating national terminologies and jurisdiction-specific workflows.
-
-The PS-CA enables clinicians to access essential health information—such as medications, allergies, and health concerns—without needing to navigate multiple systems or sift through unstructured notes. It supports both scheduled and unscheduled care, and is designed to be usable across diverse technical environments, including legacy systems and modern FHIR-based platforms.
+The [Pan-Canadian Patient Summary (PS-CA)](https://www.infoway-inforoute.ca/en/featured-initiatives/patient-summary) is a standardized extract of a patient’s health record designed to support continuity of care across borders and healthcare settings. It is based on the International Patient Summary (IPS) standard, and adapts this global framework to the Canadian context by incorporating national terminologies and jurisdiction-specific workflows. It enables clinicians to access essential health information—such as medications, allergies, and health concerns—without needing to navigate multiple systems or sift through unstructured notes. It supports both scheduled and unscheduled care, and is designed to be usable across diverse technical environments, including legacy systems and modern FHIR-based platforms.
 
 ![Screenshot of IPS composition showing required sections as: Header (subject, author, attester, custodian), Medication Summary, Allergies & Intolerances, and Problem List](images/ips-composition.png)
 (Image Source: https://build.fhir.org/ig/HL7/fhir-ips/Structure-of-the-International-Patient-Summary.html)
@@ -14,7 +10,6 @@ The PS-CA enables clinicians to access essential health information—such as me
 - [Connected Care: The Power of the Patient Summary](https://youtu.be/LXLj0ElsRNg?si=D8Q_G8KvZu4vgfu6)
 - [What Connected Care Means to the Future of Canada's Health Care System](https://youtu.be/XoqzMAULasg?si=yuLXjGBJvAWEVZ8i)
 - [DevDays (2024):  Moving to "Real" International Patient Summary (IPS) Implementations (Robert Hausam)](https://youtu.be/I86G6PyoVrg?si=_v1ChxnK1lovMWea)
-
 - [IHE North America (2024): The International Patient Summary: A Worldwide Initiative](https://youtu.be/HKmmZQTK6BU?si=FrcU6xVTF7AhaRLD)
 - [IHE Europe (2023): The Pan Canadian Patient Summary](https://youtu.be/YLsvI5GUc30?si=PUktY4Y5YWXuH-Cz)
 - [Infoway Partnership Conference (2023): Demonstrating the Value of a Patient Summary](https://www.youtube.com/watch?v=s4sfMFB56mI&list=PLD40L51Q1YDhQMuduy9XJSnSG7s0vHOWD)
@@ -27,15 +22,10 @@ The PS-CA enables clinicians to access essential health information—such as me
 
 ## Interoperability
 
-Interoperability is foundational to the PS-CA. According to the Health Information Management Systems Society (HIMSS), it encompasses the ability of systems to access, exchange, integrate, and cooperatively use data across organizational and national boundaries. 
+Interoperability is foundational to the PS-CA. According to the [Health Information Management Systems Society (HIMSS)](https://legacy.himss.org/resources/interoperability-healthcare), it encompasses the ability of systems to access, exchange, integrate, and cooperatively use data across organizational and national boundaries. 
 
 ![Graphic displaying the levels of interoperability](images/interoperability.jpg)
 (Image Source: Adebesin, F., Foster, R., Kotzé, P., & Van Greunen, D. (2013). A Review of Interoperability Standards in E-health and Imperatives for their Adoption in Africa. South African Computer Journal, 50. https://doi.org/10.18489/sacj.v50i1.176)
-
-### Learn More
-- [HIMSS Interoperability Website](https://legacy.himss.org/resources/interoperability-healthcare)
-- [Connected Care. A Healthier Canada. Powered By Interoperability](https://youtu.be/A93_7N99HmY?si=n1fXUyWTd6cM3vk2)
-- [Pan Canadian Health Data Strategy Presentation (2023)](https://youtu.be/VAqCDZS3QuA?si=-6Lj12-SuxUtBiyW)
 
 The PS-CA supports:
 
@@ -43,26 +33,30 @@ The PS-CA supports:
 - Structural interoperability: Data follows consistent formats, such as HL7 FHIR.
 - Semantic interoperability: Shared terminologies ensure consistent meaning.
 
+### Learn More
+#### YouTube
+- [Connected Care. A Healthier Canada. Powered By Interoperability](https://youtu.be/A93_7N99HmY?si=n1fXUyWTd6cM3vk2)
+- [Pan Canadian Health Data Strategy Presentation (2023)](https://youtu.be/VAqCDZS3QuA?si=-6Lj12-SuxUtBiyW)
 
 ## Health Information Exchange Standards
 
 The PS-CA is built on a suite of health information exchange standards that define how data is structured, transmitted, and interpreted:
 
-- ISO 27269: Defines the abstract model for the IPS.
-- HL7 FHIR: A modern, web-based standard for health data exchange.
-- IHE Profiles: Define real-world workflows, actors, and transactions for IPS exchange.
+- [ISO 27269](https://www.iso.org/standard/79491.html): Defines the abstract model for the IPS.
+- [HL7 FHIR](https://infocentral.infoway-inforoute.ca/en/standards/canadian/fhir): A modern, web-based standard for health data exchange.
+- [IHE Profiles](https://www.ihe.net/news/ihe-releases-the-international-patient-summary-ips-profile/): Define real-world workflows, actors, and transactions for IPS exchange.
 
-Canada Health Infoway’s PS-CA Interoperability Specification supports both FHIR and CDA formats, promoting broad adoption across provinces and territories.
+Canada Health Infoway’s [PS-CA Interoperability Specification](https://infoscribe.infoway-inforoute.ca/display/PSCAV1TI/ImplementationGuide) supports both FHIR and CDA formats, promoting broad adoption across provinces and territories.
 
 ## Controlled Terminology Standards
 
 Terminologies and value sets ensure that exchanged data is meaningful and consistently interpreted. The PS-CA uses:
 
-- SNOMED CT Canadian Edition: For clinical concepts.
-- LOINC and pCLOCD: For lab and observation data.
-- CCDD: For medication data.
+- [SNOMED CT Canadian Edition](https://accelero.infoway-inforoute.ca/en/standards/terminology-standards/snomed-ct-snomed-ct-ca): For clinical concepts.
+- [pan-Canadian LOINC Observation Code Database (pCLOCD)](https://accelero.infoway-inforoute.ca/en/standards/terminology-standards/pclocd): For lab and observation data.
+- [Canadian Clinical Drug Data Set (CCDD)](https://accelero.infoway-inforoute.ca/en/standards/terminology-standards/canadian-clinical-drug-data-set): For medication data.
 
-These terminologies are maintained by Canada Health Infoway and distributed via the Canadian Standards Release Centre and Terminology Gateway. Value sets are curated subsets of these terminologies, and data elements in the PS-CA are bound to them with varying levels of strictness (e.g., required, preferred, example, etc.).
+These terminologies are maintained by Canada Health Infoway and distributed via the [Canadian Standards Release Centre](https://accelero.infoway-inforoute.ca/en/standards/terminology-standards) and [Terminology Gateway](https://tgateway.infoway-inforoute.ca/). Value sets are curated subsets of these terminologies, and data elements in the PS-CA are bound to them with varying levels of strictness (e.g., required, preferred, example, etc.).
 
 ### Learn More
 #### Websites
