@@ -9,6 +9,22 @@ The PS-CA enables clinicians to access essential health information—such as me
 ![Screenshot of IPS composition showing required sections as: Header (subject, author, attester, custodian), Medication Summary, Allergies & Intolerances, and Problem List](images/ips-composition.png)
 (Image Source: https://build.fhir.org/ig/HL7/fhir-ips/Structure-of-the-International-Patient-Summary.html)
 
+### Learn More
+#### YouTube
+- [Connected Care: The Power of the Patient Summary](https://youtu.be/LXLj0ElsRNg?si=D8Q_G8KvZu4vgfu6)
+- [What Connected Care Means to the Future of Canada's Health Care System](https://youtu.be/XoqzMAULasg?si=yuLXjGBJvAWEVZ8i)
+- [DevDays (2024):  Moving to "Real" International Patient Summary (IPS) Implementations (Robert Hausam)](https://youtu.be/I86G6PyoVrg?si=_v1ChxnK1lovMWea)
+
+- [IHE North America (2024): The International Patient Summary: A Worldwide Initiative](https://youtu.be/HKmmZQTK6BU?si=FrcU6xVTF7AhaRLD)
+- [IHE Europe (2023): The Pan Canadian Patient Summary](https://youtu.be/YLsvI5GUc30?si=PUktY4Y5YWXuH-Cz)
+- [Infoway Partnership Conference (2023): Demonstrating the Value of a Patient Summary](https://www.youtube.com/watch?v=s4sfMFB56mI&list=PLD40L51Q1YDhQMuduy9XJSnSG7s0vHOWD)
+- [IHE Europe (2022): International Patient Summary, IHE and HL7 FHIR checks and balances (Grahame Grieve)](https://youtu.be/WvHgDbpNQ8c?si=LMgCwwTX7ZzHx5Pf)
+- [DevDays (2022):  International Patient Summary: examples, tooling and exchange (Matt Rahn)](https://www.youtube.com/watch?v=s4sfMFB56mI&list=PLD40L51Q1YDhQMuduy9XJSnSG7s0vHOWD)
+- [International Patient Summary: A-Z of FHIR (Chris Royale)](https://youtu.be/zK9DEpo66vs?si=bwtymS_tgjadybEs)
+- [DevDays (2021):  International Patient Summary - Moving from Specification to Implementation (Robert Hausam)](https://youtu.be/efp7gn7DB30?si=8ltfyoMkBqrSiIfO)
+- [DevDays (2019):  International Patient Summary (Rob Hausam)](https://www.youtube.com/watch?v=s4sfMFB56mI&list=PLD40L51Q1YDhQMuduy9XJSnSG7s0vHOWD)
+- [International Patient Summary Proof of Concept](https://youtu.be/zpPlZNSvSB0?si=wiV-bhER2Levv4DA)
+
 ## Interoperability
 
 Interoperability is foundational to the PS-CA. According to the Health Information Management Systems Society (HIMSS), it encompasses the ability of systems to access, exchange, integrate, and cooperatively use data across organizational and national boundaries. 
@@ -16,8 +32,10 @@ Interoperability is foundational to the PS-CA. According to the Health Informati
 ![Graphic displaying the levels of interoperability](images/interoperability.jpg)
 (Image Source: Adebesin, F., Foster, R., Kotzé, P., & Van Greunen, D. (2013). A Review of Interoperability Standards in E-health and Imperatives for their Adoption in Africa. South African Computer Journal, 50. https://doi.org/10.18489/sacj.v50i1.176)
 
-
-Learn more [here](https://legacy.himss.org/resources/interoperability-healthcare).
+### Learn More
+- [HIMSS Interoperability Website](https://legacy.himss.org/resources/interoperability-healthcare)
+- [Connected Care. A Healthier Canada. Powered By Interoperability](https://youtu.be/A93_7N99HmY?si=n1fXUyWTd6cM3vk2)
+- [Pan Canadian Health Data Strategy Presentation (2023)](https://youtu.be/VAqCDZS3QuA?si=-6Lj12-SuxUtBiyW)
 
 The PS-CA supports:
 
@@ -46,6 +64,15 @@ Terminologies and value sets ensure that exchanged data is meaningful and consis
 
 These terminologies are maintained by Canada Health Infoway and distributed via the Canadian Standards Release Centre and Terminology Gateway. Value sets are curated subsets of these terminologies, and data elements in the PS-CA are bound to them with varying levels of strictness (e.g., required, preferred, example, etc.).
 
+### Learn More
+#### Websites
+##### Canada Health Infoway
+[Connected Care Terminology Standards](https://accelero.infoway-inforoute.ca/en/standards/terminology-standards)
+#### YouTube
+- [Terminology Standards (Canada Health Infoway)](https://youtu.be/ZGX5oNKSUfA?si=LWQxXNCKqz6LGTaX)
+- [Enhancing Terminology in the International Patient Summary (Rob Hausam](https://youtu.be/zcgo6DRQApA?si=OxeSZLSfbpvkyJHc)
+- [International Patient Summary (IPS) adoption and implementation with SNOMED CT](https://youtu.be/O2HTepV6hGg?si=ocJVp-9OG4n0J10d)
+
 ## FHIR
 
 FHIR (Fast Healthcare Interoperability Resources) is the preferred format for PS-CA implementation. It structures data into modular resources—such as Patient, Condition, and MedicationStatement—and supports exchange via standard web protocols.
@@ -59,4 +86,10 @@ The PS-CA FHIR Implementation Guide defines:
 
 FHIR enables flexible, scalable, and interoperable patient summary exchange, and is supported by open-source tools like the HAPI FHIR JPA Server.
 
-
+### Learn More
+- [FHIR for Developers (Gino Canessa)](https://youtu.be/m2O6HiA1Z7g?si=lHAKkAHSBkKcstSg)
+- [DevDays (2018) - Python FHIR Library (Ilya Beda)](https://youtu.be/dBAhIoArh80?si=i9-YyLWUtU07y7Ur)
+- [PyTexas (2023) - An Introduction to FHIR and Python (Aly Sivji)](https://youtu.be/atWzjajDzBE?si=UEWlHNlylIejXFv1)
+- [What is FHIR? - Resources, Profiles and FHIR Paradigms Explained (Sidharth Ramesh)](https://youtu.be/CtpkvtbgXE8?si=2eZacSRBt8HCjL-M)
+- [How to create a FHIR resource in Python (Sidharth Ramesh)](https://youtu.be/jTiLXxyBYBY?si=jB8QZrIB71d9veXu)
+- [Using Python to interact with FHIR REST APIs (Sidharth Ramesh)](https://youtu.be/iYB1iTohuyk?si=OeUtk1B2epQPEFbY)

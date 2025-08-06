@@ -2,6 +2,13 @@
 The Microsoft Power BI desktop application (with built-in Power Query) was used to access the PS-CA patient summaries from the HAPI FHIR server, unpack the .json into tabular format, and display the data in a visual way. 
 
 ## Web Connector vs FHIR Connector
+Power BI offers multiple ways to connect to FHIR endpoints, including the [Web connector](https://learn.microsoft.com/en-us/power-query/connectors/web/web) and the [dedicated FHIR connector](https://learn.microsoft.com/en-us/power-query/connectors/fhir/fhir). The FHIR connector simplifies access to FHIR resources and supports automatic parsing of FHIR bundles. However, it requires a Power BI account which the author did not have access to. Therefore, in this project the Web connector was used to query the HAPI FHIR server directly. This approach required manual unpacking of the JSON data but provided greater flexibility and control over the transformation process.
+
+### Learn more about the FHIR web connector
+#### YouTube
+- [Dev Days (2023) FHIR Analytics with Power BI (Michael Hansen)](https://youtu.be/AqFZTf_gVhU?si=fQNXW-dyofKhT5sD)
+#### Blog
+- [Power BI Dashboard for FHIR Server](https://vnbhealth.com/2021/05/power-bi-dashboard-for-fhir-server-vnb-health/)
 
 ## Unpacking json to tabular format
 The m code used in Power Query to connect to each FHIR endpoint and unpack the json data into tabular format is below.

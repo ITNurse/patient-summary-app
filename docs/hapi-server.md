@@ -5,7 +5,7 @@
 
 ## What is Docker?
 <img src="images/docker.svg" alt="Docker Logo" style="height:1in; float:left; margin-right:15px; margin-bottom:10px;" align="left" />
-<a href = "">Docker</a> is a platform that uses containerization to package and run applications. For the purpose of this project, Docker was used to run a HAPI FHIR JPA Server locally on a Microsoft Surface 3 Laptop running Windows 11 Home. The Docker image of HAPI FHIR is a pre-packaged version of a FHIR server that you can run using Docker to easily test, store, and manage healthcare data using the HL7 FHIR standard. Detailed instructions on running the Docker image of the HAPI FHIR JPA Server can be found on the HAPI FHIR GitHub repository.
+<a href = "">Docker</a> is a platform that uses containerization to package and run applications. For the purpose of this project, Docker was used to run a HAPI FHIR JPA Server locally on a Microsoft Surface 3 Laptop running Windows 11 Home. The Docker image of HAPI FHIR is a pre-packaged version of a FHIR server that you can run using Docker to easily test, store, and manage healthcare data using the HL7 FHIR standard. Detailed instructions on running the Docker image of the HAPI FHIR JPA Server can be found on the <a href = "https://github.com/hapifhir">HAPI FHIR GitHub repository</a>.
 <br clear="left"/>
 
 
@@ -35,3 +35,11 @@ Runs the HAPI FHIR container on port 8080, mounts application.yaml config, sets 
 ```bash
 docker run -d -p 8080:8080 --name hapi-fhir -v C:\Python\Wellness_Way\hapi-config:/configs -e SPRING_CONFIG_LOCATION=file:///configs/application.yaml hapiproject/hapi:latest
 ```
+
+## Useful Links
+### YouTube Videos
+- [DevDays (2021) Let's Build a FHIR App: Introduction HAPI Library for FHIR](https://youtu.be/nYPi2q_Tpks?si=WT9jqSkok0noNvYn)
+- [Setting up a local HAPI FHIR Server for testing via Docker (Gino Canessa)](https://www.youtube.com/watch?v=EaJpJ0aQjiM)
+- [HAPI FHIR Local Test Server (Gino Canessa)](https://youtu.be/EaJpJ0aQjiM?si=5XVxj2O9C9kALtwE)
+- [James Agnew - Generating International Patient Summary with HAPI FHIR | DevDays 2024](https://youtu.be/ClGed65vLNk?si=3ZnNT29UScjcSZw8)
+- [How to Set Up Your Own HAPI FHIR Server (Sidharth Ramesh)](https://youtu.be/M9mnj00hYlg?si=u2qpvGm2V182cEMy)
