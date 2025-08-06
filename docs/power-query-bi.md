@@ -184,16 +184,20 @@ let
         "patient", "occurrenceDateTime", "primarySource", "site", "route"
     }, {
         "ResourceType", "ImmunizationID", "Meta", "Status", "VaccineCode", 
-        "Patient", "Date", "PrimarySource", "Site", "Route"
+        "Patient", "OccurrenceDate", "PrimarySource", "Site", "Route"
     }),
+    ParsedOccurrenceDate = Table.TransformColumns(ExpandedResource,{{"OccurrenceDate", each Date.From(DateTimeZone.From(_)), type date}}),
 
     // Step 4: Expand vaccine code details
-    ExpandedVaccineCode = Table.ExpandRecordColumn(ExpandedResource, "VaccineCode", {"coding"}, {"VaccineCoding"}),
+    ExpandedVaccineCode = Table.ExpandRecordColumn(ParsedOccurrenceDate, "VaccineCode", {"coding"}, {"VaccineCoding"}),
     ExpandedVaccineCodingList = Table.ExpandListColumn(ExpandedVaccineCode, "VaccineCoding"),
     ExpandedVaccineCoding = Table.ExpandRecordColumn(ExpandedVaccineCodingList, "VaccineCoding", {"system", "code", "display"}, {"VaccineCodeSystem", "VaccineCode", "Vaccine"}),
+    ExtractVaccineType = Table.AddColumn(ExpandedVaccineCoding, "VaccineType", each Text.BetweenDelimiters([Vaccine], "[", "]"), type text),
+    ReplaceInfWithInfluenza = Table.ReplaceValue(ExtractVaccineType,"Inf","Influenza",Replacer.ReplaceText,{"VaccineType"}),
+    ReplaceVarWithVaricella = Table.ReplaceValue(ReplaceInfWithInfluenza,"Var","Varicella",Replacer.ReplaceText,{"VaccineType"}),
 
     // Step 5: Extract Patient ID from the patient reference
-    ExpandedPatient = Table.ExpandRecordColumn(ExpandedVaccineCoding, "Patient", {"reference"}, {"PatientReference"}),
+    ExpandedPatient = Table.ExpandRecordColumn(ReplaceVarWithVaricella, "Patient", {"reference"}, {"PatientReference"}),
     ExtractedPatientID = Table.ReplaceValue(ExpandedPatient, "Patient/", "", Replacer.ReplaceText, {"PatientReference"}),
 
     // Step 6: Expand site details (e.g. injection site)
@@ -207,13 +211,10 @@ let
     ExpandedRouteCoding = Table.ExpandRecordColumn(ExpandedRouteList, "RouteCoding", {"system", "code", "display"}, {"RouteCodeSystem", "RouteCode", "Route"}),
 
     // Step 8: Remove unneeded metadata fields
-    RemovedExtras = Table.RemoveColumns(ExpandedRouteCoding, {"Meta", "ResourceType", "PrimarySource"}),
+    RemovedExtras = Table.RemoveColumns(ExpandedRouteCoding, {"Meta", "ResourceType", "PrimarySource", "Search"}),
 
     // Step 9: Rename columns for clarity
-    RenamedColumns = Table.RenameColumns(RemovedExtras, {
-        {"PatientReference", "PatientID"},
-        {"Date", "OccurrenceDate"}
-    })
+    RenamedColumns = Table.RenameColumns(RemovedExtras, {"PatientReference", "PatientID"})
 in
     RenamedColumns
 ```
