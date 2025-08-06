@@ -7,8 +7,22 @@ Power BI offers multiple ways to connect to FHIR endpoints, including the [Web c
 ### Learn more about the FHIR web connector
 #### YouTube
 - [Dev Days (2023) FHIR Analytics with Power BI (Michael Hansen)](https://youtu.be/AqFZTf_gVhU?si=fQNXW-dyofKhT5sD)
+- [Power BI December 2021 Update - FHIR Connector](https://www.youtube.com/watch?v=iyAmYqTRCLY&t=514s)
 #### Blog
 - [Power BI Dashboard for FHIR Server](https://vnbhealth.com/2021/05/power-bi-dashboard-for-fhir-server-vnb-health/)
+
+## User Interface
+The following screenshots show the user interface.
+![Overview Page](images/Overview.jpg)
+![Medication Page](images/Medications.jpg)
+![Condition Page](images/Conditions.jpg)
+![Allergy Page](images/Allergies.jpg)
+![Immunization Page](images/Immunizations.jpg)
+
+## Relating tables
+All tables were related using the PatientID columns.
+![Screenshot Data Model View in Power BI](images/dataModel.jpg)
+
 
 ## Unpacking json to tabular format
 The m code used in Power Query to connect to each FHIR endpoint and unpack the json data into tabular format is below.
@@ -306,8 +320,6 @@ in
     FinalOutput
 ```
 
-## Relating tables
-
-## Data visualization
 
 ## Publish to Power BI Service
+Due to the fact that the author did not have access to a Power BI account, it was not possible to publish the report to the Power BI service.
