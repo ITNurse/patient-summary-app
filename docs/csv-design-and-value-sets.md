@@ -33,17 +33,6 @@ Because the patient data is created as CSV files, any values within those files 
 
 
 ## Composition
-<style>
-  table, th, td {
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-  }
-  th, td {
-    padding: 6px;
-    text-align: left;       /* horizontal alignment */
-    vertical-align: top;    /* vertical alignment */
-  }
-</style>
 <table>
   <thead>
     <tr>
@@ -64,7 +53,8 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>CompositionPSCA.status</code></td>
       <td><code>code</code></td>
       <td>Required</td>
-      <td>Required Binding: <a href="http://hl7.org/fhir/composition-status">CompositionStatus</a><br>Allowed: <code>preliminary</code>, <code>final</code>, <code>amended</code>, <code>entered-in-error</code></td>
+      <td><b>Binding Strength:</b>Required <br> <b>Value Set:</b> DocumentSectionCodes <br> https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879 
+            <br><b>LOINC Document: </b>60591-5: Patient summary Document</td>
     </tr>
     <tr>
       <td><code>CompositionPSCA.type</code></td>
@@ -118,7 +108,8 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>Composition.section:sectionAllergies.code</code></td>
       <td><code>CodeableConcept</code></td>
       <td>Required</td>
-      <td>Required Binding: <a href="https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879">DocumentSectionCodes</a></td>
+      <td><b>Binding Strength:</b>Required <br> <b>Value Set:</b> DocumentSectionCodes <br> https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879 
+            <br><b>LOINC Document: </b>60591-5: Patient summary Document</td>
     </tr>
     <tr>
       <td><code>Composition.section:sectionProblems.title</code></td>
@@ -130,7 +121,8 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>Composition.section:sectionProblems.code</code></td>
       <td><code>CodeableConcept</code></td>
       <td>Required</td>
-      <td>Required Binding: <a href="https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879">DocumentSectionCodes</a></td>
+      <td><b>Binding Strength:</b>Required <br> <b>Value Set:</b> DocumentSectionCodes <br> https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879 
+            <br><b>LOINC Document: </b>60591-5: Patient summary Document</td>
     </tr>
   </tbody>
 </table>
@@ -164,13 +156,13 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>Patient.gender</code></td>
       <td><code>code</code></td>
       <td>Optional</td>
-      <td>Required Binding: <a href="http://hl7.org/fhir/administrative-gender">AdministrativeGender</a><br>Allowed: <code>male</code>, <code>female</code>, <code>other</code>, <code>unknown</code></td>
+      <td><b>Binding Strength:</b>Required <br> <b>Value Set:</b> AdministrativeGender <br> http://hl7.org/fhir/administrative-gender</td>
     </tr>
     <tr>
       <td><code>Patient.contact.telecom.system</code></td>
       <td><code>code</code></td>
       <td>Optional</td>
-      <td>Required Binding: <a href="http://hl7.org/fhir/contact-point-system">ContactPointSystem</a><br>Allowed: <code>phone</code>, <code>fax</code>, <code>email</code>, <code>pager</code>, <code>url</code>, <code>sms</code>, <code>other</code></td>
+      <td><b>Binding Strength:</b>Required <br> <b>Value Set:</b> ContactPointSystem <br> http://hl7.org/fhir/contact-point-system</td>
     </tr>
     <tr>
       <td><code>Patient.contact.telecom.value</code></td>
@@ -212,7 +204,7 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>Patient.photo.contentType</code></td>
       <td><code>code</code></td>
       <td>Optional</td>
-      <td>Binding: <em>Mime Types</em> value set (Required Binding)</td>
+      <td><b>Binding Strength:</b>Required <br> <b>Value Set:</b> Mime Types</td>
     </tr>
     <tr>
       <td><code>Patient.photo.data</code></td>
@@ -255,27 +247,16 @@ Because the patient data is created as CSV files, any values within those files 
       <td>A reference to the patient resource</td>
     </tr>
     <tr>
-      <td><code>Condition.code</code></td>
-      <td><code>date</code></td>
-      <td>Required</td>
-      <td>
-        Preferred Binding: Clinical Finding Code<br>
-        This subset was defined using the intensional definition of <code>404684003 | Clinical finding (finding)</code> against the substrate SNOMED CT Canadian Edition.<br>
-        This resource is an informative value set; a normative subset containing the expanded values can be found on Canada Health Infoway's Terminology Gateway.<br>
-        <a href="https://fhir.infoway-inforoute.ca/ValueSet/clinicalfindingcode">https://fhir.infoway-inforoute.ca/ValueSet/clinicalfindingcode</a>
-      </td>
-    </tr>
-    <tr>
       <td><code>Condition.code.coding.system</code></td>
       <td><code>uri</code></td>
       <td>Required</td>
-      <td></td>
+      <td>SNOMED CT CA</td>
     </tr>
     <tr>
       <td><code>Condition.code.coding.code</code></td>
-      <td><code>code</code></td>
+      <td><code>date</code></td>
       <td>Required</td>
-      <td></td>
+      <td><b>Binding Strength:</b>Preferred <br> <b>Value Set:</b> Clinical Finding Code <br> https://fhir.infoway-inforoute.ca/ValueSet/clinicalfindingcode</td>
     </tr>
     <tr>
       <td><code>Condition.code.coding.display</code></td>
@@ -308,13 +289,13 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>medication.coding.system</code></td>
       <td><code>uri</code></td>
       <td>Required</td>
-      <td></td>
+      <td>CCDD</td>
     </tr>
     <tr>
       <td><code>medication.coding.code</code></td>
       <td><code>code</code></td>
       <td>Required</td>
-      <td><code>PrescriptionMedicinalProduct</code></td>
+      <td><b>Binding Strength:</b>Required <br> <b>Value Set:</b> PrescriptionMedicinalProduct <br> https://fhir.infoway-inforoute.ca/ValueSet/prescriptionmedicinalproduct</td>
     </tr>
     <tr>
       <td><code>medication.coding.display</code></td>
@@ -332,7 +313,7 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>status.coding.code</code></td>
       <td><code>code</code></td>
       <td>Required</td>
-      <td><code>Medication Status Codes</code></td>
+      <td><b>Binding Strength:</b>Preferred <br> <b>Value Set:</b> Medication Status Codes <br> http://hl7.org/fhir/CodeSystem/medication-statement-status</td>
     </tr>
     <tr>
       <td><code>effective.date</code></td>
@@ -370,7 +351,7 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>substance.coding.code</code></td>
       <td><code>code</code></td>
       <td>Required</td>
-      <td>PharmaceuticalBiologicProductAndSubstanceCode</td>
+      <td><b>Binding Strength:</b>Preferred <br> <b>Value Set:</b> PharmaceuticalBiologicProductAndSubstanceCode <br> https://fhir.infoway-inforoute.ca/ValueSet/pharmaceuticalbiologicproductandsubstancecode  </td>
     </tr>
     <tr>
       <td><code>substance.coding.display</code></td>
@@ -388,7 +369,7 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>reaction.coding.code</code></td>
       <td><code>code</code></td>
       <td>Optional</td>
-      <td>ClinicalFindingCode</td>
+      <td><b>Binding Strength:</b>Requried <br> <b>Value Set:</b> ClinicalFindingCode <br> https://fhir.infoway-inforoute.ca/ValueSet/clinicalfindingcode </td>
     </tr>
     <tr>
       <td><code>reaction.coding.display</code></td>
@@ -406,7 +387,7 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>clinicalStatus.coding.code</code></td>
       <td><code>code</code></td>
       <td>Optional</td>
-      <td>AllergyIntoleranceClinicalStatusCodes</td>
+      <td><b>Binding Strength:</b>Requried <br> <b>Value Set:</b> AllergyIntoleranceClinicalStatusCodes <br> http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical </td>
     </tr>
     <tr>
       <td><code>verificationStatus.coding.system</code></td>
@@ -418,7 +399,7 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>verificationStatus.coding.code</code></td>
       <td><code>code</code></td>
       <td>Optional</td>
-      <td>AllergyIntoleranceVerificationStatusCodes</td>
+      <td><b>Binding Strength:</b>Requried <br> <b>Value Set:</b> AllergyIntoleranceVerificationStatusCodes <br> http://terminology.hl7.org/CodeSystem/allergyintolerance-verification </td>
     </tr>
     <tr>
       <td><code>criticality.coding.system</code></td>
@@ -430,7 +411,7 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>criticality.coding.code</code></td>
       <td><code>code</code></td>
       <td>Optional</td>
-      <td>AllergyIntoleranceCriticality</td>
+      <td><b>Binding Strength:</b>Requried <br> <b>Value Set:</b> AllergyIntoleranceCriticality <br> http://hl7.org/fhir/allergy-intolerance-criticality</td>
     </tr>
     <tr>
       <td><code>severity.coding.system</code></td>
@@ -442,7 +423,7 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>severity.coding.code</code></td>
       <td><code>code</code></td>
       <td>Optional</td>
-      <td>AllergyIntoleranceSeverity</td>
+      <td><b>Binding Strength:</b>Requried <br> <b>Value Set:</b> AllergyIntoleranceSeverity <br> http://hl7.org/fhir/reaction-event-severity </td>
     </tr>
   </tbody>
 </table>
