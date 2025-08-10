@@ -54,7 +54,7 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>code</code></td>
       <td>Required</td>
       <td><b>Binding Strength:</b>Required <br> <b>Value Set:</b> DocumentSectionCodes <br> https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879 
-            <br><b>LOINC Document: </b>60591-5: Patient summary Document</td>
+            <br><b>LOINC Document Type: </b>60591-5: Patient summary Document</td>
     </tr>
     <tr>
       <td><code>CompositionPSCA.type</code></td>
@@ -96,33 +96,47 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>Composition.section:sectionMedications.code</code></td>
       <td><code>CodeableConcept</code></td>
       <td>Required</td>
-      <td>Required Binding: <a href="https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879">DocumentSectionCodes</a></td>
+      <td><b>Binding Strength:</b>Required <br> <b>Value Set:</b> DocumentSectionCodes <br> https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879 
+            <br><b>LOINC Document Type: </b>10160-0: History of Medication use Narrative</td>
     </tr>
     <tr>
       <td><code>Composition.section:sectionAllergies.title</code></td>
       <td><code>string</code></td>
       <td>Required</td>
-      <td>Required if allergy-intolerance section</td>
+      <td>Required if allergy-intolerance section is included</td>
     </tr>
     <tr>
       <td><code>Composition.section:sectionAllergies.code</code></td>
       <td><code>CodeableConcept</code></td>
       <td>Required</td>
       <td><b>Binding Strength:</b>Required <br> <b>Value Set:</b> DocumentSectionCodes <br> https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879 
-            <br><b>LOINC Document: </b>60591-5: Patient summary Document</td>
+            <br><b>LOINC Document Type: </b>48765-2: Allergies and adverse reactions Document</td>
     </tr>
     <tr>
       <td><code>Composition.section:sectionProblems.title</code></td>
       <td><code>string</code></td>
       <td>Required</td>
-      <td></td>
+      <td>Required if condition section is included</td>
     </tr>
     <tr>
       <td><code>Composition.section:sectionProblems.code</code></td>
       <td><code>CodeableConcept</code></td>
       <td>Required</td>
       <td><b>Binding Strength:</b>Required <br> <b>Value Set:</b> DocumentSectionCodes <br> https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879 
-            <br><b>LOINC Document: </b>60591-5: Patient summary Document</td>
+            <br><b>LOINC Document Type: </b>11450-4: Problem List – Reported</td>
+    </tr>
+    <tr>
+      <td><code>Composition.section:sectionImmunizations.title</code></td>
+      <td><code>string</code></td>
+      <td>Required</td>
+      <td>Required if immunization section is included</td>
+    </tr>
+    <tr>
+      <td><code>Composition.section:sectionImmunizations.code</code></td>
+      <td><code>CodeableConcept</code></td>
+      <td>Required</td>
+      <td><b>Binding Strength:</b>Required <br> <b>Value Set:</b> DocumentSectionCodes <br> https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879 
+            <br><b>LOINC Document Type: </b>•	11369-6: History of Immunization Narrative</td>
     </tr>
   </tbody>
 </table>
