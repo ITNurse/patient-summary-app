@@ -1,7 +1,13 @@
 # CSV File Design Decisions
-This section identifies the rationale behind why the csv files used as the base patient data for the patient summaries were created as they were.
+This section explains the rationale behind the structure and content of the CSV files used to generate synthetic patient data for the PS-CA Patient Summary Viewer. Each file corresponds to a FHIR resource type required by the PS-CA Implementation Guide (IG), including Composition, Patient, MedicationStatement, Condition, and AllergyIntolerance. Additional files for Organization and Immunization were included to broaden the educational scope.
 
-## PS-CA Implementation Guide
+The data was manually created using Windows Notepad to ensure full control over each record and to make the files easy to explore with tools like Microsoft Excel. This approach supports transparency and helps learners understand how each data element maps to the PS-CA profiles and value sets.
+
+Only fields marked as Required in the IG were generally included, with a few optional fields added to enrich the dashboard and demonstrate how they can enhance patient summaries. For coded elements, the CSV files include the code, code system, and display name to support clarity, even if some of this information is not pushed to the FHIR server.
+
+The the contents of each CSV file, including resource mappings, data types, and terminology bindings are detailed below.
+
+## PS-CA Implementation Guide Background Information
 The Trial Implementation version (v1.0.0 TI) of the [PS-CA implementation guide](https://simplifier.net/guide/pan-canadian-patient-summary-v1.0-ti-fhir-implementation-guide?version=1.0.0) and the associated resource definitions on simplifier.net were used as the basis for all design decisions. The PS-CA is closely aligned with the [International Patient Summary (IPS) Implementation Guide](https://hl7.org/fhir/uv/ips/), which indicates that every IPS must include the following sections: Header (subject, author, attester, custodian), Medication Summary, Allergies & Intolerances, and Problem List.
 
 ![Screenshot of IPS composition showing required sections as: Header (subject, author, attester, custodian), Medication Summary, Allergies & Intolerances, and Problem List](images/ips-composition.png)
@@ -24,13 +30,31 @@ In an effort to make this project a more well-rounded educational resource, the 
 Because the patient data is created as CSV files, any values within those files that contain commas (i.e. a condition display name) will cause issues. To get around this, all text fields should be wrapped in double quotes.
 
 ## Organization
-
-| Field                                                   | Type              | Requirement | Notes                                                                                                                                               |
-|---------------------------------------------------------|-------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Organization.name`                                     | `string`          | Required    | Name used for the organization                                                                                                                      |
-| `CompositionPSCA.status`                                | `CodeableConcept` | Optional    | Example Binding: [OrganizationType](http://terminology.hl7.org/CodeSystem/organization-type)                                                        |
-
-
+                                                     |
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Requirement</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Organization.name</code></td>
+      <td><code>string</code></td>
+      <td>Required</td>
+      <td>Name used for the organization</td>
+    </tr>
+    <tr>
+      <td><code>Organization.type</code></td>
+      <td><code>code</code></td>
+      <td>Optional</td>
+      <td><b>Binding Strength:</b>Example <br> <b>Value Set:</b> OrganizationType <br> http://terminology.hl7.org/CodeSystem/organization-type</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Composition
 <table>
