@@ -29,6 +29,8 @@ In an effort to make this project a more well-rounded educational resource, the 
 - [ImmunizationPSCA](https://simplifier.net/ps-ca-r1/immunizationpsca)
 - [OrganizationCACore](https://simplifier.net/ca-core/organization-ca-core)
 
+<br>
+<br>
 
 ## CSV File Contents 
 Note: Because the patient data is created as CSV files, any values within those files that contain commas (i.e. a condition display name) will cause issues. To get around this, all text fields should be wrapped in double quotes.
