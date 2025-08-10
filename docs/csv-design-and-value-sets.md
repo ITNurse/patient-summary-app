@@ -33,7 +33,17 @@ Because the patient data is created as CSV files, any values within those files 
 
 
 ## Composition
-
+<style>
+  table, th, td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 6px;
+    text-align: left;       /* horizontal alignment */
+    vertical-align: top;    /* vertical alignment */
+  }
+</style>
 <table>
   <thead>
     <tr>
@@ -153,61 +163,61 @@ Because the patient data is created as CSV files, any values within those files 
     <tr>
       <td><code>Patient.gender</code></td>
       <td><code>code</code></td>
-      <td>Not required</td>
+      <td>Optional</td>
       <td>Required Binding: <a href="http://hl7.org/fhir/administrative-gender">AdministrativeGender</a><br>Allowed: <code>male</code>, <code>female</code>, <code>other</code>, <code>unknown</code></td>
     </tr>
     <tr>
       <td><code>Patient.contact.telecom.system</code></td>
       <td><code>code</code></td>
-      <td>Not required</td>
+      <td>Optional</td>
       <td>Required Binding: <a href="http://hl7.org/fhir/contact-point-system">ContactPointSystem</a><br>Allowed: <code>phone</code>, <code>fax</code>, <code>email</code>, <code>pager</code>, <code>url</code>, <code>sms</code>, <code>other</code></td>
     </tr>
     <tr>
       <td><code>Patient.contact.telecom.value</code></td>
       <td><code>string</code></td>
-      <td>Not required</td>
+      <td>Optional</td>
       <td></td>
     </tr>
     <tr>
       <td><code>Patient.contact.address.city</code></td>
       <td><code>string</code></td>
-      <td>Not required</td>
+      <td>Optional</td>
       <td></td>
     </tr>
     <tr>
       <td><code>Patient.contact.address.line</code></td>
       <td><code>string</code></td>
-      <td>Not required</td>
+      <td>Optional</td>
       <td></td>
     </tr>
     <tr>
       <td><code>Patient.contact.address.state</code></td>
       <td><code>string</code></td>
-      <td>Not required</td>
+      <td>Optional</td>
       <td></td>
     </tr>
     <tr>
       <td><code>Patient.contact.address.postalCode</code></td>
       <td><code>string</code></td>
-      <td>Not required</td>
+      <td>Optional</td>
       <td></td>
     </tr>
     <tr>
       <td><code>Patient.contact.address.country</code></td>
       <td><code>string</code></td>
-      <td>Not required</td>
+      <td>Optional</td>
       <td></td>
     </tr>
     <tr>
       <td><code>Patient.photo.contentType</code></td>
       <td><code>code</code></td>
-      <td>Not required</td>
+      <td>Optional</td>
       <td>Binding: <em>Mime Types</em> value set (Required Binding)</td>
     </tr>
     <tr>
       <td><code>Patient.photo.data</code></td>
       <td><code>base64Binary</code></td>
-      <td>Not required</td>
+      <td>Optional</td>
       <td></td>
     </tr>
     <tr>
