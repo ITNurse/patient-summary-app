@@ -5,7 +5,7 @@ The [Pan-Canadian Patient Summary (PS-CA)](https://www.infoway-inforoute.ca/en/f
 ![Screenshot of IPS composition showing required sections as: Header (subject, author, attester, custodian), Medication Summary, Allergies & Intolerances, and Problem List](images/ips-composition.png)
 (Image Source: https://build.fhir.org/ig/HL7/fhir-ips/Structure-of-the-International-Patient-Summary.html)
 
-### Learn More
+## Learn More
 #### YouTube
 - [Connected Care: The Power of the Patient Summary](https://youtu.be/LXLj0ElsRNg?si=D8Q_G8KvZu4vgfu6)
 - [What Connected Care Means to the Future of Canada's Health Care System](https://youtu.be/XoqzMAULasg?si=yuLXjGBJvAWEVZ8i)
@@ -20,7 +20,9 @@ The [Pan-Canadian Patient Summary (PS-CA)](https://www.infoway-inforoute.ca/en/f
 - [DevDays (2019):  International Patient Summary (Rob Hausam)](https://www.youtube.com/watch?v=s4sfMFB56mI&list=PLD40L51Q1YDhQMuduy9XJSnSG7s0vHOWD)
 - [International Patient Summary Proof of Concept](https://youtu.be/zpPlZNSvSB0?si=wiV-bhER2Levv4DA)
 
-## Interoperability
+<br>
+
+# Interoperability
 
 Interoperability is foundational to the PS-CA. According to the [Health Information Management Systems Society (HIMSS)](https://legacy.himss.org/resources/interoperability-healthcare), it encompasses the ability of systems to access, exchange, integrate, and cooperatively use data across organizational and national boundaries. 
 
@@ -33,12 +35,14 @@ The PS-CA supports:
 - Structural interoperability: Data follows consistent formats, such as HL7 FHIR.
 - Semantic interoperability: Shared terminologies ensure consistent meaning.
 
-### Learn More
+## Learn More
 #### YouTube
 - [Connected Care. A Healthier Canada. Powered By Interoperability](https://youtu.be/A93_7N99HmY?si=n1fXUyWTd6cM3vk2)
 - [Pan Canadian Health Data Strategy Presentation (2023)](https://youtu.be/VAqCDZS3QuA?si=-6Lj12-SuxUtBiyW)
 
-## Health Information Exchange Standards
+<br>
+
+# Health Information Exchange Standards
 
 The PS-CA is built on a suite of health information exchange standards that define how data is structured, transmitted, and interpreted:
 
@@ -48,7 +52,9 @@ The PS-CA is built on a suite of health information exchange standards that defi
 
 Canada Health Infoway’s [PS-CA Interoperability Specification](https://infoscribe.infoway-inforoute.ca/display/PSCAV1TI/ImplementationGuide) supports both FHIR and CDA formats, promoting broad adoption across provinces and territories.
 
-## Controlled Terminology Standards
+<br>
+
+# Controlled Terminology Standards
 
 Terminologies and value sets ensure that exchanged data is meaningful and consistently interpreted. The PS-CA uses:
 
@@ -58,16 +64,17 @@ Terminologies and value sets ensure that exchanged data is meaningful and consis
 
 These terminologies are maintained by Canada Health Infoway and distributed via the [Canadian Standards Release Centre](https://accelero.infoway-inforoute.ca/en/standards/terminology-standards) and [Terminology Gateway](https://tgateway.infoway-inforoute.ca/). Value sets are curated subsets of these terminologies, and data elements in the PS-CA are bound to them with varying levels of strictness (e.g., required, preferred, example, etc.).
 
-### Learn More
+## Learn More
 #### Websites
-##### Canada Health Infoway
 [Connected Care Terminology Standards](https://accelero.infoway-inforoute.ca/en/standards/terminology-standards)
 #### YouTube
 - [Terminology Standards (Canada Health Infoway)](https://youtu.be/ZGX5oNKSUfA?si=LWQxXNCKqz6LGTaX)
 - [Enhancing Terminology in the International Patient Summary (Rob Hausam](https://youtu.be/zcgo6DRQApA?si=OxeSZLSfbpvkyJHc)
 - [International Patient Summary (IPS) adoption and implementation with SNOMED CT](https://youtu.be/O2HTepV6hGg?si=ocJVp-9OG4n0J10d)
 
-## FHIR
+<br>
+
+# FHIR
 
 FHIR (Fast Healthcare Interoperability Resources) is the preferred format for PS-CA implementation. It structures data into modular resources—such as Patient, Condition, and MedicationStatement—and supports exchange via standard web protocols.
 
