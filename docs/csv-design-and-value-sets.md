@@ -34,21 +34,96 @@ Because the patient data is created as CSV files, any values within those files 
 
 ## Composition
 
-| Field                                                   | Type           | Requirement | Notes                                                                                                                                                              |
-|---------------------------------------------------------|----------------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `CompositionPSCA.subject.reference`                     | `string`       | Required    | A reference to a location at which the other resource is found                                                                                                     |
-| `CompositionPSCA.status`                                | `code`         | Required    | Required Binding: [CompositionStatus](http://hl7.org/fhir/composition-status) <br> Allowed: `preliminary`, `final`, `amended`, `entered-in-error`              |
-| `CompositionPSCA.type`                                  | `CodeableConcept` | Required | Preferred Binding: `FHIRDocumentTypeCodes` <br> Includes codes from LOINC (where SCALE_TYP = "Doc")                                                                     |
-| `Composition.date`                                      | `dateTime`     | Required    |                                                                                                                                                                    |
-| `CompositionPSCA.author`                                | `Reference`    | Required    | Must reference: `PractitionerProfile`, `PractitionerRoleProfile`, `Device`, `PatientPSCA`, `RelatedPerson`, or `OrganizationProfile`                              |
-| `CompositionPSCA.title`                                 | `string`       | Required    |                                                                                                                                                                    |
-| `CompositionPSCA.section`                               | `BackboneElement` | Required | Sections comprising the PSCA                                                                                                                                        |
-| `Composition.section:sectionMedications.title`          | `string`       | Required    |                                                                                                                                                                    |
-| `Composition.section:sectionMedications.code`           | `CodeableConcept` | Required | Required Binding: [DocumentSectionCodes](https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879)                                                             |
-| `Composition.section:sectionAllergies.title`            | `string`       | Required    |                                                                                                                                                                    |
-| `Composition.section:sectionAllergies.code`             | `CodeableConcept` | Required | Required Binding: [DocumentSectionCodes](https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879)                                                             |
-| `Composition.section:sectionProblems.title`             | `string`       | Required    |                                                                                                                                                                    |
-| `Composition.section:sectionProblems.code`              | `CodeableConcept` | Required | Required Binding: [DocumentSectionCodes](https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879)                                                             |
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Requirement</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>CompositionPSCA.subject.reference</code></td>
+      <td><code>string</code></td>
+      <td>Required</td>
+      <td>Reference to the patient</td>
+    </tr>
+    <tr>
+      <td><code>CompositionPSCA.status</code></td>
+      <td><code>code</code></td>
+      <td>Required</td>
+      <td>Required Binding: <a href="http://hl7.org/fhir/composition-status">CompositionStatus</a><br>Allowed: <code>preliminary</code>, <code>final</code>, <code>amended</code>, <code>entered-in-error</code></td>
+    </tr>
+    <tr>
+      <td><code>CompositionPSCA.type</code></td>
+      <td><code>CodeableConcept</code></td>
+      <td>Required</td>
+      <td>Preferred Binding: <code>FHIRDocumentTypeCodes</code><br>Includes codes from LOINC (where SCALE_TYP = "Doc")</td>
+    </tr>
+    <tr>
+      <td><code>Composition.date</code></td>
+      <td><code>dateTime</code></td>
+      <td>Required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>CompositionPSCA.author</code></td>
+      <td><code>Reference</code></td>
+      <td>Required</td>
+      <td>Must reference: <code>PractitionerProfile</code>, <code>PractitionerRoleProfile</code>, <code>Device</code>, <code>PatientPSCA</code>, <code>RelatedPerson</code>, or <code>OrganizationProfile</code></td>
+    </tr>
+    <tr>
+      <td><code>CompositionPSCA.title</code></td>
+      <td><code>string</code></td>
+      <td>Required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>CompositionPSCA.section</code></td>
+      <td><code>BackboneElement</code></td>
+      <td>Required</td>
+      <td>Sections comprising the PSCA</td>
+    </tr>
+    <tr>
+      <td><code>Composition.section:sectionMedications.title</code></td>
+      <td><code>string</code></td>
+      <td>Required</td>
+      <td>Required if medication section is included</td>
+    </tr>
+    <tr>
+      <td><code>Composition.section:sectionMedications.code</code></td>
+      <td><code>CodeableConcept</code></td>
+      <td>Required</td>
+      <td>Required Binding: <a href="https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879">DocumentSectionCodes</a></td>
+    </tr>
+    <tr>
+      <td><code>Composition.section:sectionAllergies.title</code></td>
+      <td><code>string</code></td>
+      <td>Required</td>
+      <td>Required if allergy-intolerance section</td>
+    </tr>
+    <tr>
+      <td><code>Composition.section:sectionAllergies.code</code></td>
+      <td><code>CodeableConcept</code></td>
+      <td>Required</td>
+      <td>Required Binding: <a href="https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879">DocumentSectionCodes</a></td>
+    </tr>
+    <tr>
+      <td><code>Composition.section:sectionProblems.title</code></td>
+      <td><code>string</code></td>
+      <td>Required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>Composition.section:sectionProblems.code</code></td>
+      <td><code>CodeableConcept</code></td>
+      <td>Required</td>
+      <td>Required Binding: <a href="https://simplifier.net/packages/hl7.fhir.r4.core/4.0.1/files/2831879">DocumentSectionCodes</a></td>
+    </tr>
+  </tbody>
+</table>
 
 
 ## Patient
