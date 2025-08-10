@@ -13,7 +13,7 @@ Power BI offers multiple ways to connect to FHIR endpoints, including the [Web c
 
 <br>
 
-# Unpacking json to tabular format
+## Unpacking json to tabular format
 The m code used in Power Query to connect to each FHIR endpoint and unpack the json data into tabular format is below.
 
 ### Composition
@@ -319,7 +319,7 @@ The following screenshots show the user interface.
 ![Allergy Page](images/Allergies.jpg)
 ![Immunization Page](images/Immunizations.jpg)
 
-## Relating tables
+# Relating tables
 All tables were related using the PatientID columns.
 ![Screenshot Data Model View in Power BI](images/dataModel.jpg)
 
