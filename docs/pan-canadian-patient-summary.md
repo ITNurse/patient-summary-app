@@ -5,7 +5,7 @@ The [Pan-Canadian Patient Summary (PS-CA)](https://www.infoway-inforoute.ca/en/f
 ![Screenshot of IPS composition showing required sections as: Header (subject, author, attester, custodian), Medication Summary, Allergies & Intolerances, and Problem List](images/ips-composition.png)
 (Image Source: https://build.fhir.org/ig/HL7/fhir-ips/Structure-of-the-International-Patient-Summary.html)
 
-## Learn More
+### Learn More
 #### YouTube
 - [Connected Care: The Power of the Patient Summary](https://youtu.be/LXLj0ElsRNg?si=D8Q_G8KvZu4vgfu6)
 - [What Connected Care Means to the Future of Canada's Health Care System](https://youtu.be/XoqzMAULasg?si=yuLXjGBJvAWEVZ8i)
@@ -35,7 +35,7 @@ The PS-CA supports:
 - Structural interoperability: Data follows consistent formats, such as HL7 FHIR.
 - Semantic interoperability: Shared terminologies ensure consistent meaning.
 
-## Learn More
+### Learn More
 #### YouTube
 - [Connected Care. A Healthier Canada. Powered By Interoperability](https://youtu.be/A93_7N99HmY?si=n1fXUyWTd6cM3vk2)
 - [Pan Canadian Health Data Strategy Presentation (2023)](https://youtu.be/VAqCDZS3QuA?si=-6Lj12-SuxUtBiyW)
@@ -64,9 +64,9 @@ Terminologies and value sets ensure that exchanged data is meaningful and consis
 
 These terminologies are maintained by Canada Health Infoway and distributed via the [Canadian Standards Release Centre](https://accelero.infoway-inforoute.ca/en/standards/terminology-standards) and [Terminology Gateway](https://tgateway.infoway-inforoute.ca/). Value sets are curated subsets of these terminologies, and data elements in the PS-CA are bound to them with varying levels of strictness (e.g., required, preferred, example, etc.).
 
-## Learn More
+### Learn More
 #### Websites
-[Connected Care Terminology Standards](https://accelero.infoway-inforoute.ca/en/standards/terminology-standards)
+- [Connected Care Terminology Standards](https://accelero.infoway-inforoute.ca/en/standards/terminology-standards)
 #### YouTube
 - [Terminology Standards (Canada Health Infoway)](https://youtu.be/ZGX5oNKSUfA?si=LWQxXNCKqz6LGTaX)
 - [Enhancing Terminology in the International Patient Summary (Rob Hausam](https://youtu.be/zcgo6DRQApA?si=OxeSZLSfbpvkyJHc)
