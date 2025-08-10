@@ -128,32 +128,153 @@ Because the patient data is created as CSV files, any values within those files 
 
 ## Patient
 
-| Field                                        | Type           | Requirement  | Notes                                                                                                                                              |
-|---------------------------------------------|----------------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Patient.name`                              | `string`       | Required     | Used `patient.name.family` and `patient.name.given`                                                                                                |
-| `Patient.birthDate`                         | `date`         | Required     |                                                                                                                                                    |
-| `Patient.gender`                            | `code`         | Not required | Required Binding: [AdministrativeGender](http://hl7.org/fhir/administrative-gender) <br> Allowed: `male`, `female`, `other`, `unknown`                 |
-| `Patient.contact.telecom.system`            | `code`         | Not required | Required Binding: [ContactPointSystem](http://hl7.org/fhir/contact-point-system) <br> Allowed: `phone`, `fax`, `email`, `pager`, `url`, `sms`, `other`     |
-| `Patient.contact.telecom.value`             | `string`       | Not required |                                                                                                                                                    |
-| `Patient.contact.address.city`              | `string`       | Not required |                                                                                                                                                    |
-| `Patient.contact.address.line`              | `string`       | Not required |                                                                                                                                                    |
-| `Patient.contact.address.state`             | `string`       | Not required |                                                                                                                                                    |
-| `Patient.contact.address.postalCode`        | `string`       | Not required |                                                                                                                                                    |
-| `Patient.contact.address.country`           | `string`       | Not required |                                                                                                                                                    |
-| `Patient.photo.contentType`                 | `code`         | Not required | Binding: *Mime Types* value set (Required Binding)                                                                               |
-| `Patient.photo.data`                        | `base64Binary` | Not required |                                                                                                                                                    |
-| `Patient.identifier.system`                 | `uri`          | Required     |                                                                                                                                                    |
-| `Patient.identifier.value`                  | `string`       | Required     |                                                                                                                                                    |
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Requirement</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Patient.name</code></td>
+      <td><code>string</code></td>
+      <td>Required</td>
+      <td>Used <code>patient.name.family</code> and <code>patient.name.given</code></td>
+    </tr>
+    <tr>
+      <td><code>Patient.birthDate</code></td>
+      <td><code>date</code></td>
+      <td>Required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>Patient.gender</code></td>
+      <td><code>code</code></td>
+      <td>Not required</td>
+      <td>Required Binding: <a href="http://hl7.org/fhir/administrative-gender">AdministrativeGender</a><br>Allowed: <code>male</code>, <code>female</code>, <code>other</code>, <code>unknown</code></td>
+    </tr>
+    <tr>
+      <td><code>Patient.contact.telecom.system</code></td>
+      <td><code>code</code></td>
+      <td>Not required</td>
+      <td>Required Binding: <a href="http://hl7.org/fhir/contact-point-system">ContactPointSystem</a><br>Allowed: <code>phone</code>, <code>fax</code>, <code>email</code>, <code>pager</code>, <code>url</code>, <code>sms</code>, <code>other</code></td>
+    </tr>
+    <tr>
+      <td><code>Patient.contact.telecom.value</code></td>
+      <td><code>string</code></td>
+      <td>Not required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>Patient.contact.address.city</code></td>
+      <td><code>string</code></td>
+      <td>Not required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>Patient.contact.address.line</code></td>
+      <td><code>string</code></td>
+      <td>Not required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>Patient.contact.address.state</code></td>
+      <td><code>string</code></td>
+      <td>Not required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>Patient.contact.address.postalCode</code></td>
+      <td><code>string</code></td>
+      <td>Not required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>Patient.contact.address.country</code></td>
+      <td><code>string</code></td>
+      <td>Not required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>Patient.photo.contentType</code></td>
+      <td><code>code</code></td>
+      <td>Not required</td>
+      <td>Binding: <em>Mime Types</em> value set (Required Binding)</td>
+    </tr>
+    <tr>
+      <td><code>Patient.photo.data</code></td>
+      <td><code>base64Binary</code></td>
+      <td>Not required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>Patient.identifier.system</code></td>
+      <td><code>uri</code></td>
+      <td>Required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>Patient.identifier.value</code></td>
+      <td><code>string</code></td>
+      <td>Required</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## Condition
 
-| Field                                        | Type           | Requirement  | Notes                                                                                                                                                                            |
-|---------------------------------------------|----------------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Condition.subject.reference`            | `string`       | Required     | A reference to a location at which the other resource is found  |
-| `Condition.code`                         | `date`         | Required     | Preferred Binding: Clinical Finding Code <br>  This subset was defined using the intensional definition of 404684003 &#124; Clinical finding (finding) against the substrate SNOMED CT Canadian Edition. <br> This resource is an informative value set; a normative subset containing the expanded values can be found on Canada Health Infoway's Terminology Gateway. <br> [https://fhir.infoway-inforoute.ca/ValueSet/clinicalfindingcode](https://fhir.infoway-inforoute.ca/ValueSet/clinicalfindingcode) |
-| `Condition.code.coding.system`          | `uri`         | Required |                                                                                                                                                                                             |
-| `Condition.code.coding.code`            | `code`         | Required |                                                                                                                                                                                             |
-| `Condition.code.coding.display`             | `string`       | Required |                                                                                                                                                                                        |
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Requirement</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Condition.subject.reference</code></td>
+      <td><code>string</code></td>
+      <td>Required</td>
+      <td>A reference to a location at which the other resource is found</td>
+    </tr>
+    <tr>
+      <td><code>Condition.code</code></td>
+      <td><code>date</code></td>
+      <td>Required</td>
+      <td>
+        Preferred Binding: Clinical Finding Code<br>
+        This subset was defined using the intensional definition of <code>404684003 | Clinical finding (finding)</code> against the substrate SNOMED CT Canadian Edition.<br>
+        This resource is an informative value set; a normative subset containing the expanded values can be found on Canada Health Infoway's Terminology Gateway.<br>
+        <a href="https://fhir.infoway-inforoute.ca/ValueSet/clinicalfindingcode">https://fhir.infoway-inforoute.ca/ValueSet/clinicalfindingcode</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>Condition.code.coding.system</code></td>
+      <td><code>uri</code></td>
+      <td>Required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>Condition.code.coding.code</code></td>
+      <td><code>code</code></td>
+      <td>Required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>Condition.code.coding.display</code></td>
+      <td><code>string</code></td>
+      <td>Required</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 
 
 ## Medication
