@@ -471,7 +471,7 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>status.coding.code</code></td>
       <td><code>code</code></td>
       <td>Required</td>
-      <td>Binding Strength: Requried <br> Value Set: ImmunizationStatusCodes <br> https://fhir.infoway-inforoute.ca/ValueSet/immunizationstatuscodes</td>
+      <td><b>Binding Strength:</b>Requried <br> <b>Value Set:</b> ImmunizationStatusCodes <br> https://fhir.infoway-inforoute.ca/ValueSet/immunizationstatuscodes</td>
     </tr>
     <tr>
       <td><code>status.coding.display</code></td>
@@ -489,7 +489,7 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>vaccine.coding.code</code></td>
       <td><code>code</code></td>
       <td>Required</td>
-      <td>Binding Strength: Preferred <br> Value Set: VaccineAdministeredTradeNameCode <br> https://fhir.infoway-inforoute.ca/ValueSet/vaccineadministeredtradenamecode</td>
+      <td><b>Binding Strength:</b> Preferred <br> <b>Value Set:</b> VaccineAdministeredTradeNameCode <br> https://fhir.infoway-inforoute.ca/ValueSet/vaccineadministeredtradenamecode</td>
     </tr>
     <tr>
       <td><code>vaccine.coding.display</code></td>
@@ -507,7 +507,7 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>site.coding.code</code></td>
       <td><code>code</code></td>
       <td>Optional</td>
-      <td>Binding Strength: Example <br> Value Set: CodesForImmunizationSiteOfAdministration <br> http://hl7.org/fhir/ValueSet/immunization-site </td>
+      <td><b>Binding Strength:</b> Example <br> <b>Value Set:</b> CodesForImmunizationSiteOfAdministration <br> http://hl7.org/fhir/ValueSet/immunization-site </td>
     </tr>
     <tr>
       <td><code>site.coding.display</code></td>
@@ -525,7 +525,7 @@ Because the patient data is created as CSV files, any values within those files 
       <td><code>route.coding.code</code></td>
       <td><code>code</code></td>
       <td>Optional</td>
-      <td>Binding Strength: Preferred <br> Value Set: ImmunizationRouteOfAdministrationCode <br> https://fhir.infoway-inforoute.ca/ValueSet/immunizationrouteofadministrationcode </td>
+      <td><b>Binding Strength:</b> Preferred <br> <b>Value Set:</b> ImmunizationRouteOfAdministrationCode <br> https://fhir.infoway-inforoute.ca/ValueSet/immunizationrouteofadministrationcode </td>
     </tr>
     <tr>
       <td><code>route.coding.display</code></td>
