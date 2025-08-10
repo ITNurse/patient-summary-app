@@ -29,10 +29,10 @@ In an effort to make this project a more well-rounded educational resource, the 
 - [ImmunizationPSCA](https://simplifier.net/ps-ca-r1/immunizationpsca)
 - [OrganizationCACore](https://simplifier.net/ca-core/organization-ca-core)
 
-## Special Note: 
-Because the patient data is created as CSV files, any values within those files that contain commas (i.e. a condition display name) will cause issues. To get around this, all text fields should be wrapped in double quotes.
+## CSV File Contents 
+Note: Because the patient data is created as CSV files, any values within those files that contain commas (i.e. a condition display name) will cause issues. To get around this, all text fields should be wrapped in double quotes.
 
-## Organization
+### Organization
                                                      |
 <table>
   <thead>
@@ -169,7 +169,7 @@ Because the patient data is created as CSV files, any values within those files 
 </table>
 
 
-## Patient
+### Patient
 
 <table>
   <thead>
@@ -269,7 +269,7 @@ Because the patient data is created as CSV files, any values within those files 
 </table>
 
 
-## Condition
+### Condition
 
 <table>
   <thead>
@@ -309,7 +309,7 @@ Because the patient data is created as CSV files, any values within those files 
 </table>
 
 
-## Medication
+### Medication
 <table>
   <thead>
     <tr>
@@ -365,7 +365,7 @@ Because the patient data is created as CSV files, any values within those files 
   </tbody>
 </table>
 
-## Allergy Intolerance
+### Allergy Intolerance
 <table>
   <thead>
     <tr>
@@ -470,7 +470,7 @@ Because the patient data is created as CSV files, any values within those files 
 </table>
 
 
-## Immunization
+### Immunization
 <table>
   <thead>
     <tr>
