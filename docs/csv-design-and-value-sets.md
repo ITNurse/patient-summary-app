@@ -46,9 +46,9 @@ Because the patient data is created as CSV files, any values within those files 
   <tbody>
     <tr>
       <td><code>CompositionPSCA.subject.reference</code></td>
-      <td><code>string</code></td>
+      <td><code>reference</code></td>
       <td>Required</td>
-      <td>Reference to the patient</td>
+      <td>A reference to the patient resource</td>
     </tr>
     <tr>
       <td><code>CompositionPSCA.status</code></td>
@@ -240,9 +240,9 @@ Because the patient data is created as CSV files, any values within those files 
   <tbody>
     <tr>
       <td><code>Condition.subject.reference</code></td>
-      <td><code>string</code></td>
+      <td><code>reference</code></td>
       <td>Required</td>
-      <td>A reference to a location at which the other resource is found</td>
+      <td>A reference to the patient resource</td>
     </tr>
     <tr>
       <td><code>Condition.code</code></td>
@@ -278,10 +278,260 @@ Because the patient data is created as CSV files, any values within those files 
 
 
 ## Medication
-[Enter table here]
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Requirement</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>patient.identifier</code></td>
+      <td><code>reference</code></td>
+      <td>Required</td>
+      <td>A reference to the patient resource</td>
+    </tr>
+    <tr>
+      <td><code>medication.coding.system</code></td>
+      <td><code>uri</code></td>
+      <td>Required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>medication.coding.code</code></td>
+      <td><code>code</code></td>
+      <td>Required</td>
+      <td><code>PrescriptionMedicinalProduct</code></td>
+    </tr>
+    <tr>
+      <td><code>medication.coding.display</code></td>
+      <td><code>string</code></td>
+      <td>Required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>status.coding.system</code></td>
+      <td><code>uri</code></td>
+      <td>Required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>status.coding.code</code></td>
+      <td><code>code</code></td>
+      <td>Required</td>
+      <td><code>Medication Status Codes</code></td>
+    </tr>
+    <tr>
+      <td><code>effective.date</code></td>
+      <td><code>date</code></td>
+      <td>Required</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Allergy Intolerance
-[Enter table here]
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Requirement</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>patient.identifier</code></td>
+      <td><code>reference</code></td>
+      <td>Required</td>
+      <td>A reference to the patient resource</td>
+    </tr>
+    <tr>
+      <td><code>substance.coding.system</code></td>
+      <td><code>uri</code></td>
+      <td>Required</td>
+      <td>SNOMED CT CA</td>
+    </tr>
+    <tr>
+      <td><code>substance.coding.code</code></td>
+      <td><code>code</code></td>
+      <td>Required</td>
+      <td>PharmaceuticalBiologicProductAndSubstanceCode</td>
+    </tr>
+    <tr>
+      <td><code>substance.coding.display</code></td>
+      <td><code>string</code></td>
+      <td>Required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>reaction.coding.system</code></td>
+      <td><code>uri</code></td>
+      <td>Optional</td>
+      <td>SNOMED CT CA</td>
+    </tr>
+    <tr>
+      <td><code>reaction.coding.code</code></td>
+      <td><code>code</code></td>
+      <td>Optional</td>
+      <td>ClinicalFindingCode</td>
+    </tr>
+    <tr>
+      <td><code>reaction.coding.display</code></td>
+      <td><code>string</code></td>
+      <td>Optional</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>clinicalStatus.coding.system</code></td>
+      <td><code>uri</code></td>
+      <td>Optional</td>
+      <td>HL7</td>
+    </tr>
+    <tr>
+      <td><code>clinicalStatus.coding.code</code></td>
+      <td><code>code</code></td>
+      <td>Optional</td>
+      <td>AllergyIntoleranceClinicalStatusCodes</td>
+    </tr>
+    <tr>
+      <td><code>verificationStatus.coding.system</code></td>
+      <td><code>uri</code></td>
+      <td>Optional</td>
+      <td>HL7</td>
+    </tr>
+    <tr>
+      <td><code>verificationStatus.coding.code</code></td>
+      <td><code>code</code></td>
+      <td>Optional</td>
+      <td>AllergyIntoleranceVerificationStatusCodes</td>
+    </tr>
+    <tr>
+      <td><code>criticality.coding.system</code></td>
+      <td><code>uri</code></td>
+      <td>Optional</td>
+      <td>HL7</td>
+    </tr>
+    <tr>
+      <td><code>criticality.coding.code</code></td>
+      <td><code>code</code></td>
+      <td>Optional</td>
+      <td>AllergyIntoleranceCriticality</td>
+    </tr>
+    <tr>
+      <td><code>severity.coding.system</code></td>
+      <td><code>uri</code></td>
+      <td>Optional</td>
+      <td>HL7</td>
+    </tr>
+    <tr>
+      <td><code>severity.coding.code</code></td>
+      <td><code>code</code></td>
+      <td>Optional</td>
+      <td>AllergyIntoleranceSeverity</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## Immunization
-[Enter table here]
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Requirement</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>patient.identifier</code></td>
+      <td><code>reference</code></td>
+      <td>Required</td>
+      <td>A reference to the patient resource</td>
+    </tr>
+    <tr>
+      <td><code>occurrence.date</code></td>
+      <td><code>date</code></td>
+      <td>Required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>status.coding.system</code></td>
+      <td><code>uri</code></td>
+      <td>Required</td>
+      <td>HL7</td>
+    </tr>
+    <tr>
+      <td><code>status.coding.code</code></td>
+      <td><code>code</code></td>
+      <td>Required</td>
+      <td>ImmunizationStatusCodes</td>
+    </tr>
+    <tr>
+      <td><code>status.coding.display</code></td>
+      <td><code>string</code></td>
+      <td>Required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>vaccine.coding.system</code></td>
+      <td><code>uri</code></td>
+      <td>Required</td>
+      <td>SNOMED CT CA</td>
+    </tr>
+    <tr>
+      <td><code>vaccine.coding.code</code></td>
+      <td><code>code</code></td>
+      <td>Required</td>
+      <td>VaccineAdministeredTradeNameCode</td>
+    </tr>
+    <tr>
+      <td><code>vaccine.coding.display</code></td>
+      <td><code>string</code></td>
+      <td>Required</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>site.coding.system</code></td>
+      <td><code>uri</code></td>
+      <td>Optional</td>
+      <td>HL7</td>
+    </tr>
+    <tr>
+      <td><code>site.coding.code</code></td>
+      <td><code>code</code></td>
+      <td>Optional</td>
+      <td>CodesForImmunizationSiteOfAdministration</td>
+    </tr>
+    <tr>
+      <td><code>site.coding.display</code></td>
+      <td><code>string</code></td>
+      <td>Optional</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>route.coding.system</code></td>
+      <td><code>uri</code></td>
+      <td>Optional</td>
+      <td>SNOMED CT CA</td>
+    </tr>
+    <tr>
+      <td><code>route.coding.code</code></td>
+      <td><code>code</code></td>
+      <td>Optional</td>
+      <td>ImmunizationRouteOfAdministrationCode</td>
+    </tr>
+    <tr>
+      <td><code>route.coding.display</code></td>
+      <td><code>string</code></td>
+      <td>Optional</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
