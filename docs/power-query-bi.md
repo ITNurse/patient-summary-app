@@ -311,7 +311,7 @@ in
 
 <br>
 
-# User Interface
+## User Interface
 The following screenshots show the user interface.
 ![Overview Page](images/Overview.jpg)
 ![Medication Page](images/Medications.jpg)
@@ -319,12 +319,12 @@ The following screenshots show the user interface.
 ![Allergy Page](images/Allergies.jpg)
 ![Immunization Page](images/Immunizations.jpg)
 
-# Relating tables
+## Relating tables
 All tables were related using the PatientID columns.
 ![Screenshot Data Model View in Power BI](images/dataModel.jpg)
 
 
 <br>
 
-# Publish to Power BI Service
+## Publish to Power BI Service
 Due to the fact that the author did not have access to a Power BI account, it was not possible to publish the report to the Power BI service.
