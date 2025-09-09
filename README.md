@@ -83,6 +83,15 @@ To open and refresh the report:
 ## License
 MIT
 
+# Next Steps
+- Improve conformance validation: Explore HAPI FHIR server configuration to generate clearer validation feedback, making it easier to troubleshoot PS-CA compliance issues.
+- Address Power BI limitations: Revisit licensing options or alternatives so the FHIR connector and online publishing can be used, reducing barriers for learners to access the dashboard.
+- Enhance Python app logic: Add PUT operations to prevent duplicate resources and expand the synthetic dataset (Results, Devices, Vital Signs) to better reflect the PS-CA scope.
+- Test with external data: Run the app against datasets like Synthea to validate adaptability and performance with more complex, realistic patient scenarios.
+- Develop bilingual reporting: Build an English/French version of the Power BI report to reflect Canada’s official languages, investigating how to handle HL7 value sets available only in English.
+- Expand documentation: Add terminology primers, Infoway resources, and SNOMED/LOINC guidance so new users have the context they need to learn and apply the standards.
+- Recruit volunteer testers: Ask others to walk through the repo, flag unclear instructions, and try running the project, ensuring usability and accessibility for independent learners.
+
 # Learn More
 
 - [What is the Pan-Canadian Patient Summary?](docs/pan-canadian-patient-summary.md)
