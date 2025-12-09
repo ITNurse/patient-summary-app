@@ -11,6 +11,7 @@ This project generates synthetic HL7 FHIR-based patient summaries aligned with t
 - Connects to HAPI FHIR server using Power Query in Microsoft Power BI, unpacks .json into tables, and visualizes the data.
 
 ## Requirements
+- Git (If you are new to Git, check out [this YouTube video](https://www.youtube.com/watch?v=r8jQ9hVA2qs))
 - Python 3.x
 - Docker (for running HAPI FHIR server)
 - Python packages listed in `requirements.txt`
@@ -19,7 +20,7 @@ This project generates synthetic HL7 FHIR-based patient summaries aligned with t
 ## Getting Started
 
 ### 1. Clone the repository
-
+Open a command window and enter the following command:
 ```bash
 git clone https://github.com/ITNurse/patient-summary-app.git
 cd patient-summary-app
