@@ -79,7 +79,12 @@ You should see the following output:
 
 ### 6. Output
 
-FHIR Bundles will be created in the `document_bundles/` folder. Check this folder and you should be able to see see the bundles. The resources should also have been POSTed to the FHIR server. Check 
+FHIR Bundles will be created in the `document_bundles/` folder. Check this folder and you should be able to see see the bundles. The resources should also have been POSTed to the FHIR server. Check the following links and you should be able to see them:
+- [Composition Resources](http://localhost:8080/fhir/Composition)
+- [Patient Resources](http://localhost:8080/fhir/Patient)
+- [Medication Resources](http://localhost:8080/fhir/MedicationStatement)
+- [Immunization Resources](http://localhost:8080/fhir/Immunization)
+- [AllergyIntolerance Resources](http://localhost:8080/fhir/Patient)
 
 ### 7. Open and Refresh the Power BI Report
 
