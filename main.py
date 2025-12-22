@@ -109,8 +109,8 @@ def main():
     
     # Step 4: Save log
     # -----------------
-    print(f"\nSTEP 4: SAVING LOG TO {LOG_OUTPUT_PATH}")
-    print("--------------------------------------------------------------------")
+    print(f"\n\nSTEP 4: SAVING LOG TO {LOG_OUTPUT_PATH}")
+    print("----------------------------------------------------------------------------")
 
     try:
         df_log = pd.DataFrame(log)
