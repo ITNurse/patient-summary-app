@@ -13,7 +13,7 @@ This project generates synthetic HL7 FHIR-based patient summaries aligned with t
 ## Requirements
 - Computer running Windows
 - Git (If you are new to Git, check out [this YouTube video](https://www.youtube.com/watch?v=r8jQ9hVA2qs))
-- Knowledge of how to work with the Command Prompt (If you are new to this, check out [this YouTube video](https://www.youtube.com/watch?v=QBWX_4ho8D4)
+- Knowledge of how to work with the Command Prompt (If you are new to this, check out [this YouTube video](https://www.youtube.com/watch?v=QBWX_4ho8D4))
 - Python 3.x
 - Microsoft Power BI desktop
 
@@ -75,7 +75,7 @@ python main.py
 ```
 You should see the following output:
 
-![Screenshot of command line output from running the application](docs/images/hapi-fhir-localhost.jpg)
+![Screenshot of command line output from running the application](docs/images/command_line.jpg)
 
 ### 6. Output
 
