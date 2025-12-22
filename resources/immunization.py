@@ -21,6 +21,7 @@ def create_immunization_resources(immunizations_df, hcn, patient_id):
     """
     immunization_entries = []
     patient_immunizations = immunizations_df[immunizations_df["patient.identifier"] == hcn]
+    num_immunizations = len(patient_immunizations)
 
     for _, row in patient_immunizations.iterrows():
         immunization_id = str(uuid.uuid4())
@@ -66,7 +67,7 @@ def create_immunization_resources(immunizations_df, hcn, patient_id):
 
         immunization_entries.append(immunization_entry)
 
-    return immunization_entries
+    return num_immunizations, immunization_entries
 
 def get_immunization_references(immunization_entries):
     """

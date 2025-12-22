@@ -19,6 +19,7 @@ def create_allergy_resources(allergies_df, hcn, patient_id):
     """
     allergy_entries = []
     patient_allergies = allergies_df[allergies_df["patient.identifier"] == hcn]
+    num_allergies = len(patient_allergies)
 
     for _, allergy_row in patient_allergies.iterrows():
         allergy_id = str(uuid.uuid4())
@@ -64,7 +65,7 @@ def create_allergy_resources(allergies_df, hcn, patient_id):
 
         allergy_entries.append(allergy_entry)
 
-    return allergy_entries
+    return num_allergies, allergy_entries
 
 
 def get_allergy_references(allergy_entries):

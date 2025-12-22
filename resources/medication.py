@@ -21,6 +21,7 @@ def create_medication_resources(medications_df, hcn, patient_id):
     """
     medication_entries = []
     patient_medications = medications_df[medications_df["patient.identifier"] == hcn]
+    num_medications = len(patient_medications)
 
     for _, medication_row in patient_medications.iterrows():
         medication_id = str(uuid.uuid4())
@@ -52,7 +53,7 @@ def create_medication_resources(medications_df, hcn, patient_id):
 
         medication_entries.append(medication_entry)
 
-    return medication_entries
+    return num_medications, medication_entries
 
 
 def get_medication_references(medication_entries):

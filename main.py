@@ -15,18 +15,22 @@ from process_patient import process_patient
 from config import LOG_OUTPUT_PATH, FHIR_SERVER_URL
 
 def main():
+    print("\n ------  SCRIPT STARTING  ------\n\n")
+    
     
     # Step 1: Test server connection
     # ------------------------------
-    print("Step 1: Testing FHIR server connection...")
+    print("STEP 1: TESTING FHIR SERVER CONNECTION")
+    print("--------------------------------------")
     if not test_server_connection():
         print("Cannot connect to FHIR server. Please check server is running.")        
         sys.exit(1)
-    print("FHIR server connection successful")
+    print("✅ FHIR server connection successful")
     
     # Step 2: Load and validate csv data
     # -----------------------------------
-    print("\n Step 2: Loading CSV data...")
+    print("\n STEP 2: LOADING CSV DATA")
+    print("---------------------------")
     try:
         organization_df, compositions_df, patients_df, conditions_df, medications_df, allergies_df, immunizations_df = load_csv_data()
     except Exception as e:
@@ -38,12 +42,12 @@ def main():
     
     # Step 3: Process each patient
     # ----------------------------
-    print(f"\nStep 3: Processing Patients")
-    print(f"\n Patients Found: {len(patients_df)}")
+    print(f"\nSTEP 3: PROCESSING PATIENTS")
+    print("------------------------------")
     log = []
     
     for index, patient_row in patients_df.iterrows():
-        print(f"\n[Patient {index+1}/{len(patients_df)}]")
+        print(f"\nProcessing Patient [{index+1}/{len(patients_df)}]:")
         try:
             # Step 3a: Process patient
             # --------------------------
@@ -62,7 +66,7 @@ def main():
                     "Status": "Success",
                     "FilePath": bundle_path
                 })
-                print(f"✅ Created and saved bundle for patient {hcn} to {bundle_path}")
+                print(f"-- Created and saved bundle for patient to {bundle_path}")
             else:
                 log.append({
                     "HealthCard": hcn,
@@ -83,7 +87,7 @@ def main():
                     "Action": "Upload Bundle",
                     "Status": f"Success ({status_code})",
                 })
-                print(f"✅ Uploaded bundle for patient {hcn} to {FHIR_SERVER_URL}")
+                print(f"-- Uploaded bundle for patient to {FHIR_SERVER_URL}")
             else:
                 log.append({
                     "HealthCard": hcn,
@@ -105,15 +109,17 @@ def main():
     
     # Step 4: Save log
     # -----------------
-    print(f"\nSaving upload log to {LOG_OUTPUT_PATH}...")
+    print(f"\nSTEP 4: SAVING LOG TO {LOG_OUTPUT_PATH}")
+    print("--------------------------------------------------------------------")
 
     try:
         df_log = pd.DataFrame(log)
         df_log.to_csv(LOG_OUTPUT_PATH, index=False)
-        print("✅ Upload log saved successfully.")
+        print("✅ Output log saved successfully")
     except Exception as e:
-        print(f"❌ Failed to save upload log: {e}")
+        print(f"❌ Failed to save output log: {e}")
 
+    print("\n ------ 🎉 SCRIPT COMPLETED 🎉 ------\n\n")
 
 if __name__ == "__main__":
     main()

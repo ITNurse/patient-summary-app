@@ -88,12 +88,12 @@ def validate_data(organization_df, compositions_df, patients_df, conditions_df, 
         return False
     
     print(f"✅ Data import validation passed")
-    print(f"   - {len(organization_df)} organizations") 
-    print(f"   - {len(compositions_df)} compositions")   
-    print(f"   - {len(patients_df)} patients")
-    print(f"   - {len(conditions_df)} conditions")
-    print(f"   - {len(medications_df)} medications")
-    print(f"   - {len(allergies_df)} allergies")
-    print(f"   - {len(immunizations_df)} immunizations")
+    print(f"   - {len(organization_df)} total organizations") 
+    print(f"   - {len(compositions_df)} total compositions")   
+    print(f"   - {len(patients_df)} total patients")
+    print(f"   - {len(conditions_df)} total conditions")
+    print(f"   - {len(medications_df)} total medications")
+    print(f"   - {len(allergies_df)} total allergies")
+    print(f"   - {len(immunizations_df)} total immunizations")
     
     return True

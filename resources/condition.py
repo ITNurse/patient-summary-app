@@ -18,6 +18,7 @@ def create_condition_resources(conditions_df, hcn, patient_id):
     """
     condition_entries = []    
     patient_conditions = conditions_df[conditions_df["patient.identifier"] == hcn]
+    num_conditions = len(patient_conditions)
 
     for _, condition_row in patient_conditions.iterrows():
         condition_id = str(uuid.uuid4())
@@ -45,7 +46,7 @@ def create_condition_resources(conditions_df, hcn, patient_id):
 
         condition_entries.append(condition_entry)
 
-    return condition_entries
+    return num_conditions, condition_entries
 
 
 def get_condition_references(condition_entries):
