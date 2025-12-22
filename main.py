@@ -119,7 +119,7 @@ def main():
     except Exception as e:
         print(f"❌ Failed to save output log: {e}")
 
-    print("\n ------ 🎉 SCRIPT COMPLETED 🎉 ------\n\n")
+    print("\n\n ------ 🎉 SCRIPT COMPLETED 🎉 ------\n\n")
 
 if __name__ == "__main__":
     main()
