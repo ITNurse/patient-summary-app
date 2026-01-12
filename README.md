@@ -60,7 +60,7 @@ Docker is required to run the HAPI FHIR server locally.
 In the command window, enter the following command:
 
 ```bash
-docker run -d -p 8080:8080 hapiproject/hapi:latest
+docker run -d -p 8080:8080 --name hapi-fhir -v hapi_data:/hapi-fhir-jpaserver-start/db hapiproject/hapi:latest 
 ```
 Wait a couple of minutes for the server to start, then open a web browser and navigate to `http://localhost:8080/fhir` to ensure it is running. You should see something like this:
 
