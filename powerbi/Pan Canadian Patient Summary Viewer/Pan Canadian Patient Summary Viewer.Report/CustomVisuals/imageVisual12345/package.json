@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0.0",
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "resources": [
+    {
+      "resourceId": "rId0",
+      "sourceType": 5,
+      "file": "resources/imageVisual12345.pbiviz.json"
+    }
+  ],
+  "visual": {
+    "guid": "imageVisual12345",
+    "name": "imageVisual",
+    "displayName": "Image Visual",
+    "version": "1.0.0.0",
+    "description": "A custom visual to display Base64 images.",
+    "supportUrl": "https://your-support-site.com",
+    "gitHubUrl": "https://github.com/your-repo",
+    "visualClassName": "Visual"
+  },
+  "metadata": {
+    "pbivizjson": {
+      "resourceId": "rId0"
+    }
+  }
+}

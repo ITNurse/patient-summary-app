@@ -1,0 +1,25 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-CA
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["PS_CA_Patient","PS_CA_Composition","PS_CA_Condition","PS_CA_AllergyIntolerance","PS_CA_Medication","PS_CA_Immunization","ICD-10-Map"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table PS_CA_Patient
+ref table PS_CA_Composition
+ref table PS_CA_Condition
+ref table PS_CA_AllergyIntolerance
+ref table PS_CA_Medication
+ref table PS_CA_Immunization
+ref table ICD-10-Map
+
+ref cultureInfo en-US
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Pan Canadian Patient Summary Viewer"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c2bab9db-b5b0-4984-9afa-0deb2689c857"
+  }
+}

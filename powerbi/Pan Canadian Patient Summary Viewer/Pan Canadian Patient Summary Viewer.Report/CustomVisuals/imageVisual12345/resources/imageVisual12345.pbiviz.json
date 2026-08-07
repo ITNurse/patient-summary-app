@@ -1,0 +1,82 @@
+{
+  "visual": {
+    "name": "imageVisual",
+    "displayName": "Image Visual",
+    "guid": "imageVisual12345",
+    "visualClassName": "Visual",
+    "version": "1.0.0.0",
+    "description": "A custom visual to display Base64 images.",
+    "supportUrl": "https://your-support-site.com",
+    "gitHubUrl": "https://github.com/your-repo"
+  },
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "apiVersion": "5.3.0",
+  "style": "style/visual.less",
+  "stringResources": {},
+  "capabilities": {
+    "dataRoles": [
+      {
+        "name": "image",
+        "kind": "Grouping",
+        "displayName": "Image URL"
+      }
+    ],
+    "dataViewMappings": [
+      {
+        "categorical": {
+          "categories": {
+            "for": {
+              "in": "image"
+            },
+            "dataReductionAlgorithm": {
+              "top": {}
+            }
+          }
+        }
+      }
+    ],
+    "objects": {
+      "imageSettings": {
+        "displayName": "Image Settings",
+        "properties": {
+          "padding": {
+            "displayName": "Padding",
+            "type": {
+              "numeric": true
+            }
+          },
+          "borderRadius": {
+            "displayName": "Border Radius",
+            "type": {
+              "numeric": true
+            }
+          },
+          "backgroundColor": {
+            "displayName": "Background Color",
+            "type": {
+              "fill": {
+                "solid": {
+                  "color": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "privileges": []
+  },
+  "content": {
+    "js": "var imageVisual12345;(()=>{\"use strict\";var e={278:(e,t,a)=>{a.d(t,{b:()=>i});class i{target;constructor(e){this.target=e.element,this.target.classList.add(\"image-card-visual\")}update(e){const t=e.dataViews&&e.dataViews[0],a=t?.metadata?.objects??{};let i=\"\";if(t?.categorical?.categories&&t.categorical.categories.length>0&&t.categorical.categories[0].values.length>0){const e=t.categorical.categories[0].values[0];\"string\"==typeof e&&e.startsWith(\"data:image\")&&(i=e)}const r=s(a,\"imageSettings\",\"borderRadius\",8),o=s(a,\"imageSettings\",\"padding\",4),l=s(a,\"imageSettings\",\"backgroundColor\",\"#ffffff\");for(;this.target.firstChild;)this.target.removeChild(this.target.firstChild);const n=document.createElement(\"div\");n.style.textAlign=\"center\",n.style.padding=`${o}px`,n.style.backgroundColor=l;const g=document.createElement(\"img\");g.src=i,g.alt=\"Image\",g.style.maxWidth=\"100%\",g.style.maxHeight=\"100%\",g.style.borderRadius=`${r}px`,n.appendChild(g),this.target.appendChild(n)}}function s(e,t,a,i){return e&&e[t]&&void 0!==e[t][a]?e[t][a]:i}}},t={};function a(i){var s=t[i];if(void 0!==s)return s.exports;var r=t[i]={exports:{}};return e[i](r,r.exports,a),r.exports}a.d=(e,t)=>{for(var i in t)a.o(t,i)&&!a.o(e,i)&&Object.defineProperty(e,i,{enumerable:!0,get:t[i]})},a.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),a.r=e=>{\"undefined\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(e,\"__esModule\",{value:!0})};var i={};(()=>{a.r(i),a.d(i,{default:()=>r});var e=a(278),t=window.powerbi,s={name:\"imageVisual12345\",displayName:\"Image Visual\",class:\"Visual\",apiVersion:\"5.3.0\",create:t=>{if(e.b)return new e.b(t);throw\"Visual instance not found\"},createModalDialog:(e,t,a)=>{const i=globalThis.dialogRegistry;e in i&&new i[e](t,a)},custom:!0};void 0!==t&&(t.visuals=t.visuals||{},t.visuals.plugins=t.visuals.plugins||{},t.visuals.plugins.imageVisual12345=s);const r=s})(),imageVisual12345=i})();",
+    "css": "p {\n  font-size: 20px;\n  font-weight: bold;\n}\np em {\n  background: yellow;\n  padding: 5px;\n}\n\n",
+    "iconBase64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpBOEJGMzkxN0NBRDNFMDExQTcxQ0JFODI3ODBCQUE5RSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3NEY1QjA1NUQ0OTAxMUUwQTgxREI2NjMxMkNEMUNEMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3NEY1QjA1NEQ0OTAxMUUwQTgxREI2NjMxMkNEMUNEMyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5Mjk5RDU1ODBGRDRFMDExQTcxQ0JFODI3ODBCQUE5RSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBOEJGMzkxN0NBRDNFMDExQTcxQ0JFODI3ODBCQUE5RSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PpDoNX0AAAI3SURBVHjarJRLSFVRFIY9t7SiRDGLoEEPCRJRaCSYkxCiFCXCF+LIMExQLkilgumgwkbdBuWDRC2EomhURCOjgagkXEgKLUKhidobM6H0+i34rxyPnuvEA5/rXPda/1l7739vJxKJxG3ls93+hEKhTILxJhgMftmsiPxdhHw4CfepeR8dCyjWwwB0kZy3iVgCoQ2ewnmXxhrBD7Cgr/ZQVA17fDRPw2UYhzK6G99IsBse6/0QNME+H8FT4EA/YiPqOgA1q4IMzBNuw6iKjkCpj+Av+AdnEEmD3bxfhzvuDk30HaEaLsEkXCO53rN+Bwg5qsvTuj/TjGYtx9nINhRmEx7AYWiFW7AXOuEcbPOUvIZ2mnrl+PkQUbNEh4QHNKUSDdsSBWEOlmxTEfvs26FL9Khe211if6Acgee+xo7xzMgBxfq9qPe3fgWBGN2lEnqtG9nExM7CV3jp3bDos2bKJB0nHFRxAxRpA/5CIXyHh5ABv6GZqd9dJ6iz2SjbxMMypGhJFtTlNzu3kK7xgDxpove8U66FK2A+s6nul5gVVMEL+Ak7lG/T+g9JcIOGar2CRUoogxMwpP/bLTJMB9bRhDbkk5bBUU0y3ES0xS04CBfN9RSHiY90vJK0BHaSzG9h2eejS3RJeVfdtrGzuGyd8CX7Yq6ExuCH63jaVMPkFOv6OibB6DKs2+VEQp+WYBoqERn2sVWWRNN0YurIfeL14U6YkpkLYCSG6e0yqdCxvKBLIm5FgAEAV0nKuwMYRUsAAAAASUVORK5CYII="
+  },
+  "visualEntryPoint": "",
+  "externalJS": [],
+  "assets": {
+    "icon": "assets/icon.png"
+  }
+}

@@ -1,0 +1,111 @@
+table PS_CA_Medication
+	lineageTag: d6b05f83-2936-473d-994b-79596c898f15
+
+	column MedicationStatementID
+		dataType: string
+		lineageTag: 59dfdf8c-dff0-4148-9cf7-d7f857f33667
+		summarizeBy: none
+		sourceColumn: MedicationStatementID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PatientID
+		dataType: string
+		lineageTag: a1be4a3b-ae8f-4905-bbb9-6a13bd641db5
+		summarizeBy: none
+		sourceColumn: PatientID
+
+		annotation SummarizationSetBy = Automatic
+
+	column MedicationCode
+		dataType: string
+		lineageTag: 5faeeb09-4019-4032-aadf-e1b53d0257da
+		summarizeBy: none
+		sourceColumn: MedicationCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column MedicationDisplay
+		dataType: string
+		lineageTag: dab442f2-bb48-427a-aa07-351d48db7b54
+		summarizeBy: none
+		sourceColumn: MedicationDisplay
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 1371e49f-e6fe-4d4b-bd45-c2d454e061a8
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column MedicationSystem
+		dataType: string
+		lineageTag: 8c79cd1f-647d-4c02-83eb-93a2eb4e0892
+		summarizeBy: none
+		sourceColumn: MedicationSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column EffectiveDate
+		dataType: dateTime
+		formatString: dd-mmm-yyyy
+		lineageTag: cd0f6366-5475-4a86-8ff2-c7e4c0476243
+		summarizeBy: none
+		sourceColumn: EffectiveDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	partition PS_CA_Medication = m
+		mode: import
+		source = ```
+				let
+				    // Step 1: Retrieve MedicationStatement resources from the local FHIR server
+				    Source = Json.Document(Web.Contents("http://localhost:8080/fhir/MedicationStatement?_count=100&_summary=false")),
+				    MedicationEntries = Source[entry],
+				
+				    // Step 2: Convert the list of entries into a table and expand the main columns
+				    ToTable = Table.FromList(MedicationEntries, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    ExpandedEntry = Table.ExpandRecordColumn(ToTable, "Column1", {"fullUrl", "resource", "search"}, {"FullUrl", "Resource", "Search"}),
+				
+				    // Step 3: Expand fields from the resource object
+				    ExpandedResource = Table.ExpandRecordColumn(ExpandedEntry, "Resource", {"resourceType", "id", "meta", "status", "medicationCodeableConcept", "subject", "effectiveDateTime"}, {"ResourceType", "ID", "Meta", "Status", "MedicationCodeableConcept", "Subject", "EffectiveDate"}),
+				    ParsedEffectiveDate = Table.TransformColumns(ExpandedResource,{{"EffectiveDate", each Date.From(DateTimeZone.From(_)), type date}}),
+				
+				
+				    // Step 4: Expand metadata to access versioning and timestamp info
+				    ExpandedMeta = Table.ExpandRecordColumn(ParsedEffectiveDate, "Meta", {"versionId", "lastUpdated", "source"}, {"VersionId", "LastUpdated", "Source"}),
+				
+				    // Step 5: Expand the medication codeable concept to access codings
+				    ExpandedMedicationConcept = Table.ExpandRecordColumn(ExpandedMeta, "MedicationCodeableConcept", {"coding"}, {"Coding"}),
+				
+				    // Step 6: Unpack the list of codings into individual rows (in case of multiple codings per medication)
+				    ExpandedCodingList = Table.ExpandListColumn(ExpandedMedicationConcept, "Coding"),
+				
+				    // Step 7: Expand each coding object to get system, code, and display text
+				    ExpandedCoding = Table.ExpandRecordColumn(ExpandedCodingList, "Coding", {"system", "code", "display"}, {"MedicationSystem", "MedicationCode", "MedicationDisplay"}),
+				
+				    // Step 8: Extract patient ID from subject.reference (e.g. "Patient/123" becomes "123")
+				    ExpandedSubject = Table.ExpandRecordColumn(ExpandedCoding, "Subject", {"reference"}, {"PatientReference"}),
+				    ExtractedPatientID = Table.ReplaceValue(ExpandedSubject, "Patient/", "", Replacer.ReplaceText, {"PatientReference"}),
+				
+				    // Step 9: Rename columns for clarity
+				    RenamedPatientID = Table.RenameColumns(ExtractedPatientID, {{"PatientReference", "PatientID"}, {"ID", "MedicationStatementID"}}),
+				    
+				    // Step 10: Keep only the necessary columns
+				    FinalOutput = Table.SelectColumns(RenamedPatientID, {"MedicationStatementID", "PatientID", "MedicationCode", "MedicationDisplay", "MedicationSystem", "Status", "EffectiveDate"})
+				
+				in
+				    FinalOutput
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

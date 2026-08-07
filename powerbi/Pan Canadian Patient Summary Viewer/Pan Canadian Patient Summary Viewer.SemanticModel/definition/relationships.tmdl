@@ -1,0 +1,26 @@
+relationship 729640bd-41f7-1cc7-9c11-9305ca74a190
+	fromColumn: PS_CA_Condition.PatientID
+	toColumn: PS_CA_Patient.ID
+
+relationship 173a438c-5b11-85d1-ed11-01fc91aff0c5
+	fromColumn: PS_CA_AllergyIntolerance.PatientID
+	toColumn: PS_CA_Patient.ID
+
+relationship 1c2fd6e9-6851-2b93-bd3d-58c39867eb91
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: ICD-10-Map.'SNOMED CT CA concept'
+	toColumn: PS_CA_Condition.ConditionCode
+
+relationship e731c6ad-b7a9-1d7f-d658-60aa1aaebe8d
+	fromColumn: PS_CA_Composition.PatientID
+	toColumn: PS_CA_Patient.ID
+
+relationship f5cb7c63-c715-04ec-eec6-71eff4e14218
+	fromColumn: PS_CA_Medication.PatientID
+	toColumn: PS_CA_Patient.ID
+
+relationship d45b5d87-c989-dd66-8347-510275640cca
+	fromColumn: PS_CA_Immunization.PatientID
+	toColumn: PS_CA_Patient.ID
+

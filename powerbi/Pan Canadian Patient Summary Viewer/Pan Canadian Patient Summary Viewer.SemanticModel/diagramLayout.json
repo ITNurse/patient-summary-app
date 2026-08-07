@@ -1,0 +1,113 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 764,
+            "y": 0
+          },
+          "nodeIndex": "PS_CA_Patient",
+          "nodeLineageTag": "30e4d8ce-2446-45f2-8842-ae1750537cdb",
+          "size": {
+            "height": 440,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 334,
+            "y": 14.689453125
+          },
+          "nodeIndex": "PS_CA_Composition",
+          "nodeLineageTag": "c856d3ae-fa7a-4bc0-8bb9-f901873f7cbe",
+          "size": {
+            "height": 548,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1393,
+            "y": 189.939453125
+          },
+          "nodeIndex": "PS_CA_Condition",
+          "nodeLineageTag": "1310e871-8734-4750-b1c9-4a74f1f74739",
+          "size": {
+            "height": 202,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1105,
+            "y": 594.126953125
+          },
+          "nodeIndex": "PS_CA_AllergyIntolerance",
+          "nodeLineageTag": "29c72616-b32c-440b-a69e-9a505977b9b0",
+          "size": {
+            "height": 464,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 838,
+            "y": 596.283203125
+          },
+          "nodeIndex": "PS_CA_Medication",
+          "nodeLineageTag": "d6b05f83-2936-473d-994b-79596c898f15",
+          "size": {
+            "height": 263,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 579,
+            "y": 592.017578125
+          },
+          "nodeIndex": "PS_CA_Immunization",
+          "nodeLineageTag": "5ebec23d-6eae-4836-b24d-e84ec1ae2a34",
+          "size": {
+            "height": 471,
+            "width": 232
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1388,
+            "y": 593.685546875
+          },
+          "nodeIndex": "ICD-10-Map",
+          "nodeLineageTag": "61613e57-7f5c-4092-ac8f-1f3fa6adaf5a",
+          "size": {
+            "height": 290,
+            "width": 234
+          },
+          "zIndex": 6
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

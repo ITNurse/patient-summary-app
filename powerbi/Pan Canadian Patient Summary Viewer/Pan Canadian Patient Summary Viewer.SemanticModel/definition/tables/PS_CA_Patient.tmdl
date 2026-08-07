@@ -1,0 +1,218 @@
+table PS_CA_Patient
+	lineageTag: 30e4d8ce-2446-45f2-8842-ae1750537cdb
+
+	column PatientName = PS_CA_Patient[FamilyName] & ", " & PS_CA_Patient[GivenNames]
+		lineageTag: 3f770a54-ed61-473e-beee-ebb7061a17eb
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FormattedBirthdate = FORMAT(PS_CA_Patient[BirthDate], "dd-mmm-yyyy")
+		lineageTag: 987897a1-c9e2-45a4-a32a-2e319d9e8423
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column FullUrl
+		dataType: string
+		lineageTag: 03044e69-8a67-4a7d-9f24-6bb2d862163b
+		summarizeBy: none
+		sourceColumn: FullUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: string
+		lineageTag: 07c5c593-9b43-4dba-a0de-fdeef6a79519
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: abf947ed-c2c0-4e93-87d6-96505cdd28bf
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column BirthDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8f79fe54-671f-4ae9-b694-30375b5654b4
+		summarizeBy: none
+		sourceColumn: BirthDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HealthCardNumber
+		dataType: string
+		lineageTag: 00eb723c-2b14-4b10-bdcd-455d2de09616
+		summarizeBy: none
+		sourceColumn: HealthCardNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column GivenNames
+		dataType: string
+		lineageTag: 3e5852b8-f693-48ca-8dfa-62223fe19d59
+		summarizeBy: none
+		sourceColumn: GivenNames
+
+		annotation SummarizationSetBy = Automatic
+
+	column FamilyName
+		dataType: string
+		lineageTag: c82f695e-6a25-4c72-b33a-f6ea1518e561
+		summarizeBy: none
+		sourceColumn: FamilyName
+
+		annotation SummarizationSetBy = Automatic
+
+	column AddressLine1
+		dataType: string
+		lineageTag: c048cb73-9bcd-40d4-9ae4-16947c5df1f5
+		summarizeBy: none
+		sourceColumn: AddressLine1
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: c2dae1a2-17fe-4fe9-9bab-8a6b8f9f3766
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 6d0d8c60-92c1-49cd-9cf4-f5986cfe1231
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostalCode
+		dataType: string
+		lineageTag: b0838428-46d3-46a9-af04-076a7894f626
+		summarizeBy: none
+		sourceColumn: PostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 5b910b22-8f7a-40c2-8040-a4ec985c51cf
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Photo.contentType'
+		dataType: string
+		lineageTag: 792fff7d-17d9-4600-b1ee-753ddbb05575
+		summarizeBy: none
+		sourceColumn: Photo.contentType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Photo.data'
+		dataType: string
+		lineageTag: 7de5d5e1-78a7-4695-8733-579f64e8fbb8
+		summarizeBy: none
+		sourceColumn: Photo.data
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: 72874d7c-378c-46b7-867c-bda26c5b2e3f
+		summarizeBy: sum
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: 1e8388e6-22bb-4ab6-82d7-43749299bb44
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 7ba9a656-31e1-4b29-bb74-7e17cef1de87
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Photo
+		dataType: string
+		lineageTag: 4de9be0d-5959-456f-9a26-f632b5be93f8
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Photo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PS_CA_Patient = m
+		mode: import
+		source =
+				let
+				    // Step 1: Load JSON from FHIR Patient endpoint
+				    Source = Json.Document(Web.Contents("http://localhost:8080/fhir/Patient?_count=50&_summary=false")),
+				    PatientEntries = Source[entry],
+				
+				    // Step 2: Convert list to table and expand resource details
+				    PatientList = Table.FromList(PatientEntries, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    ExpandedEntry = Table.ExpandRecordColumn(PatientList, "Column1", {"fullUrl", "resource"}, {"FullUrl", "Resource"}),
+				    ExpandedResource = Table.ExpandRecordColumn(ExpandedEntry, "Resource", {"id", "gender", "birthDate", "identifier", "name", "telecom", "address", "photo"}, {"ID", "Gender", "BirthDate", "Identifier", "Name", "Telecom", "Address", "Photo"}),
+				    ChangedIDType = Table.TransformColumnTypes(ExpandedResource,{{"ID", type text}}),
+				
+				    // Step 3: Extract and format patient name fields
+				    FirstNameOnly = Table.TransformColumns(ChangedIDType, {{"Name", each if List.IsEmpty(_) then null else _{0}}}),
+				    ExpandedName = Table.ExpandRecordColumn(FirstNameOnly, "Name", {"given", "family"}, {"GivenNames", "FamilyName"}),
+				    CombinedGivenNames = Table.TransformColumns(ExpandedName, {{"GivenNames", each Text.Combine(_, " "), type text}}),
+				
+				    // Step 4: Parse birth date and calculate age
+				    ParsedBirthDate = Table.TransformColumns(CombinedGivenNames, {{"BirthDate", each try Date.From(_) otherwise null, type nullable date}}),
+				    AddedAge = Table.AddColumn(ParsedBirthDate, "Age", each if [BirthDate] <> null then Number.RoundDown(Duration.Days(Date.From(DateTime.LocalNow()) - [BirthDate]) / 365) else null, Int64.Type),
+				
+				    // Step 5: Extract Health Card Number (first identifier only)
+				    FirstIdentifierOnly = Table.TransformColumns(AddedAge, {{"Identifier", each if List.IsEmpty(_) then null else _{0}}}),
+				    ExpandedIdentifier = Table.ExpandRecordColumn(FirstIdentifierOnly, "Identifier", {"value"}, {"HealthCardNumber"}),
+				
+				    // Step 6: Expand address fields
+				    ExpandedAddressList = Table.ExpandListColumn(ExpandedIdentifier, "Address"),
+				    ExpandedAddressFields = Table.ExpandRecordColumn(ExpandedAddressList, "Address", {"line", "city", "state", "postalCode", "country"}, {"AddressLine1", "City", "State", "PostalCode", "Country"}),
+				    CombinedAddressLine = Table.TransformColumns(ExpandedAddressFields, {"AddressLine1", each Text.Combine(List.Transform(_, Text.From), ","), type text}),
+				
+				    // Step 7: Expand telecom fields and pivot by system type (e.g. phone, email)
+				    ExpandedTelecomList = Table.ExpandListColumn(CombinedAddressLine, "Telecom"),
+				    ExpandedTelecomFields = Table.ExpandRecordColumn(ExpandedTelecomList, "Telecom", {"system", "value"}),
+				    PivotedTelecom = Table.Pivot(
+				        ExpandedTelecomFields,
+				        List.Distinct(ExpandedTelecomFields[system]),
+				        "system",
+				        "value"
+				    ),
+				    RenamedTelecomColumns = Table.RenameColumns(PivotedTelecom,{{"phone", "Phone"}, {"email", "Email"}}),
+				
+				    // Step 8: Expand photo and construct base64 image URI string
+				    ExpandedPhotoList = Table.ExpandListColumn(RenamedTelecomColumns, "Photo"),
+				    ExpandedPhotoFields = Table.ExpandRecordColumn(ExpandedPhotoList, "Photo", {"contentType", "data"}, {"Photo.contentType", "Photo.data"}),
+				    ConstructedPhotoURI = Table.AddColumn(ExpandedPhotoFields, "Photo", each Text.Combine({"data:", [Photo.contentType], ";base64, ", [Photo.data]}, ""))
+				in
+				    ConstructedPhotoURI
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

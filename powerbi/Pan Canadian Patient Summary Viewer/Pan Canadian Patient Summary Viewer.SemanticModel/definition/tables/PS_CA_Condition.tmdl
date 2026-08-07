@@ -1,0 +1,80 @@
+table PS_CA_Condition
+	lineageTag: 1310e871-8734-4750-b1c9-4a74f1f74739
+
+	column PatientID
+		dataType: string
+		lineageTag: 33bc6071-c9b9-462a-9f61-87a582f8d3b7
+		summarizeBy: none
+		sourceColumn: PatientID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ConditionCode
+		dataType: string
+		lineageTag: 1230d930-1fc8-423e-bb71-ab090dd7f863
+		summarizeBy: none
+		sourceColumn: ConditionCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column ConditionDisplay
+		dataType: string
+		lineageTag: ac23e8ff-4b5d-4cf2-ae51-f2e38c06e680
+		summarizeBy: none
+		sourceColumn: ConditionDisplay
+
+		annotation SummarizationSetBy = Automatic
+
+	column CodeSystem
+		dataType: string
+		lineageTag: 3b26da6c-2d47-4eb4-a287-2a25e25072f3
+		summarizeBy: none
+		sourceColumn: CodeSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column ConditionID
+		dataType: string
+		lineageTag: 8e3dc9cb-9b4e-4cbf-acc3-432d9c2cbce2
+		summarizeBy: none
+		sourceColumn: ConditionID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PS_CA_Condition = m
+		mode: import
+		source =
+				let
+				    // Step 1: Load and extract Condition resources from the local FHIR server
+				    Source = Json.Document(Web.Contents("http://localhost:8080/fhir/Condition?_count=100&_summary=false")),
+				    ConditionEntries = Source[entry],
+				
+				    // Step 2: Convert JSON list to table and extract relevant fields
+				    ToTable = Table.FromList(ConditionEntries, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    ExpandedTopLevel = Table.ExpandRecordColumn(ToTable, "Column1", {"fullUrl", "resource"}, {"FullUrl", "Resource"}),
+				
+				    // Step 3: Expand top-level fields from the Condition resource
+				    ExpandedResource = Table.ExpandRecordColumn(ExpandedTopLevel, "Resource", {"id", "subject", "code"}, {"ConditionID", "Subject", "Code"}),
+				
+				    // Step 4: Extract Patient ID from the subject reference field
+				    ExtractedPatientID = Table.AddColumn(ExpandedResource, "PatientID", each Text.AfterDelimiter([Subject][reference], "/")),
+				
+				    // Step 5: Expand SNOMED CT condition coding
+				    ExpandedCode = Table.ExpandRecordColumn(ExtractedPatientID, "Code", {"coding"}, {"CodingList"}),
+				    ExpandedCodingList = Table.ExpandListColumn(ExpandedCode, "CodingList"),
+				    ExpandedCoding = Table.ExpandRecordColumn(ExpandedCodingList, "CodingList", {"code", "display"}, {"ConditionCode", "ConditionDisplay"}),
+				
+				    // Step 6: Clean up columns and formatting
+				    SelectedColumns = Table.SelectColumns(ExpandedCoding, {"ConditionID", "PatientID", "ConditionCode", "ConditionDisplay"}),
+				    RemovedDisorderSuffix = Table.ReplaceValue(SelectedColumns, " (disorder)", "", Replacer.ReplaceText, {"ConditionDisplay"}),
+				
+				    // Step 7: Add a fixed column for the code system used
+				    AddCodeSystem = Table.AddColumn(RemovedDisorderSuffix, "CodeSystem", each "http://snomed.info/sct")
+				
+				in
+				    AddCodeSystem
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,130 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY24SU10",
+      "reportVersionAtImport": {
+        "visual": "1.8.98",
+        "report": "2.0.98",
+        "page": "1.3.98"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "Solar",
+      "reportVersionAtImport": {
+        "visual": "1.8.98",
+        "report": "2.0.98",
+        "page": "1.3.98"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY24SU10",
+          "path": "BaseThemes/CY24SU10.json",
+          "type": "BaseTheme"
+        },
+        {
+          "name": "Solar",
+          "path": "BuiltInThemes/Solar.json",
+          "type": "CustomTheme"
+        }
+      ]
+    },
+    {
+      "name": "plainCardVisual2EBEF2FC7F41688BE43FA75F6A939E",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "plainCardVisual2EBEF2FC7F41688BE43FA75F6A939E.pbiviz.json",
+          "path": "plainCardVisual2EBEF2FC7F41688BE43FA75F6A939E.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "imageVisual12345",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "imageVisual12345.pbiviz.json",
+          "path": "imageVisual12345.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Patient_Dashboard_Background_2019582029745878082.jpg",
+          "path": "Patient_Dashboard_Background_2019582029745878082.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "Patient_Dashboard_Background_322364072575928673.jpg",
+          "path": "Patient_Dashboard_Background_322364072575928673.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "Patient_Dashboard_Background_340830035047656266.jpg",
+          "path": "Patient_Dashboard_Background_340830035047656266.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "Patient_Dashboard_Background_35918974891281389.jpg",
+          "path": "Patient_Dashboard_Background_35918974891281389.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "Patient_Dashboard_Background_36421769672269061.jpg",
+          "path": "Patient_Dashboard_Background_36421769672269061.jpg",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

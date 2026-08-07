@@ -1,0 +1,226 @@
+table PS_CA_Composition
+	lineageTag: c856d3ae-fa7a-4bc0-8bb9-f901873f7cbe
+
+	measure LastUpdatedString = "Last Updated: " & FORMAT(SELECTEDVALUE(PS_CA_Composition[lastUpdated]), "MMMM D, YYYY at h:mm AM/PM")
+		lineageTag: a9232762-332b-4374-8cd5-d6a82f0d75c7
+
+	column FullUrl
+		dataType: string
+		lineageTag: a9e3599f-fec0-4ff5-b32c-2885169fc66c
+		summarizeBy: none
+		sourceColumn: FullUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column ResourceType
+		dataType: string
+		lineageTag: f138c149-7b80-463c-9d5d-badeb25c6d2a
+		summarizeBy: none
+		sourceColumn: ResourceType
+
+		annotation SummarizationSetBy = Automatic
+
+	column CompositionID
+		dataType: string
+		lineageTag: 2fc5cb45-d37b-4f3c-84f0-6de3eb1e02b6
+		summarizeBy: none
+		sourceColumn: CompositionID
+
+		annotation SummarizationSetBy = Automatic
+
+	column VersionId
+		dataType: string
+		lineageTag: d459423b-77a7-459d-81d0-a406c2c6b650
+		summarizeBy: none
+		sourceColumn: VersionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastUpdated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f123cd24-e7bd-451e-b08b-3f99a6aaa0fb
+		summarizeBy: none
+		sourceColumn: LastUpdated
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: ea75b5bb-4434-4289-9aad-d4d6205eed04
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column TypeSystem
+		dataType: string
+		lineageTag: 5e5d11d9-e6aa-4a1e-9a01-ad10459a9198
+		summarizeBy: none
+		sourceColumn: TypeSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column TypeCode
+		dataType: string
+		lineageTag: 1a81ee69-4806-4825-86cb-651ff593418d
+		summarizeBy: none
+		sourceColumn: TypeCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column DocumentType
+		dataType: string
+		lineageTag: 64686175-7c42-45a3-91c6-16b00478547e
+		summarizeBy: none
+		sourceColumn: DocumentType
+
+		annotation SummarizationSetBy = Automatic
+
+	column PatientID
+		dataType: string
+		lineageTag: 55f722be-3f71-42da-8a72-d9dc921f49e7
+		summarizeBy: none
+		sourceColumn: PatientID
+
+		annotation SummarizationSetBy = Automatic
+
+	column AuthorRef
+		dataType: string
+		lineageTag: faa92099-6b36-4165-aad8-e43801ed4615
+		summarizeBy: none
+		sourceColumn: AuthorRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column AuthorDisplay
+		dataType: string
+		lineageTag: db96a551-7550-414e-8e90-0002e1af4506
+		summarizeBy: none
+		sourceColumn: AuthorDisplay
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrganizationID
+		dataType: string
+		lineageTag: 068c9085-a390-489f-941f-dd41efc1fd89
+		summarizeBy: none
+		sourceColumn: OrganizationID
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrganizationName
+		dataType: string
+		lineageTag: cf6ba450-4eef-4698-9f75-825532ad1fa9
+		summarizeBy: none
+		sourceColumn: OrganizationName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SectionTitleText
+		dataType: string
+		lineageTag: d2747054-7d00-4f07-9c2f-311755770e4d
+		summarizeBy: none
+		sourceColumn: SectionTitleText
+
+		annotation SummarizationSetBy = Automatic
+
+	column SectionCode
+		dataType: string
+		lineageTag: 508e40bc-882e-4af7-a5b4-febf49bc5e5b
+		summarizeBy: none
+		sourceColumn: SectionCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column SectionName
+		dataType: string
+		lineageTag: ce533a6c-c491-462d-bc37-b92db21f0850
+		summarizeBy: none
+		sourceColumn: SectionName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PS_CA_Composition = m
+		mode: import
+		source = ```
+				let
+				    // Step 1: Retrieve Composition resources from local FHIR server
+				    Source = Json.Document(Web.Contents("http://localhost:8080/fhir/Composition?_count=50&_summary=false")),
+				    CompositionEntries = Source[entry],
+				
+				    // Step 2: Convert entry list to table and expand the top-level fields
+				    ToTable = Table.FromList(CompositionEntries, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    ExpandedTopLevel = Table.ExpandRecordColumn(ToTable, "Column1", {"fullUrl", "resource"}, {"FullUrl", "Resource"}),
+				
+				    // Step 3: Expand key fields from the Composition resource
+				    ExpandedResource = Table.ExpandRecordColumn(ExpandedTopLevel, "Resource", {
+				        "resourceType", "id", "meta", "status", "type", "subject", 
+				        "date", "author", "title", "custodian", "section"
+				    }, {
+				        "ResourceType", "CompositionID", "Meta", "Status", "Type", "Subject", 
+				        "Date", "Author", "Title", "Custodian", "Sections"
+				    }),
+				
+				    // Step 4: Expand author and subject references
+				    ExpandedAuthor = Table.ExpandListColumn(ExpandedResource, "Author"),
+				    ExpandedSubject = Table.ExpandRecordColumn(ExpandedAuthor, "Subject", {"reference"}, {"PatientReference"}),
+				
+				    // Step 5: Expand custodian organization info
+				    ExpandedCustodian = Table.ExpandRecordColumn(ExpandedSubject, "Custodian", {"reference", "display"}, {"OrganizationRef", "OrganizationName"}),
+				
+				    // Step 6: Expand section data
+				    ExpandedSectionList = Table.ExpandListColumn(ExpandedCustodian, "Sections"),
+				    ExpandedSectionDetails = Table.ExpandRecordColumn(ExpandedSectionList, "Sections", {"title", "code", "entry"}, {"SectionTitle", "SectionCode", "SectionEntries"}),
+				
+				    // Step 7: Expand author reference inside section
+				    ExpandedSectionAuthor = Table.ExpandRecordColumn(ExpandedSectionDetails, "Author", {"reference", "display"}, {"AuthorRef", "AuthorDisplay"}),
+				
+				    // Step 8: Expand type coding for document type
+				    ExpandedTypeCoding = Table.ExpandRecordColumn(ExpandedSectionAuthor, "Type", {"coding"}, {"TypeCoding"}),
+				    ExpandedTypeCodingList = Table.ExpandListColumn(ExpandedTypeCoding, "TypeCoding"),
+				    ExpandedTypeDetails = Table.ExpandRecordColumn(ExpandedTypeCodingList, "TypeCoding", {"system", "code", "display"}, {"TypeSystem", "TypeCode", "TypeDisplay"}),
+				
+				    // Step 9: Expand metadata
+				    ExpandedMeta = Table.ExpandRecordColumn(ExpandedTypeDetails, "Meta", {"versionId", "lastUpdated", "source"}, {"VersionId", "LastUpdated", "Source"}),
+				
+				    // Step 10: Expand section entries
+				    ExpandedSectionEntryList = Table.ExpandListColumn(ExpandedMeta, "SectionEntries"),
+				    ExpandedSectionEntry = Table.ExpandRecordColumn(ExpandedSectionEntryList, "SectionEntries", {"reference"}, {"SectionEntryRef"}),
+				
+				    // Step 11: Expand section code info
+				    ExpandedSectionCode = Table.ExpandRecordColumn(ExpandedSectionEntry, "SectionCode", {"coding"}, {"SectionCoding"}),
+				    ExpandedSectionCodingList = Table.ExpandListColumn(ExpandedSectionCode, "SectionCoding"),
+				    ExpandedSectionCoding = Table.ExpandRecordColumn(ExpandedSectionCodingList, "SectionCoding", {"system", "code", "display"}, {"SectionCodeSystem", "SectionCodeValue", "SectionDisplay"}),
+				
+				    // Step 12: Keep only relevant columns for report use
+				    SelectedColumns = Table.SelectColumns(ExpandedSectionCoding, {
+				        "FullUrl", "ResourceType", "CompositionID", "VersionId", "LastUpdated", "Status",
+				        "TypeSystem", "TypeCode", "TypeDisplay", "PatientReference", 
+				        "AuthorRef", "AuthorDisplay", "OrganizationRef", "OrganizationName", 
+				        "SectionTitle", "SectionCodeValue", "SectionDisplay"
+				    }),
+				
+				    // Step 13: Clean up column names
+				    RenamedColumns = Table.RenameColumns(SelectedColumns, {
+				        {"PatientReference", "PatientID"},
+				        {"OrganizationRef", "OrganizationID"},
+				        {"SectionCodeValue", "SectionCode"},
+				        {"SectionDisplay", "SectionName"},
+				        {"TypeDisplay", "DocumentType"},
+				        {"SectionTitle", "SectionTitleText"}
+				    }),
+				
+				    // Step 14: Clean up Patient ID format
+				    CleanedPatientID = Table.ReplaceValue(RenamedColumns, "Patient/", "", Replacer.ReplaceText, {"PatientID"}),
+				
+				    // Step 15: Convert lastUpdated timestamp to datetime type
+				    ConvertedTypes = Table.TransformColumnTypes(CleanedPatientID, {{"LastUpdated", type datetime}})
+				in
+				    ConvertedTypes
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

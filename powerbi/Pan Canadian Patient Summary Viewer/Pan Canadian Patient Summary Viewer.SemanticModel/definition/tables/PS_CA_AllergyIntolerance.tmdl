@@ -1,0 +1,169 @@
+table PS_CA_AllergyIntolerance
+	lineageTag: 29c72616-b32c-440b-a69e-9a505977b9b0
+
+	column ID
+		dataType: string
+		lineageTag: c606d37b-c3b0-42f9-ad7e-7f167f1982df
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PatientID
+		dataType: string
+		lineageTag: 0a843e01-f33a-4800-b685-2723df65f792
+		summarizeBy: none
+		sourceColumn: PatientID
+
+		annotation SummarizationSetBy = Automatic
+
+	column AllergenCode
+		dataType: string
+		lineageTag: b81c3abd-ef94-4b61-baa8-f20b29333778
+		summarizeBy: none
+		sourceColumn: AllergenCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column AllergenDisplay
+		dataType: string
+		lineageTag: 32074b7f-203a-47c6-a4b3-ccd0947e8b6a
+		summarizeBy: none
+		sourceColumn: AllergenDisplay
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReactionCode
+		dataType: string
+		lineageTag: 642a61ec-507c-4bc4-bbc9-157f116493e2
+		summarizeBy: none
+		sourceColumn: ReactionCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReactionDisplay
+		dataType: string
+		lineageTag: 5c6b0975-7888-41b9-8423-37ddba132794
+		summarizeBy: none
+		sourceColumn: ReactionDisplay
+
+		annotation SummarizationSetBy = Automatic
+
+	column Severity
+		dataType: string
+		lineageTag: 58f5eb28-ec66-47b3-9e11-83ceeb6110a2
+		summarizeBy: none
+		sourceColumn: Severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Criticality
+		dataType: string
+		lineageTag: decbe45d-ac3b-4244-bf8e-f4f376bdd98d
+		summarizeBy: none
+		sourceColumn: Criticality
+
+		annotation SummarizationSetBy = Automatic
+
+	column AllergenSystem
+		dataType: string
+		lineageTag: d0484676-955d-4339-8643-f0ce1d669632
+		summarizeBy: none
+		sourceColumn: AllergenSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReactionSystem
+		dataType: string
+		lineageTag: a8707b74-5e6b-40aa-a062-24f116b334ec
+		summarizeBy: none
+		sourceColumn: ReactionSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClinicalStatusSystem
+		dataType: string
+		lineageTag: ad7e1650-bb13-499e-99fa-bb0fe631d364
+		summarizeBy: none
+		sourceColumn: ClinicalStatusSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClinicalStatusCode
+		dataType: string
+		lineageTag: 885926da-0d91-4f0e-9cff-cd9307b7ba86
+		summarizeBy: none
+		sourceColumn: ClinicalStatusCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column VerificationStatusSystem
+		dataType: string
+		lineageTag: a1e10ee5-1dd3-4a4b-a799-67e5675a2482
+		summarizeBy: none
+		sourceColumn: VerificationStatusSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column VerificationStatusCode
+		dataType: string
+		lineageTag: 4214d99b-83b6-4de2-866b-5ec9ae4736b2
+		summarizeBy: none
+		sourceColumn: VerificationStatusCode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PS_CA_AllergyIntolerance = m
+		mode: import
+		source = ```
+				let
+				    // Step 1: Load JSON data from the FHIR AllergyIntolerance endpoint
+				    Source = Json.Document(Web.Contents("http://localhost:8080/fhir/AllergyIntolerance?_count=100")),
+				    AllergyEntries = Source[entry],
+				
+				    // Step 2: Convert list of entries into a table and expand top-level entry fields
+				    AllergyList = Table.FromList(AllergyEntries, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    ExpandedEntry = Table.ExpandRecordColumn(AllergyList, "Column1", {"fullUrl", "resource"}, {"FullUrl", "Resource"}),
+				
+				    // Step 3: Expand key fields from the resource
+				    ExpandedResource = Table.ExpandRecordColumn(ExpandedEntry, "Resource", {"id", "patient", "code", "reaction", "criticality", "clinicalStatus", "verificationStatus"}, {"ID", "Patient", "Substance", "Reaction", "Criticality", "ClinicalStatus", "VerificationStatus"}),
+				
+				    // Step 4: Extract patient ID from the Patient reference (e.g. "Patient/12345" -> "12345")
+				    ExtractedPatientRef = Table.AddColumn(ExpandedResource, "PatientID", each Text.AfterDelimiter([Patient][reference], "/")),
+				
+				    // Step 5: Expand allergen substance coding to get code, system, and display
+				    SubstanceCoding = Table.ExpandRecordColumn(ExtractedPatientRef, "Substance", {"coding"}, {"Coding"}),
+				    ExpandedSubstanceCodingList = Table.ExpandListColumn(SubstanceCoding, "Coding"),
+				    ExpandedSubstanceCoding = Table.ExpandRecordColumn(ExpandedSubstanceCodingList, "Coding", {"system", "code", "display"}, {"AllergenSystem", "AllergenCode", "AllergenDisplay"}),
+				
+				    // Step 6: Expand the first reaction and its manifestations (if any)
+				    FirstReactionOnly = Table.TransformColumns(ExpandedSubstanceCoding, {{"Reaction", each if List.IsEmpty(_) then null else _{0}}}),
+				    ExpandedReaction = Table.ExpandRecordColumn(FirstReactionOnly, "Reaction", {"manifestation", "severity"}, {"ManifestationList", "Severity"}),
+				
+				    // Step 7: Expand first manifestation coding to get reaction code, system, and display
+				    FirstManifestation = Table.TransformColumns(ExpandedReaction, {{"ManifestationList", each if List.IsEmpty(_) then null else _{0}}}),
+				    ExpandedManifestation = Table.ExpandRecordColumn(FirstManifestation, "ManifestationList", {"coding"}, {"ManifestationCoding"}),
+				    ManifestationCodeList = Table.ExpandListColumn(ExpandedManifestation, "ManifestationCoding"),
+				    ExpandedManifestationCode = Table.ExpandRecordColumn(ManifestationCodeList, "ManifestationCoding", {"system", "code", "display"}, {"ReactionSystem", "ReactionCode", "ReactionDisplay"}),
+				
+				    // Step 7: Expand clinical status to get code system and display
+				    ClinicalStatusCoding = Table.ExpandRecordColumn(ExpandedManifestationCode, "ClinicalStatus", {"coding"}, {"Coding"}),
+				    ExpandedClinicalStatusCodingList = Table.ExpandListColumn(ClinicalStatusCoding, "Coding"),
+				    ExpandedClinicalStatusCoding = Table.ExpandRecordColumn(ExpandedClinicalStatusCodingList, "Coding", {"system", "code"}, {"ClinicalStatusSystem", "ClinicalStatusCode"}),
+				
+				    // Step 7: Expand verification status to get code system and display
+				    VerificationStatusCoding = Table.ExpandRecordColumn(ExpandedClinicalStatusCoding, "VerificationStatus", {"coding"}, {"Coding"}),
+				    ExpandedVerificationStatusCodingList = Table.ExpandListColumn(VerificationStatusCoding, "Coding"),
+				    ExpandedVerificationStatusCoding = Table.ExpandRecordColumn(ExpandedVerificationStatusCodingList, "Coding", {"system", "code"}, {"VerificationStatusSystem", "VerificationStatusCode"}),
+				
+				    // Step 10: Keep only final columns of interest
+				    FinalOutput = Table.SelectColumns(ExpandedVerificationStatusCoding, {"ID", "PatientID", "AllergenSystem", "AllergenCode", "AllergenDisplay", "ReactionSystem", "ReactionCode", "ReactionDisplay", "Severity", "Criticality", "ClinicalStatusSystem", "ClinicalStatusCode","VerificationStatusSystem", "VerificationStatusCode"})
+				 
+				in
+				    FinalOutput
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

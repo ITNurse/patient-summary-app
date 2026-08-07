@@ -1,0 +1,80 @@
+table ICD-10-Map
+	lineageTag: 61613e57-7f5c-4092-ac8f-1f3fa6adaf5a
+
+	column 'SNOMED CT CA concept'
+		dataType: string
+		lineageTag: 977e30dc-9d38-4b34-9bae-c9236c0b8de7
+		summarizeBy: none
+		sourceColumn: SNOMED CT CA concept
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SNOMED CT CA term'
+		dataType: string
+		lineageTag: 8ab7b4f3-361b-4521-93d0-8bacc4c613a0
+		summarizeBy: none
+		sourceColumn: SNOMED CT CA term
+
+		annotation SummarizationSetBy = Automatic
+
+	column mapGroup
+		dataType: string
+		lineageTag: 3817b4de-963c-4207-925c-b154ff5d2464
+		summarizeBy: none
+		sourceColumn: mapGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column mapPriority
+		dataType: string
+		lineageTag: 176efcf1-19c8-4942-a518-3b2986ce2558
+		summarizeBy: none
+		sourceColumn: mapPriority
+
+		annotation SummarizationSetBy = Automatic
+
+	column mapRule
+		dataType: string
+		lineageTag: c7853cfc-949a-471a-aae3-c13de2ff9efe
+		summarizeBy: none
+		sourceColumn: mapRule
+
+		annotation SummarizationSetBy = Automatic
+
+	column mapAdvice
+		dataType: string
+		lineageTag: 211fcffc-2d81-403c-b9e7-a548577d7e06
+		summarizeBy: none
+		sourceColumn: mapAdvice
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'v2022 ICD-10-CA code'
+		dataType: string
+		lineageTag: f4d30aea-d8a5-496e-83fb-b336e02f3f4b
+		summarizeBy: none
+		sourceColumn: v2022 ICD-10-CA code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'v2022 ICD-10-CA code description'
+		dataType: string
+		lineageTag: a1bce9f7-2979-4ed0-b26f-18228ef38491
+		summarizeBy: none
+		sourceColumn: v2022 ICD-10-CA code description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ICD-10-Map = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\lisat\OneDrive\003 Education\006 Professional Development\004 Portfolio Projects\HAPI\snomedctca-icd10ca-march-2025-en.xlsx"), null, true),
+				    Table1_Table = Source{[Item="Table1",Kind="Table"]}[Data]
+				in
+				    Table1_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "d6b8ba306ee176401c2c",
+  "position": {
+    "x": 45,
+    "y": 139.71428571428572,
+    "z": 12000,
+    "height": 68.571428571428569,
+    "width": 70.714285714285722,
+    "tabOrder": 12000
+  },
+  "visual": {
+    "visualType": "imageVisual12345",
+    "query": {
+      "queryState": {
+        "image": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PS_CA_Patient"
+                    }
+                  },
+                  "Property": "Photo"
+                }
+              },
+              "queryRef": "PS_CA_Patient.Photo",
+              "nativeQueryRef": "Photo"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

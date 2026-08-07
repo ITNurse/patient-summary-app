@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Pan Canadian Patient Summary Viewer"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5d6ae0d8-527e-4c9a-a3af-6d386007a651"
+  }
+}

@@ -1,0 +1,185 @@
+table PS_CA_Immunization
+	lineageTag: 5ebec23d-6eae-4836-b24d-e84ec1ae2a34
+
+	column VaccineCodeSystem
+		dataType: string
+		lineageTag: 30df3a82-7a65-4252-8fc1-a0bab0aeba84
+		summarizeBy: none
+		sourceColumn: VaccineCodeSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column VaccineCode
+		dataType: string
+		lineageTag: 54162ce8-bc1c-469a-8492-f8501e87afa2
+		summarizeBy: none
+		sourceColumn: VaccineCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vaccine
+		dataType: string
+		lineageTag: 3bcd8385-5fe1-4a13-beaa-f9d4558d7c98
+		summarizeBy: none
+		sourceColumn: Vaccine
+
+		annotation SummarizationSetBy = Automatic
+
+	column RouteCodeSystem
+		dataType: string
+		lineageTag: 2ebae0fc-f630-451b-b93f-3b327dcd60c7
+		summarizeBy: none
+		sourceColumn: RouteCodeSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column RouteCode
+		dataType: string
+		lineageTag: 7aafb883-af55-4442-bbfb-b964fb588052
+		summarizeBy: none
+		sourceColumn: RouteCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Route
+		dataType: string
+		lineageTag: 46f282b2-01b3-4036-af42-761b36d92827
+		summarizeBy: none
+		sourceColumn: Route
+
+		annotation SummarizationSetBy = Automatic
+
+	column SiteCodeSystem
+		dataType: string
+		lineageTag: 8b5a5a35-88c2-427c-90b2-75c1818998ba
+		summarizeBy: none
+		sourceColumn: SiteCodeSystem
+
+		annotation SummarizationSetBy = Automatic
+
+	column SiteCode
+		dataType: string
+		lineageTag: 53e58b08-d7e9-4c93-81ca-38259710e07f
+		summarizeBy: none
+		sourceColumn: SiteCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Site
+		dataType: string
+		lineageTag: 3cec0329-813f-4a04-bdc1-cbd3e049688b
+		summarizeBy: none
+		sourceColumn: Site
+
+		annotation SummarizationSetBy = Automatic
+
+	column FullUrl
+		dataType: string
+		lineageTag: c2545202-589a-45f1-9bfe-49b44327ec05
+		summarizeBy: none
+		sourceColumn: FullUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImmunizationID
+		dataType: string
+		lineageTag: 65ce280f-c23e-4cc1-b2c7-5fd9f2878977
+		summarizeBy: none
+		sourceColumn: ImmunizationID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: b6ee8e30-495f-43c8-b7f8-e856a02069bd
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column PatientID
+		dataType: string
+		lineageTag: 0474ee80-e7c7-4608-8d2a-98d0b64257ee
+		summarizeBy: none
+		sourceColumn: PatientID
+
+		annotation SummarizationSetBy = Automatic
+
+	column OccurrenceDate
+		dataType: dateTime
+		formatString: dd-mmm-yyyy
+		lineageTag: 4a69592b-a609-4d25-bf3f-8313ef0a63ce
+		summarizeBy: none
+		sourceColumn: OccurrenceDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column VaccineType
+		dataType: string
+		lineageTag: ed93b546-9679-464f-af6e-2612c8770d23
+		summarizeBy: none
+		sourceColumn: VaccineType
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PS_CA_Immunization = m
+		mode: import
+		source = ```
+				let
+				    // Step 1: Retrieve Immunization resources from the local FHIR server
+				    Source = Json.Document(Web.Contents("http://localhost:8080/fhir/Immunization?_count=100&_summary=false")),
+				    ImmunizationEntries = Source[entry],
+				
+				    // Step 2: Convert the list of entries to a table and expand top-level columns
+				    ToTable = Table.FromList(ImmunizationEntries, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    ExpandedEntry = Table.ExpandRecordColumn(ToTable, "Column1", {"fullUrl", "resource", "search"}, {"FullUrl", "Resource", "Search"}),
+				
+				    // Step 3: Expand fields from the Immunization resource
+				    ExpandedResource = Table.ExpandRecordColumn(ExpandedEntry, "Resource", {
+				        "resourceType", "id", "meta", "status", "vaccineCode", 
+				        "patient", "occurrenceDateTime", "primarySource", "site", "route"
+				    }, {
+				        "ResourceType", "ImmunizationID", "Meta", "Status", "VaccineCode", 
+				        "Patient", "OccurrenceDate", "PrimarySource", "Site", "Route"
+				    }),
+				    ParsedOccurrenceDate = Table.TransformColumns(ExpandedResource,{{"OccurrenceDate", each Date.From(DateTimeZone.From(_)), type date}}),
+				
+				    // Step 4: Expand vaccine code details
+				    ExpandedVaccineCode = Table.ExpandRecordColumn(ParsedOccurrenceDate, "VaccineCode", {"coding"}, {"VaccineCoding"}),
+				    ExpandedVaccineCodingList = Table.ExpandListColumn(ExpandedVaccineCode, "VaccineCoding"),
+				    ExpandedVaccineCoding = Table.ExpandRecordColumn(ExpandedVaccineCodingList, "VaccineCoding", {"system", "code", "display"}, {"VaccineCodeSystem", "VaccineCode", "Vaccine"}),
+				    ExtractVaccineType = Table.AddColumn(ExpandedVaccineCoding, "VaccineType", each Text.BetweenDelimiters([Vaccine], "[", "]"), type text),
+				    ReplaceInfWithInfluenza = Table.ReplaceValue(ExtractVaccineType,"Inf","Influenza",Replacer.ReplaceText,{"VaccineType"}),
+				    ReplaceVarWithVaricella = Table.ReplaceValue(ReplaceInfWithInfluenza,"Var","Varicella",Replacer.ReplaceText,{"VaccineType"}),
+				
+				    // Step 5: Extract Patient ID from the patient reference
+				    ExpandedPatient = Table.ExpandRecordColumn(ReplaceVarWithVaricella, "Patient", {"reference"}, {"PatientReference"}),
+				    ExtractedPatientID = Table.ReplaceValue(ExpandedPatient, "Patient/", "", Replacer.ReplaceText, {"PatientReference"}),
+				
+				    // Step 6: Expand site details (e.g. injection site)
+				    ExpandedSite = Table.ExpandRecordColumn(ExtractedPatientID, "Site", {"coding"}, {"SiteCoding"}),
+				    ExpandedSiteList = Table.ExpandListColumn(ExpandedSite, "SiteCoding"),
+				    ExpandedSiteCoding = Table.ExpandRecordColumn(ExpandedSiteList, "SiteCoding", {"system", "code", "display"}, {"SiteCodeSystem", "SiteCode", "Site"}),
+				
+				    // Step 7: Expand route details (e.g. intramuscular)
+				    ExpandedRoute = Table.ExpandRecordColumn(ExpandedSiteCoding, "Route", {"coding"}, {"RouteCoding"}),
+				    ExpandedRouteList = Table.ExpandListColumn(ExpandedRoute, "RouteCoding"),
+				    ExpandedRouteCoding = Table.ExpandRecordColumn(ExpandedRouteList, "RouteCoding", {"system", "code", "display"}, {"RouteCodeSystem", "RouteCode", "Route"}),
+				
+				    // Step 8: Remove unneeded metadata fields
+				    RemovedExtras = Table.RemoveColumns(ExpandedRouteCoding, {"Meta", "ResourceType", "PrimarySource", "Search"}),
+				
+				    // Step 9: Rename columns for clarity
+				    RenamedColumns = Table.RenameColumns(RemovedExtras, {"PatientReference", "PatientID"})
+				in
+				    RenamedColumns
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

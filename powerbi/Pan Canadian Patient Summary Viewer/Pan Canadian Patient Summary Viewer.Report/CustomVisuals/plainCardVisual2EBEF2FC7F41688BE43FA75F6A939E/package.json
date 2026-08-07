@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0.1",
+  "author": {
+    "name": "Your Name",
+    "email": "your@email.com"
+  },
+  "resources": [
+    {
+      "resourceId": "rId0",
+      "sourceType": 5,
+      "file": "resources/plainCardVisual2EBEF2FC7F41688BE43FA75F6A939E.pbiviz.json"
+    }
+  ],
+  "visual": {
+    "guid": "plainCardVisual2EBEF2FC7F41688BE43FA75F6A939E",
+    "name": "PlainCardVisual",
+    "displayName": "Plain Card Visual",
+    "version": "1.0.0.1",
+    "description": "A left-aligned card visual for Power BI.",
+    "supportUrl": "https://yourwebsite.com/support",
+    "gitHubUrl": "",
+    "visualClassName": "Visual"
+  },
+  "metadata": {
+    "pbivizjson": {
+      "resourceId": "rId0"
+    }
+  }
+}
