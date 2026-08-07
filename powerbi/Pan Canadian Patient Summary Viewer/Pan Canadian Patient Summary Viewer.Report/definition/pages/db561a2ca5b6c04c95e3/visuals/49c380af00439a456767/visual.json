@@ -41,7 +41,8 @@
                 }
               },
               "queryRef": "PS_CA_Patient.HealthCardNumber",
-              "nativeQueryRef": "HealthCardNumber"
+              "nativeQueryRef": "HCN",
+              "displayName": "HCN"
             },
             {
               "field": {
@@ -55,7 +56,8 @@
                 }
               },
               "queryRef": "PS_CA_Patient.PatientName",
-              "nativeQueryRef": "PatientName"
+              "nativeQueryRef": "Name",
+              "displayName": "Name"
             },
             {
               "field": {
@@ -125,7 +127,8 @@
                 }
               },
               "queryRef": "PS_CA_Patient.PostalCode",
-              "nativeQueryRef": "PostalCode"
+              "nativeQueryRef": "Postal Code",
+              "displayName": "Postal Code"
             },
             {
               "field": {
