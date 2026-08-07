@@ -3394,16 +3394,6 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.727
 			          }
-			        },
-			        {
-			          "HCN": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -12961,7 +12951,7 @@ cultureInfo en-US
 			  },
 			  "Agents": {
 			    "Internal": {
-			      "Version": "1.1.0"
+			      "Version": "1.0.0"
 			    }
 			  }
 			}
