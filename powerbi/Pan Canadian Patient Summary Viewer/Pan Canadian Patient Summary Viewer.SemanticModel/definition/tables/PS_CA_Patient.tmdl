@@ -5,6 +5,10 @@ table PS_CA_Patient
 		formatString: 0
 		lineageTag: e79f206f-dc54-47f3-ab53-30cce93cbd48
 
+	measure 'Patient Count Youth' = CALCULATE([Patient Count], PS_CA_Patient[Age Bracket] = "Youth")
+		formatString: 0
+		lineageTag: f15f5bf7-8b2e-4c86-af01-d68a3ac3d2b2
+
 	column PatientName = PS_CA_Patient[FamilyName] & ", " & PS_CA_Patient[GivenNames]
 		lineageTag: 3f770a54-ed61-473e-beee-ebb7061a17eb
 		summarizeBy: none
