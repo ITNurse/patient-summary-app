@@ -1,10 +1,6 @@
 table PS_CA_Patient
 	lineageTag: 30e4d8ce-2446-45f2-8842-ae1750537cdb
 
-	measure 'Patient Count' = COUNT(PS_CA_Patient[HealthCardNumber])
-		formatString: 0
-		lineageTag: e79f206f-dc54-47f3-ab53-30cce93cbd48
-
 	column PatientName = PS_CA_Patient[FamilyName] & ", " & PS_CA_Patient[GivenNames]
 		lineageTag: 3f770a54-ed61-473e-beee-ebb7061a17eb
 		summarizeBy: none
@@ -163,16 +159,6 @@ table PS_CA_Patient
 		dataCategory: ImageUrl
 		summarizeBy: none
 		sourceColumn: Photo
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Age Bracket' =
-			SWITCH(true(),
-			PS_CA_Patient[Age] > 19, "Youth",
-			PS_CA_Patient[Age] < 65, "Adult",
-			"Senior")
-		lineageTag: 648ab64a-161c-4ac4-9596-71dcced7a03f
-		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
